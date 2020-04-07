@@ -1,3 +1,1 @@
 # EscapeGame
-
-$f_{e}$

@@ -20,7 +20,7 @@ public class AudioManager : MonoBehaviour
         if(firstPlayInt == 0)
         {
             print("First time");
-            volumeFloat = 1;
+            volumeFloat = 10;
             volumeSlider.value = volumeFloat;
             PlayerPrefs.SetFloat(VolumePref, volumeFloat);
             PlayerPrefs.SetInt(FirstPlayPref, -1);

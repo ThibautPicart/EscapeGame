@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,26 +10,27 @@ public class AudioManager : MonoBehaviour
     private int firstPlayInt;
     private float volumeFloat;
     public AudioSource audioSource;
-
+    public AudioMixer mixer;
 
 
     // Start is called before the first frame update
+
     void Start()
     {
-        firstPlayInt = PlayerPrefs.GetInt(FirstPlayPref);
+        firstPlayInt = PlayerPrefs.GetInt(FirstPlayPref);      
 
         if(firstPlayInt == 0)
         {
-            print("First time");
             volumeFloat = 10;
             volumeSlider.value = volumeFloat;
             PlayerPrefs.SetFloat(VolumePref, volumeFloat);
             PlayerPrefs.SetInt(FirstPlayPref, -1);
-            
+
         }
         else
         {
             volumeFloat = PlayerPrefs.GetFloat(VolumePref);
+            mixer.SetFloat("MusicVol", 20 * Mathf.Log10(volumeFloat));
             volumeSlider.value = volumeFloat;
             volumeSlider.value = volumeFloat;
 
@@ -51,11 +53,6 @@ public class AudioManager : MonoBehaviour
             SaveSoundSettings();
         }
     }
-
-
-
-
-
 
 
 }

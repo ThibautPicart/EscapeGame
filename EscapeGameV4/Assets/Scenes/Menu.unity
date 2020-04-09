@@ -1453,6 +1453,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1638767570}
+        m_MethodName: SaveSoundSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &900593515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2072,7 +2083,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1198167052}
-  - component: {fileID: 1198167051}
   - component: {fileID: 1198167053}
   m_Layer: 0
   m_Name: AudioSources
@@ -2081,20 +2091,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1198167051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1198167050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 232324b49ebf5e642bd10b9e82205d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeSlider: {fileID: 1512472687}
-  audioSource: {fileID: 589155844}
 --- !u!4 &1198167052
 Transform:
   m_ObjectHideFlags: 0
@@ -2324,6 +2320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1512472686}
   - component: {fileID: 1512472687}
+  - component: {fileID: 1512472688}
   m_Layer: 5
   m_Name: VolumeSlider
   m_TagString: Untagged
@@ -2399,10 +2396,34 @@ MonoBehaviour:
   m_MinValue: 0.0001
   m_MaxValue: 2
   m_WholeNumbers: 0
-  m_Value: 2
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1512472688}
+        m_MethodName: setLevel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1512472688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512472685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59dee7c43e703c64fa37dc9bba818b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: c5a3bf37c6262004c9d7f48ec8e13beb, type: 2}
 --- !u!1 &1577857489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2660,6 +2681,7 @@ GameObject:
   - component: {fileID: 1638767568}
   - component: {fileID: 1638767567}
   - component: {fileID: 1638767566}
+  - component: {fileID: 1638767570}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2749,6 +2771,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1638767570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638767565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232324b49ebf5e642bd10b9e82205d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 1512472687}
+  audioSource: {fileID: 589155844}
+  mixer: {fileID: 24100000, guid: c5a3bf37c6262004c9d7f48ec8e13beb, type: 2}
 --- !u!1 &1721657713
 GameObject:
   m_ObjectHideFlags: 0

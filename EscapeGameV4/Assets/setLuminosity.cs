@@ -69,7 +69,7 @@ public class setLuminosity : MonoBehaviour
 //    // Fonction qui sauvegarde dans playerPrefs les valeurs des sliders
 //    public void SaveSoundSettings()
 //    {
-//        PlayerPrefs.SetFloat(LuminosityPref, luminositySlider.value);
+//        PlayerPrefs.SetFloat(LuminosityPref, luminositySlider.value);         
 //        print("luminositySlider.value =");
 //        print(luminositySlider.value);
 //    }

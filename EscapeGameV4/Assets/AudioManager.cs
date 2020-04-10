@@ -40,6 +40,7 @@ public class AudioManager : MonoBehaviour
     }
 
 
+
     // Fonction qui sauvegarde dans playerPrefs les valeurs des sliders
     public void SaveSoundSettings()
     {

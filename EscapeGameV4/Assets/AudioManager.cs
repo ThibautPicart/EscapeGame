@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
 
         if(firstPlayInt == 0)
         {
+            print("je passe pour la première fois ");
             volumeFloat = 10;
             volumeSlider.value = volumeFloat;
             PlayerPrefs.SetFloat(VolumePref, volumeFloat);
@@ -29,10 +30,11 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
+           
             volumeFloat = PlayerPrefs.GetFloat(VolumePref);
             mixer.SetFloat("MusicVol", 20 * Mathf.Log10(volumeFloat));
             volumeSlider.value = volumeFloat;
-            volumeSlider.value = volumeFloat;
+            
 
         }
     }

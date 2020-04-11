@@ -33,7 +33,7 @@ public class Register : MonoBehaviour
         bool CPW = false;
 
 
-        print("Registration Sucessful");
+        
 
 
         if (Username != "")//si username n'est pas vide
@@ -159,7 +159,7 @@ public class Register : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Tab) )//si on appui sur tab ou entrée : le entrée est à corriger!
+        if ((Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Tab))&& Username != "")//si on appui sur tab ou entrée : le entrée est à corriger!
         {
             if (username.GetComponent<InputField>().isFocused)//isFocused signifie qu'on est entrain de remplir ce champs
 

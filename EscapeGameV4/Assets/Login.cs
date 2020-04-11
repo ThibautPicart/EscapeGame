@@ -14,6 +14,8 @@ public class Login : MonoBehaviour
     private string Password;
     private string[] Lines;
     private string DecryptedPass;
+    public GameObject ProfilMenu;
+    public GameObject MainMenu;
 
     public void LoginButton()
     {
@@ -49,32 +51,40 @@ public class Login : MonoBehaviour
                     i++;
                     char Decrypted = (char)(c / i);//cette fois-ci on divise au lieu de multiplier pour retriuver le MDP
                     DecryptedPass += Decrypted.ToString();
+                    
                 }
+                
                 if (Password == DecryptedPass)
                 {
                     PW = true;
+                    DecryptedPass = ""; 
                 }
                 else
                 {
-                    Debug.LogWarning("Password is Invalid");
+                    Debug.LogWarning("1) Password is Invalid");
                 }
             }
             else
             {
-                Debug.LogWarning("Password is Invalid");
+                Debug.LogWarning("2) Password is Invalid");
             }
 
 
         }
+
         else
         {
             Debug.LogWarning("Password Field Empty");
         }
+
+
         if(UN==true && PW == true)
         {
             username.GetComponent<InputField>().text="";//on vide les formes
             password.GetComponent<InputField>().text="";
             print("Login Sucessful");
+            MainMenu.SetActive(true);
+            ProfilMenu.SetActive(false);
         }
     }
 
@@ -93,7 +103,7 @@ public class Login : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            if (Password != "" && Password != "")
+            if (Password != "" && Username != "")
             {
                 LoginButton();
             }
@@ -104,4 +114,6 @@ public class Login : MonoBehaviour
         Username = username.GetComponent<InputField>().text;
         Password = password.GetComponent<InputField>().text;
     }
+
+    
 }

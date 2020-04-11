@@ -42,7 +42,7 @@ public class Register : MonoBehaviour
 
         if (Username != "")//si username n'est pas vide
         {
-            if (!System.IO.File.Exists(@"C:\Users\ASUS\Documents\GitHub\EscapeGame\EscapeGameV4\enregistrementProfils" + Username + ".txt"))//si le fichier existe
+            if (!System.IO.File.Exists(@"C:\Users\ASUS\Documents\GitHub\EscapeGame\EscapeGameV4\enregistrementProfils\etapeSup" + Username + ".txt"))//si le fichier existe
             {
 
                 UN = true;
@@ -148,7 +148,8 @@ public class Register : MonoBehaviour
                 Password += Encrypted.ToString();
             }
             form = (Username + "\n" + Email + "\n" + Password);
-            System.IO.File.WriteAllText(@"C:\Users\ASUS\Documents\GitHub\EscapeGame\EscapeGameV4\enregistrementProfils" + Username + ".txt",form );
+            System.IO.File.WriteAllText(@"C:\Users\ASUS\Documents\GitHub\EscapeGame\EscapeGameV4\enregistrementProfils\etapeSup" + Username + ".txt",form );
+            //une fois le profil enregister on vide les formes pour pouvoir inscrire une nouvelle personne
             username.GetComponent<InputField>().text="";
             email.GetComponent<InputField>().text="";
             password.GetComponent<InputField>().text="";
@@ -212,7 +213,7 @@ public class Register : MonoBehaviour
         {
             if (Email.EndsWith(Characters[i]))
             {
-                SW = true;
+                EW = true;
             }
             if(SW== true && EW == true)
             {

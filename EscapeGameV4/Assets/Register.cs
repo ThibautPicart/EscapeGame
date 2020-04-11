@@ -22,11 +22,7 @@ public class Register : MonoBehaviour
                                   "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
                                     "0","1","2","3","4","5","6","7","8","9","-","_"};
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     public void RegisterButton()
     {
@@ -42,7 +38,7 @@ public class Register : MonoBehaviour
 
         if (Username != "")//si username n'est pas vide
         {
-            if (!System.IO.File.Exists(@"C:\Users\ASUS\Documents\GitHub\EscapeGame\EscapeGameV4\enregistrementProfils\etapeSup" + Username + ".txt"))//si le fichier existe
+            if (!System.IO.File.Exists(@"C:\Users\ASUS\Documents\GitHub\EscapeGame\EscapeGameV4\enregistrementProfils\" + Username + ".txt"))//si le fichier existe
             {
 
                 UN = true;
@@ -131,11 +127,11 @@ public class Register : MonoBehaviour
             Debug.LogWarning("Confirm password feild empty");
         }
 
-        if(UN==true && EM==true && PW == true && CPW == true)//voir 24m30
+        if(UN==true && EM==true && PW == true && CPW == true)
         {
             bool Clear = true;
             int i = 1;
-            foreach(char c in Password)
+            foreach(char c in Password)//pour chiffrer les mots de passes
             {
                 if (Clear)
                 {
@@ -148,7 +144,7 @@ public class Register : MonoBehaviour
                 Password += Encrypted.ToString();
             }
             form = (Username + "\n" + Email + "\n" + Password);
-            System.IO.File.WriteAllText(@"C:\Users\ASUS\Documents\GitHub\EscapeGame\EscapeGameV4\enregistrementProfils\etapeSup" + Username + ".txt",form );
+            System.IO.File.WriteAllText(@"C:\Users\ASUS\Documents\GitHub\EscapeGame\EscapeGameV4\enregistrementProfils\" + Username + ".txt",form );
             //une fois le profil enregister on vide les formes pour pouvoir inscrire une nouvelle personne
             username.GetComponent<InputField>().text="";
             email.GetComponent<InputField>().text="";

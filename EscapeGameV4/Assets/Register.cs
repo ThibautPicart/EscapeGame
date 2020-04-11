@@ -25,7 +25,7 @@ public class Register : MonoBehaviour
 
     void Start()
     {
-        if(!Directory.Exists(Application.persistentDataPath + @"\enregistrementProfils\"))
+        if(!Directory.Exists(Application.persistentDataPath + @"\enregistrementProfils\")) //
         {
             Directory.CreateDirectory(Application.persistentDataPath + @"\enregistrementProfils\");
         }

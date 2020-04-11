@@ -23,10 +23,10 @@ public class Login : MonoBehaviour
         bool PW = false;//password
         if (Username != "")//si il y a quelque chose d'écrit
         {
-            if (System.IO.File.Exists(@"C:\Users\ASUS\Documents\GitHub\EscapeGame\EscapeGameV4\enregistrementProfils\" + Username + ".txt"))//on regarde si le profil existe
+            if (System.IO.File.Exists((Application.persistentDataPath + @"\enregistrementProfils\" + Username + ".txt")))//on regarde si le profil existe
             {
                 UN = true;
-                Lines=System.IO.File.ReadAllLines(@"C:\Users\ASUS\Documents\GitHub\EscapeGame\EscapeGameV4\enregistrementProfils\" + Username + ".txt");//chaque ligne du fichier txt va être séparée
+                Lines=System.IO.File.ReadAllLines((Application.persistentDataPath + @"\enregistrementProfils\" + Username + ".txt"));//chaque ligne du fichier txt va être séparée
             }
             else
             {
@@ -42,7 +42,7 @@ public class Login : MonoBehaviour
 
         if (Password != "")
         {
-            if (System.IO.File.Exists(@"C:\Users\ASUS\Documents\GitHub\EscapeGame\EscapeGameV4\enregistrementProfils\" + Username + ".txt"))
+            if (System.IO.File.Exists((Application.persistentDataPath + @"\enregistrementProfils\" + Username + ".txt")))
             {
                 
                 int i = 1;

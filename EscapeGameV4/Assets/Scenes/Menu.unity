@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 7700385}
   - component: {fileID: 7700384}
   m_Layer: 5
-  m_Name: ProfileMenu
+  m_Name: ProfilMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

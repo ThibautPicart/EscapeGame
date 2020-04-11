@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
 using System;
+using System.IO;
 
 public class Register : MonoBehaviour
 {
@@ -22,7 +23,13 @@ public class Register : MonoBehaviour
                                   "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
                                     "0","1","2","3","4","5","6","7","8","9","-","_"};
 
-
+    void Start()
+    {
+        if(!Directory.Exists(Application.persistentDataPath + @"\enregistrementProfils\"))
+        {
+            Directory.CreateDirectory(Application.persistentDataPath + @"\enregistrementProfils\");
+        }
+    }
 
     public void RegisterButton()
     {
@@ -35,10 +42,11 @@ public class Register : MonoBehaviour
 
         
 
+        //@"C:\Users\ASUS\Documents\GitHub\EscapeGame\EscapeGameV4\enregistrementProfils\" + Username + ".txt"
 
         if (Username != "")//si username n'est pas vide
         {
-            if (!System.IO.File.Exists(@"C:\Users\ASUS\Documents\GitHub\EscapeGame\EscapeGameV4\enregistrementProfils\" + Username + ".txt"))//si le fichier existe
+            if (!System.IO.File.Exists(Application.persistentDataPath + @"\enregistrementProfils\" + Username + ".txt"))//si le fichier existe
             {
 
                 UN = true;
@@ -144,13 +152,13 @@ public class Register : MonoBehaviour
                 Password += Encrypted.ToString();
             }
             form = (Username + "\n" + Email + "\n" + Password);
-            System.IO.File.WriteAllText(@"C:\Users\ASUS\Documents\GitHub\EscapeGame\EscapeGameV4\enregistrementProfils\" + Username + ".txt",form );
+            System.IO.File.WriteAllText(Application.persistentDataPath + @"\enregistrementProfils\" + Username + ".txt", form );
             //une fois le profil enregister on vide les formes pour pouvoir inscrire une nouvelle personne
             username.GetComponent<InputField>().text="";
             email.GetComponent<InputField>().text="";
             password.GetComponent<InputField>().text="";
             confPassword.GetComponent<InputField>().text="";
-            print("registrartion complete");
+            print("registration complete");
         }
 
 

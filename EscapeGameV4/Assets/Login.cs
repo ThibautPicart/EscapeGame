@@ -8,6 +8,15 @@ using System.Text.RegularExpressions;
 
 public class Login : MonoBehaviour
 {
+    //pour les popup
+
+    public GameObject UserNameInvalidPopUp;
+    public GameObject UserFieldEmptyPopUp;
+    public GameObject PasswordInvalidPopUp;
+    public GameObject PasswordFieldEmptyPopUp;
+    public GameObject LoginSucessfulPopUp;
+
+
     public GameObject username;
     public GameObject password;
     private string Username;
@@ -19,7 +28,9 @@ public class Login : MonoBehaviour
     public GameObject userText;
     private static readonly string ProfilePref = "ProfilePref";
     private static readonly string LoginPref = "LoginPref";
+
     
+
 
 
 
@@ -37,11 +48,13 @@ public class Login : MonoBehaviour
             else
             {
                 Debug.LogWarning("Username Invalide");
+                UserNameInvalidPopUp.SetActive(true);
             }
         }
         else
         {
             Debug.LogWarning("Username Field Empty");
+            UserFieldEmptyPopUp.SetActive(true);
         }
 
 
@@ -68,11 +81,14 @@ public class Login : MonoBehaviour
                 else
                 {
                     Debug.LogWarning("1) Password is Invalid");
+                    PasswordInvalidPopUp.SetActive(true);
+
                 }
             }
             else
             {
                 Debug.LogWarning("2) Password is Invalid");
+                PasswordInvalidPopUp.SetActive(true);
             }
 
 
@@ -81,6 +97,7 @@ public class Login : MonoBehaviour
         else
         {
             Debug.LogWarning("Password Field Empty");
+            PasswordFieldEmptyPopUp.SetActive(true);
         }
 
 
@@ -89,10 +106,11 @@ public class Login : MonoBehaviour
             username.GetComponent<InputField>().text="";//on vide les formes
             password.GetComponent<InputField>().text="";
             print("Login Sucessful");
+            LoginSucessfulPopUp.SetActive(true);
             MainMenu.SetActive(true);
             ProfilMenu.SetActive(false);
             PlayerPrefs.SetString(ProfilePref, Username);
-            PlayerPrefs.SetInt(LoginPref, -1);
+            PlayerPrefs.SetInt(LoginPref, -1);//-1 implique connecté
             userText.GetComponent<TMPro.TextMeshProUGUI>().text = " Connected profile : " + Username;
             userText.SetActive(true);
 

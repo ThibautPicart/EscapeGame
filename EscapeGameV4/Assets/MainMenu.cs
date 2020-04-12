@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
     {
         loginInt = PlayerPrefs.GetInt(LoginPref);
 
-        if (loginInt != 0)
+        if (loginInt != 0)//si on est connecté
         {
             SceneManager.LoadScene(1);
         }

@@ -18,7 +18,7 @@ public class actualProfile : MonoBehaviour
     {
         loginInt = PlayerPrefs.GetInt(LoginPref);
 
-        if (loginInt != 0)
+        if (loginInt != 0)//si il y a une personne de connecté
         {
             profileString = PlayerPrefs.GetString(ProfilePref);
             user.GetComponent<TMPro.TextMeshProUGUI>().text = " Connected profile : " + profileString;

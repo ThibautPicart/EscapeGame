@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System;
 using System.IO;
 
+
 public class Register : MonoBehaviour
 {
 
@@ -22,6 +23,18 @@ public class Register : MonoBehaviour
     private string[] Characters ={"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
                                   "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
                                     "0","1","2","3","4","5","6","7","8","9","-","_"};
+
+    //pour les popups
+    public GameObject UserNameTakenPopUp;
+    public GameObject UsernameFieldEmptyPopUp;
+    public GameObject EmailIncorrectPopUp;
+    public GameObject EmailFeildEmptyPopUp;
+    
+    public GameObject PasswordTooShortPopUp;
+    public GameObject PasswordFieldEmptyPopUp;
+    public GameObject PasswordDontMatchPopUp;
+    public GameObject ConfPasswordFieldEmptyPopUp;
+    public GameObject RegistrationCompletedPopUp;
 
     void Start()
     {
@@ -55,6 +68,7 @@ public class Register : MonoBehaviour
             else
             {
                 Debug.LogWarning("Username Taken");//le code continue quand meme avec warning
+                UserNameTakenPopUp.SetActive(true);
 
             }
        
@@ -63,6 +77,7 @@ public class Register : MonoBehaviour
         else
         {
             Debug.LogWarning("Username field empty");
+            UsernameFieldEmptyPopUp.SetActive(true);
         }
 
         //on vérifie la validité de l'email
@@ -81,22 +96,26 @@ public class Register : MonoBehaviour
                     else
                     {
                         Debug.LogWarning("4-email is Incorrect");
+                        EmailIncorrectPopUp.SetActive(true);
                     }
                 }
 
                 else
                 {
                     Debug.LogWarning("3-email is Incorrect");
+                    EmailIncorrectPopUp.SetActive(true);
                 }
             }
             else
             {
                 Debug.LogWarning("2-email is Incorrect");
+                EmailIncorrectPopUp.SetActive(true);
             }
         }
         else
         {
             Debug.LogWarning("1-Email field empty");
+            EmailFeildEmptyPopUp.SetActive(true);
         }
 
         //on vérifie la validité du mot de passe
@@ -110,11 +129,13 @@ public class Register : MonoBehaviour
             else
             {
                 Debug.LogWarning("password must be at least 6 characters long");
+                PasswordTooShortPopUp.SetActive(true);
             }
         }
         else
         {
             Debug.LogWarning("password field empty");
+            PasswordFieldEmptyPopUp.SetActive(true);
         }
 
         //vérifion si la confirmation du MDP est cohérente
@@ -128,11 +149,13 @@ public class Register : MonoBehaviour
             else
             {
                 Debug.LogWarning("Passwords don't match");
+                PasswordDontMatchPopUp.SetActive(true);
             }
         }
         else
         {
             Debug.LogWarning("Confirm password feild empty");
+            ConfPasswordFieldEmptyPopUp.SetActive(true);
         }
 
         if(UN==true && EM==true && PW == true && CPW == true)
@@ -159,6 +182,7 @@ public class Register : MonoBehaviour
             password.GetComponent<InputField>().text="";
             confPassword.GetComponent<InputField>().text="";
             print("registration complete");
+            RegistrationCompletedPopUp.SetActive(true);
         }
 
 

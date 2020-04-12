@@ -16,6 +16,12 @@ public class Login : MonoBehaviour
     private string DecryptedPass;
     public GameObject ProfilMenu;
     public GameObject MainMenu;
+    public GameObject userText;
+    private static readonly string ProfilePref = "ProfilePref";
+    private static readonly string LoginPref = "LoginPref";
+    
+
+
 
     public void LoginButton()
     {
@@ -85,6 +91,11 @@ public class Login : MonoBehaviour
             print("Login Sucessful");
             MainMenu.SetActive(true);
             ProfilMenu.SetActive(false);
+            PlayerPrefs.SetString(ProfilePref, Username);
+            PlayerPrefs.SetInt(LoginPref, -1);
+            userText.GetComponent<TMPro.TextMeshProUGUI>().text = " Connected profile : " + Username;
+            userText.SetActive(true);
+
         }
     }
 

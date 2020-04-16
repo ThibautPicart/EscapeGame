@@ -16,8 +16,8 @@ public class animatorSphynx : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))//a terme il faudra mettre si solution = true
         {
-            print("je passe dans le sphynx");
             anim.SetBool("SphynxMove", true);
         }
     }
 }
+

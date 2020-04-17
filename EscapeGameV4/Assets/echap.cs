@@ -6,19 +6,14 @@ using UnityEngine.UI;
 
 public class echap : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject pausePanel;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown("escape"))
         {
-            print("escape");
-            SceneManager.LoadScene(0);
+            pausePanel.SetActive(true);
         }
     }
 }

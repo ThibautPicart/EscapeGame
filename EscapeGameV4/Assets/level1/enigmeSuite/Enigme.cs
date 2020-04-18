@@ -16,6 +16,18 @@ public class enigme : MonoBehaviour
     public GameObject huit;
     public GameObject neuf;
 
+    //liste des canevas correpondant aux images
+    public GameObject caneva0;
+    public GameObject caneva1;
+    public GameObject caneva2;
+    public GameObject caneva3;
+    public GameObject caneva4;
+    public GameObject caneva5;
+    public GameObject caneva6;
+    public GameObject caneva7;
+    public GameObject caneva8;
+    public GameObject caneva9;
+
 
 
 

@@ -26,6 +26,7 @@ public class Login : MonoBehaviour
     public GameObject ProfilMenu;
     public GameObject MainMenu;
     public GameObject userText;
+    
     public GameObject ChoiceLevel;
     private static readonly string ProfilePref = "ProfilePref";
     private static readonly string LoginPref = "LoginPref";
@@ -115,6 +116,7 @@ public class Login : MonoBehaviour
             PlayerPrefs.SetInt(LoginPref, -1);//-1 implique connecté
             userText.GetComponent<TMPro.TextMeshProUGUI>().text = " Connected profile : " + Username;
             userText.SetActive(true);
+            
 
         }
     }

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class enigme : MonoBehaviour
 {
-
+    //forcement au moment où on lit ce script enigme, on est déjà passé par le menu et il y a donc un niveau de difficulté de selectionné
+    private static readonly string levelDifficulty = "levelDifficulty";
 
     // Start is called before the first frame update
     void Start()

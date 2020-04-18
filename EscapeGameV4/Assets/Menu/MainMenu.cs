@@ -19,7 +19,9 @@ public class MainMenu : MonoBehaviour
 
         if (loginInt != 0)//si on est connecté
         {
+            //avant de charger la scène, il faut séléctionner la difficulté
             SceneManager.LoadScene(1);
+        
         }
         else
         {

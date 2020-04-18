@@ -14,7 +14,7 @@ public class Login : MonoBehaviour
     public GameObject UserFieldEmptyPopUp;
     public GameObject PasswordInvalidPopUp;
     public GameObject PasswordFieldEmptyPopUp;
-    public GameObject LoginSucessfulPopUp;
+    //public GameObject LoginSucessfulPopUp;//j'ai mi ce popup dans la selection du niveau de difficultée maintenant
 
 
     public GameObject username;
@@ -26,6 +26,7 @@ public class Login : MonoBehaviour
     public GameObject ProfilMenu;
     public GameObject MainMenu;
     public GameObject userText;
+    public GameObject ChoiceLevel;
     private static readonly string ProfilePref = "ProfilePref";
     private static readonly string LoginPref = "LoginPref";
 
@@ -106,9 +107,10 @@ public class Login : MonoBehaviour
             username.GetComponent<InputField>().text="";//on vide les formes
             password.GetComponent<InputField>().text="";
             print("Login Sucessful");
-            LoginSucessfulPopUp.SetActive(true);
-            MainMenu.SetActive(true);
+            //LoginSucessfulPopUp.SetActive(true);
+            //MainMenu.SetActive(true);
             ProfilMenu.SetActive(false);
+            ChoiceLevel.SetActive(true);
             PlayerPrefs.SetString(ProfilePref, Username);
             PlayerPrefs.SetInt(LoginPref, -1);//-1 implique connecté
             userText.GetComponent<TMPro.TextMeshProUGUI>().text = " Connected profile : " + Username;

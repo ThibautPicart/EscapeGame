@@ -8,7 +8,7 @@ public class setSettings : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print("Start");
+        
         GammaCorrection = PlayerPrefs.GetFloat("LuminosityPref");
         RenderSettings.ambientLight = new Color(GammaCorrection, GammaCorrection, GammaCorrection, 1.0f);
     }

@@ -214,7 +214,7 @@ public class enigme : MonoBehaviour
     void Start()
     {
         //déclaration des suites faciles
-        List<string> SuiteFacile1 = new List<string>() { "0", "2", "3", "4", "5", "6", "7" };
+        List<string> SuiteFacile1 = new List<string>() { "00", "00", "00", "00", "00", "00", "00","??" };
         List<string> SuiteFacile2 = new List<string>() { "0", "4", "6", "8", "10", "12", "14" };
 
         // déclaration des suite intermédiaires
@@ -303,10 +303,12 @@ public class enigme : MonoBehaviour
                             if (j == 0)//si c'est le premier chiffre
                             {
                                 print("prmier chiffre du nombre");
+                                zeroC2.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
                                 print("deuxième chiffre du nombre");
+                                zeroC3.enabled = true;
                             }
                         }
                         else if (i == 2)
@@ -315,10 +317,12 @@ public class enigme : MonoBehaviour
                             if (j == 0)//si c'est le premier chiffre
                             {
                                 print("prmier chiffre du nombre");
+                                zeroC4.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
                                 print("deuxième chiffre du nombre");
+                                zeroC5.enabled = true;
                             }
                         }
 
@@ -328,10 +332,12 @@ public class enigme : MonoBehaviour
                             if (j == 0)//si c'est le premier chiffre
                             {
                                 print("prmier chiffre du nombre");
+                                zeroC6.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
                                 print("deuxième chiffre du nombre");
+                                zeroC7.enabled = true;
                             }
                         }
 
@@ -341,10 +347,12 @@ public class enigme : MonoBehaviour
                             if (j == 0)//si c'est le premier chiffre
                             {
                                 print("prmier chiffre du nombre");
+                                zeroC8.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
                                 print("deuxième chiffre du nombre");
+                                zeroC9.enabled = true;
                             }
                         }
 
@@ -354,10 +362,12 @@ public class enigme : MonoBehaviour
                             if (j == 0)//si c'est le premier chiffre
                             {
                                 print("prmier chiffre du nombre");
+                                zeroC10.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
                                 print("deuxième chiffre du nombre");
+                                zeroC11.enabled = true;
                             }
                         }
 
@@ -367,10 +377,12 @@ public class enigme : MonoBehaviour
                             if (j == 0)//si c'est le premier chiffre
                             {
                                 print("prmier chiffre du nombre");
+                                zeroC12.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
                                 print("deuxième chiffre du nombre");
+                                zeroC13.enabled = true;
                             }
                         }
 
@@ -380,10 +392,12 @@ public class enigme : MonoBehaviour
                             if (j == 0)//si c'est le premier chiffre
                             {
                                 print("prmier chiffre du nombre");
+                                zeroC14.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
                                 print("deuxième chiffre du nombre");
+                                zeroC15.enabled = true;
                             }
                         }
 
@@ -405,11 +419,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                unC0.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                unC1.enabled = true;
                             }
 
                         }
@@ -418,11 +434,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                unC2.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                unC3.enabled = true;
                             }
                         }
                         else if (i == 2)
@@ -430,11 +448,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                unC4.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                unC5.enabled = true;
                             }
                         }
 
@@ -443,11 +463,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                unC6.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                unC7.enabled = true;
                             }
                         }
 
@@ -456,11 +478,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                unC8.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                unC9.enabled = true;
                             }
                         }
 
@@ -469,11 +493,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                unC10.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                unC11.enabled = true;
                             }
                         }
 
@@ -482,11 +508,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                unC12.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                unC13.enabled = true;
                             }
                         }
 
@@ -495,11 +523,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                unC14.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                unC15.enabled = true;
                             }
                         }
 
@@ -521,11 +551,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                deuxC0.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                deuxC1.enabled = true;
                             }
 
                         }
@@ -534,11 +566,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                deuxC2.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                deuxC3.enabled = true;
                             }
                         }
                         else if (i == 2)
@@ -546,11 +580,14 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                deuxC4.enabled = true;
+
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                deuxC5.enabled = true;
                             }
                         }
 
@@ -559,11 +596,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                deuxC6.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                deuxC7.enabled = true;
                             }
                         }
 
@@ -572,11 +611,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                deuxC8.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                deuxC9.enabled = true;
                             }
                         }
 
@@ -585,11 +626,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                deuxC10.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                deuxC11.enabled = true;
                             }
                         }
 
@@ -598,11 +641,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                deuxC12.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                deuxC13.enabled = true;
                             }
                         }
 
@@ -611,11 +656,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                deuxC14.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                deuxC15.enabled = true;
                             }
                         }
 
@@ -637,11 +684,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                troisC0.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                troisC1.enabled = true;
                             }
 
                         }
@@ -650,11 +699,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                troisC2.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                troisC3.enabled = true;
                             }
                         }
                         else if (i == 2)
@@ -662,11 +713,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                troisC4.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                troisC5.enabled = true;
                             }
                         }
 
@@ -675,11 +728,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                troisC6.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                troisC7.enabled = true;
                             }
                         }
 
@@ -688,11 +743,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                troisC8.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                troisC9.enabled = true;
                             }
                         }
 
@@ -701,11 +758,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                troisC10.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                troisC11.enabled = true;
                             }
                         }
 
@@ -714,11 +773,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                troisC12.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                troisC13.enabled = true;
                             }
                         }
 
@@ -727,11 +788,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                troisC14.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                troisC15.enabled = true;
                             }
                         }
 
@@ -753,11 +816,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                quatreC0.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                quatreC1.enabled = true;
                             }
 
                         }
@@ -766,11 +831,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                quatreC2.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                quatreC3.enabled = true;
                             }
                         }
                         else if (i == 2)
@@ -778,11 +845,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                quatreC4.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                quatreC5.enabled = true;
                             }
                         }
 
@@ -791,11 +860,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                quatreC6.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                quatreC7.enabled = true;
                             }
                         }
 
@@ -804,11 +875,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                quatreC8.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                quatreC9.enabled = true;
                             }
                         }
 
@@ -817,11 +890,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                quatreC10.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                quatreC11.enabled = true;
                             }
                         }
 
@@ -830,11 +905,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                quatreC12.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                quatreC13.enabled = true;
                             }
                         }
 
@@ -843,11 +920,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                quatreC14.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                quatreC15.enabled = true;
                             }
                         }
 
@@ -869,11 +948,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                cinqC0.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                cinqC1.enabled = true;
                             }
 
                         }
@@ -882,11 +963,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                cinqC2.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                cinqC3.enabled = true;
                             }
                         }
                         else if (i == 2)
@@ -894,11 +977,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                cinqC4.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                cinqC5.enabled = true;
                             }
                         }
 
@@ -907,11 +992,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                cinqC6.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                cinqC7.enabled = true;
                             }
                         }
 
@@ -920,11 +1007,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                cinqC8.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                cinqC9.enabled = true;
                             }
                         }
 
@@ -933,11 +1022,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                cinqC10.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                cinqC11.enabled = true;
                             }
                         }
 
@@ -946,11 +1037,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                cinqC12.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                cinqC13.enabled = true;
                             }
                         }
 
@@ -959,11 +1052,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                cinqC14.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                cinqC15.enabled = true;
                             }
                         }
 
@@ -985,11 +1080,14 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                sixC0.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                sixC1.enabled = true;
+
                             }
 
                         }
@@ -998,11 +1096,15 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                sixC2.enabled = true;
+
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                sixC3.enabled = true;
+
                             }
                         }
                         else if (i == 2)
@@ -1010,11 +1112,15 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                sixC4.enabled = true;
+
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                sixC5.enabled = true;
+
                             }
                         }
 
@@ -1023,11 +1129,15 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                sixC6.enabled = true;
+
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                sixC7.enabled = true;
+
                             }
                         }
 
@@ -1036,11 +1146,15 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                sixC8.enabled = true;
+
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                sixC9.enabled = true;
+
                             }
                         }
 
@@ -1049,11 +1163,15 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                sixC10.enabled = true;
+
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                sixC11.enabled = true;
+
                             }
                         }
 
@@ -1062,11 +1180,15 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                sixC12.enabled = true;
+
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                sixC13.enabled = true;
+
                             }
                         }
 
@@ -1075,11 +1197,15 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                sixC14.enabled = true;
+
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                sixC15.enabled = true;
+
                             }
                         }
 
@@ -1101,11 +1227,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                septC0.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                septC1.enabled = true;
                             }
 
                         }
@@ -1114,11 +1242,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                septC2.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                septC3.enabled = true;
                             }
                         }
                         else if (i == 2)
@@ -1126,11 +1256,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                septC4.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                septC5.enabled = true;
                             }
                         }
 
@@ -1139,11 +1271,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                septC6.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                septC7.enabled = true;
                             }
                         }
 
@@ -1152,11 +1286,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                septC8.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                septC9.enabled = true;
                             }
                         }
 
@@ -1165,11 +1301,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                septC10.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                septC11.enabled = true;
                             }
                         }
 
@@ -1178,11 +1316,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                septC12.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                septC13.enabled = true;
                             }
                         }
 
@@ -1191,11 +1331,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                septC14.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                septC15.enabled = true;
                             }
                         }
 
@@ -1217,11 +1359,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                huitC0.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                huitC1.enabled = true;
                             }
 
                         }
@@ -1230,11 +1374,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                huitC2.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                huitC3.enabled = true;
                             }
                         }
                         else if (i == 2)
@@ -1242,11 +1388,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                huitC4.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                huitC5.enabled = true;
                             }
                         }
 
@@ -1255,11 +1403,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                huitC6.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                huitC7.enabled = true;
                             }
                         }
 
@@ -1268,11 +1418,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                huitC8.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                huitC9.enabled = true;
                             }
                         }
 
@@ -1281,11 +1433,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                huitC10.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                huitC11.enabled = true;
                             }
                         }
 
@@ -1294,11 +1448,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                huitC12.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                huitC13.enabled = true;
                             }
                         }
 
@@ -1307,11 +1463,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                huitC14.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                huitC15.enabled = true;
                             }
                         }
 
@@ -1333,11 +1491,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                neufC0.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                neufC1.enabled = true;
                             }
 
                         }
@@ -1346,11 +1506,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                neufC2.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                neufC3.enabled = true;
                             }
                         }
                         else if (i == 2)
@@ -1358,11 +1520,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                neufC4.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                neufC5.enabled = true;
                             }
                         }
 
@@ -1371,11 +1535,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                neufC6.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                neufC7.enabled = true;
                             }
                         }
 
@@ -1384,11 +1550,14 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                neufC8.enabled = true;
+
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                neufC9.enabled = true;
                             }
                         }
 
@@ -1397,11 +1566,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                neufC10.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                neufC11.enabled = true;
                             }
                         }
 
@@ -1410,11 +1581,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                neufC12.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                neufC13.enabled = true;
                             }
                         }
 
@@ -1423,11 +1596,13 @@ public class enigme : MonoBehaviour
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
                             if (j == 0)//si c'est le premier chiffre
                             {
-                                print("dcrt");
+                                print("premier chiffre du nombre");
+                                neufC14.enabled = true;
                             }
                             else//si c'est le deuxième chiffre du nommbre
                             {
-                                print("gkjn");
+                                print("deuxième  chiffre du nombre");
+                                neufC15.enabled = true;
                             }
                         }
 

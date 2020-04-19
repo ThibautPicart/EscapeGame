@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class enigme : MonoBehaviour
 {
     //liste des images pour y glisser les images gameObject
-    public Image zeroC0;//pour dire l 0 du canevas0
+    //pour Canevas0
+    public Image zeroC0;//pour dire l  du canevas0
     public Image unC0;
     public Image deuxC0;
     public Image troisC0;
@@ -16,6 +17,171 @@ public class enigme : MonoBehaviour
     public Image septC0;
     public Image huitC0;
     public Image neufC0;
+    //pour Canevas1
+    public Image zeroC1;
+    public Image unC1;
+    public Image deuxC1;
+    public Image troisC1;
+    public Image quatreC1;
+    public Image cinqC1;
+    public Image sixC1;
+    public Image septC1;
+    public Image huitC1;
+    public Image neufC1;
+    //pour Canevas2
+    public Image zeroC2;
+    public Image unC2;
+    public Image deuxC2;
+    public Image troisC2;
+    public Image quatreC2;
+    public Image cinqC2;
+    public Image sixC2;
+    public Image septC2;
+    public Image huitC2;
+    public Image neufC2;
+    //pour Canevas3
+    public Image zeroC3;
+    public Image unC3;
+    public Image deuxC3;
+    public Image troisC3;
+    public Image quatreC3;
+    public Image cinqC3;
+    public Image sixC3;
+    public Image septC3;
+    public Image huitC3;
+    public Image neufC3;
+    //pour Canevas4
+    public Image zeroC4;
+    public Image unC4;
+    public Image deuxC4;
+    public Image troisC4;
+    public Image quatreC4;
+    public Image cinqC4;
+    public Image sixC4;
+    public Image septC4;
+    public Image huitC4;
+    public Image neufC4;
+    //pour Canevas5
+    public Image zeroC5;
+    public Image unC5;
+    public Image deuxC5;
+    public Image troisC5;
+    public Image quatreC5;
+    public Image cinqC5;
+    public Image sixC5;
+    public Image septC5;
+    public Image huitC5;
+    public Image neufC5;
+    //pour Canevas6
+    public Image zeroC6;
+    public Image unC6;
+    public Image deuxC6;
+    public Image troisC6;
+    public Image quatreC6;
+    public Image cinqC6;
+    public Image sixC6;
+    public Image septC6;
+    public Image huitC6;
+    public Image neufC6;
+    //pour Canevas7
+    public Image zeroC7;
+    public Image unC7;
+    public Image deuxC7;
+    public Image troisC7;
+    public Image quatreC7;
+    public Image cinqC7;
+    public Image sixC7;
+    public Image septC7;
+    public Image huitC7;
+    public Image neufC7;
+    //pour Canevas8
+    public Image zeroC8;
+    public Image unC8;
+    public Image deuxC8;
+    public Image troisC8;
+    public Image quatreC8;
+    public Image cinqC8;
+    public Image sixC8;
+    public Image septC8;
+    public Image huitC8;
+    public Image neufC8;
+    //pour Canevas9
+    public Image zeroC9;
+    public Image unC9;
+    public Image deuxC9;
+    public Image troisC9;
+    public Image quatreC9;
+    public Image cinqC9;
+    public Image sixC9;
+    public Image septC9;
+    public Image huitC9;
+    public Image neufC9;
+    //pour Canevas10
+    public Image zeroC10;
+    public Image unC10;
+    public Image deuxC10;
+    public Image troisC10;
+    public Image quatreC10;
+    public Image cinqC10;
+    public Image sixC10;
+    public Image septC10;
+    public Image huitC10;
+    public Image neufC10;
+    //pour Canevas11
+    public Image zeroC11;
+    public Image unC11;
+    public Image deuxC11;
+    public Image troisC11;
+    public Image quatreC11;
+    public Image cinqC11;
+    public Image sixC11;
+    public Image septC11;
+    public Image huitC11;
+    public Image neufC11;
+    //pour Canevas12
+    public Image zeroC12;
+    public Image unC12;
+    public Image deuxC12;
+    public Image troisC12;
+    public Image quatreC12;
+    public Image cinqC12;
+    public Image sixC12;
+    public Image septC12;
+    public Image huitC12;
+    public Image neufC12;
+    //pour Canevas13
+    public Image zeroC13;
+    public Image unC13;
+    public Image deuxC13;
+    public Image troisC13;
+    public Image quatreC13;
+    public Image cinqC13;
+    public Image sixC13;
+    public Image septC13;
+    public Image huitC13;
+    public Image neufC13;
+    //pour Canevas14
+    public Image zeroC14;
+    public Image unC14;
+    public Image deuxC14;
+    public Image troisC14;
+    public Image quatreC14;
+    public Image cinqC14;
+    public Image sixC14;
+    public Image septC14;
+    public Image huitC14;
+    public Image neufC14;
+    //pour Canevas15
+    public Image zeroC15;
+    public Image unC15;
+    public Image deuxC15;
+    public Image troisC15;
+    public Image quatreC15;
+    public Image cinqC15;
+    public Image sixC15;
+    public Image septC15;
+    public Image huitC15;
+    public Image neufC15;
 
     //liste des canevas correpondant aux images on en met 2 par lier pour l'instant
     public GameObject caneva0;
@@ -34,7 +200,7 @@ public class enigme : MonoBehaviour
     public GameObject caneva13;
     public GameObject caneva14;
     public GameObject caneva15;
-    public GameObject caneva16;
+    
 
 
 
@@ -113,10 +279,10 @@ public class enigme : MonoBehaviour
 
 
                         //on va donc chercher sur quel canvas on met l'image maintenant
-                        if (i == 0)//premier poteau
+                        if (i == 0)//premier poteau car i va de 0 à 7
                         {
                             //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
+                            if (j == 0)//si c'est le premier chiffre pour trouver le bon canevas
                             {
                                 print("prmier chiffre du nombre");
                                 //on va donc mettre un zéro sur le canvas0
@@ -127,6 +293,7 @@ public class enigme : MonoBehaviour
                             {
                                 print("deuxième chiffre du nombre");
                                 //on va mettre un zéro dans le canevas1
+                                zeroC1.enabled = true;
                             }
 
                         }

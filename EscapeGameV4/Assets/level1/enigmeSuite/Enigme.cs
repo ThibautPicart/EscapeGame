@@ -1,20 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class enigme : MonoBehaviour
 {
     //liste des images pour y glisser les images gameObject
-    public GameObject zero;
-    public GameObject un;
-    public GameObject deux;
-    public GameObject trois;
-    public GameObject quatre;
-    public GameObject cinq;
-    public GameObject six;
-    public GameObject sept;
-    public GameObject huit;
-    public GameObject neuf;
+    public Image zeroC0;//pour dire l 0 du canevas0
+    public Image unC0;
+    public Image deuxC0;
+    public Image troisC0;
+    public Image quatreC0;
+    public Image cinqC0;
+    public Image sixC0;
+    public Image septC0;
+    public Image huitC0;
+    public Image neufC0;
 
     //liste des canevas correpondant aux images on en met 2 par lier pour l'instant
     public GameObject caneva0;
@@ -47,8 +48,8 @@ public class enigme : MonoBehaviour
     void Start()
     {
         //déclaration des suites faciles
-        List<string> SuiteFacile1 = new List<string>() { "1", "2", "3", "4", "5", "6", "7" };
-        List<string> SuiteFacile2 = new List<string>() { "2", "4", "6", "8", "10", "12", "14" };
+        List<string> SuiteFacile1 = new List<string>() { "0", "2", "3", "4", "5", "6", "7" };
+        List<string> SuiteFacile2 = new List<string>() { "0", "4", "6", "8", "10", "12", "14" };
 
         // déclaration des suite intermédiaires
         List<string> SuiteIntermediaire1 = new List<string>() { "10", "20", "30", "40", "50", "60", "70" };
@@ -104,9 +105,129 @@ public class enigme : MonoBehaviour
                     //associer le chiffre à l'image
                     //print(Nombre[j]);
 
-                    if (Nombre[j] == '2')
+                    if (Nombre[j] == '0')
                     {
-                        print("on va y arriver");
+                        //print("on va y arriver");
+                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                        //on va donc chercher sur quel canvas on met l'image maintenant
+                        if (i == 0)//premier poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("prmier chiffre du nombre");
+                                //on va donc mettre un zéro sur le canvas0
+                                zeroC0.enabled = true;
+
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("deuxième chiffre du nombre");
+                                //on va mettre un zéro dans le canevas1
+                            }
+
+                        }
+                        else if (i == 1)//deuxième poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("prmier chiffre du nombre");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("deuxième chiffre du nombre");
+                            }
+                        }
+                        else if (i == 2)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("prmier chiffre du nombre");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("deuxième chiffre du nombre");
+                            }
+                        }
+
+                        else if (i == 3)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("prmier chiffre du nombre");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("deuxième chiffre du nombre");
+                            }
+                        }
+
+                        else if (i == 4)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("prmier chiffre du nombre");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("deuxième chiffre du nombre");
+                            }
+                        }
+
+                        else if (i == 5)
+                        {
+                           //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("prmier chiffre du nombre");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("deuxième chiffre du nombre");
+                            }
+                        }
+
+                        else if (i == 6)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("prmier chiffre du nombre");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("deuxième chiffre du nombre");
+                            }
+                        }
+
+                        else //if (i == 7)//8eme poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("prmier chiffre du nombre");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("deuxième chiffre du nombre");
+                            }
+                        }
+
+                        
+
+
+                    }
+
+                    if (Nombre[j] == '1')
+                    {
+                        //print("on va y arriver");
                         //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
                         //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
 
@@ -215,1010 +336,940 @@ public class enigme : MonoBehaviour
                             }
                         }
 
-                        
+
 
 
                     }
 
-                    //else if (Nombre[j] = '1')
-                    //{
-                    //    print("on va y arriver");
-                    //    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                    //    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                    //    //on va donc chercher sur quel canvas on met l'image maintenant
-                    //    if (i == 0)//premier poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-
-                    //    }
-                    //    else if (i == 1)//deuxième poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-                    //    else if (i == 2)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 3)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 4)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 5)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 6)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else //if (i == 7)//8eme poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-                    //}
-                    //else if (Nombre[j] = '2')
-                    //{
-                    //    print("on va y arriver");
-                    //    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                    //    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                    //    //on va donc chercher sur quel canvas on met l'image maintenant
-                    //    if (i == 0)//premier poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-
-                    //    }
-                    //    else if (i == 1)//deuxième poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-                    //    else if (i == 2)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 3)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 4)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 5)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 6)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else //if (i == 7)//8eme poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-                    //}
-                    //else if (Nombre[j] = '3')
-                    //{
-                    //    print("on va y arriver");
-                    //    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                    //    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                    //    //on va donc chercher sur quel canvas on met l'image maintenant
-                    //    if (i == 0)//premier poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-
-                    //    }
-                    //    else if (i == 1)//deuxième poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-                    //    else if (i == 2)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 3)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 4)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 5)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 6)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else //if (i == 7)//8eme poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-                    //}
-                    //else if (Nombre[j] = '4')
-                    //{
-                    //    print("on va y arriver");
-                    //    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                    //    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                    //    //on va donc chercher sur quel canvas on met l'image maintenant
-                    //    if (i == 0)//premier poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-
-                    //    }
-                    //    else if (i == 1)//deuxième poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-                    //    else if (i == 2)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 3)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 4)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 5)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 6)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else //if (i == 7)//8eme poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-                    //}
-                    //else if (Nombre[j] = '5')
-                    //{
-                    //    print("on va y arriver");
-                    //    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                    //    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                    //    //on va donc chercher sur quel canvas on met l'image maintenant
-                    //    if (i == 0)//premier poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-
-                    //    }
-                    //    else if (i == 1)//deuxième poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-                    //    else if (i == 2)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 3)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 4)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 5)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 6)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else //if (i == 7)//8eme poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-                    //}
-                    //else if (Nombre[j] = '6')
-                    //{
-                    //    print("on va y arriver");
-                    //    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                    //    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                    //    //on va donc chercher sur quel canvas on met l'image maintenant
-                    //    if (i == 0)//premier poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-
-                    //    }
-                    //    else if (i == 1)//deuxième poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-                    //    else if (i == 2)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 3)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 4)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 5)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 6)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else //if (i == 7)//8eme poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-                    //}
-                    //else if (Nombre[j] = '7')
-                    //{
-                    //    print("on va y arriver");
-                    //    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                    //    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                    //    //on va donc chercher sur quel canvas on met l'image maintenant
-                    //    if (i == 0)//premier poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-
-                    //    }
-                    //    else if (i == 1)//deuxième poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-                    //    else if (i == 2)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 3)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 4)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 5)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 6)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else //if (i == 7)//8eme poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-                    //}
-                    //else if (Nombre[j] = '8')
-                    //{
-                    //    print("on va y arriver");
-                    //    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                    //    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                    //    //on va donc chercher sur quel canvas on met l'image maintenant
-                    //    if (i == 0)//premier poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-
-                    //    }
-                    //    else if (i == 1)//deuxième poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-                    //    else if (i == 2)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 3)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 4)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 5)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 6)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else //if (i == 7)//8eme poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-                    //}
-                    //else if (Nombre[j] = '9')
-                    //{
-                    //    print("on va y arriver");
-                    //    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                    //    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                    //    //on va donc chercher sur quel canvas on met l'image maintenant
-                    //    if (i == 0)//premier poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-
-                    //    }
-                    //    else if (i == 1)//deuxième poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-                    //    else if (i == 2)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 3)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 4)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 5)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else if (i == 6)
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-
-                    //    else //if (i == 7)//8eme poteau
-                    //    {
-                    //        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                    //        if (j == 0)//si c'est le premier chiffre
-                    //        {
-                    //            print("dcrt");
-                    //        }
-                    //        else//si c'est le deuxième chiffre du nommbre
-                    //        {
-                    //            print("gkjn");
-                    //        }
-                    //    }
-                    //}
+                    if (Nombre[j] == '2')
+                    {
+                        //print("on va y arriver");
+                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                        //on va donc chercher sur quel canvas on met l'image maintenant
+                        if (i == 0)//premier poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+
+                        }
+                        else if (i == 1)//deuxième poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+                        else if (i == 2)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 3)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 4)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 5)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 6)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else //if (i == 7)//8eme poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+
+
+
+                    }
+
+                    if (Nombre[j] == '3')
+                    {
+                        //print("on va y arriver");
+                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                        //on va donc chercher sur quel canvas on met l'image maintenant
+                        if (i == 0)//premier poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+
+                        }
+                        else if (i == 1)//deuxième poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+                        else if (i == 2)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 3)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 4)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 5)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 6)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else //if (i == 7)//8eme poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+
+
+
+                    }
+
+                    if (Nombre[j] == '4')
+                    {
+                        //print("on va y arriver");
+                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                        //on va donc chercher sur quel canvas on met l'image maintenant
+                        if (i == 0)//premier poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+
+                        }
+                        else if (i == 1)//deuxième poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+                        else if (i == 2)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 3)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 4)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 5)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 6)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else //if (i == 7)//8eme poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+
+
+
+                    }
+
+                    if (Nombre[j] == '5')
+                    {
+                        //print("on va y arriver");
+                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                        //on va donc chercher sur quel canvas on met l'image maintenant
+                        if (i == 0)//premier poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+
+                        }
+                        else if (i == 1)//deuxième poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+                        else if (i == 2)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 3)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 4)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 5)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 6)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else //if (i == 7)//8eme poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+
+
+
+                    }
+
+                    if (Nombre[j] == '6')
+                    {
+                        //print("on va y arriver");
+                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                        //on va donc chercher sur quel canvas on met l'image maintenant
+                        if (i == 0)//premier poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+
+                        }
+                        else if (i == 1)//deuxième poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+                        else if (i == 2)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 3)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 4)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 5)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 6)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else //if (i == 7)//8eme poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+
+
+
+                    }
+
+                    if (Nombre[j] == '7')
+                    {
+                        //print("on va y arriver");
+                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                        //on va donc chercher sur quel canvas on met l'image maintenant
+                        if (i == 0)//premier poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+
+                        }
+                        else if (i == 1)//deuxième poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+                        else if (i == 2)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 3)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 4)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 5)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 6)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else //if (i == 7)//8eme poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+
+
+
+                    }
+
+                    if (Nombre[j] == '8')
+                    {
+                        //print("on va y arriver");
+                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                        //on va donc chercher sur quel canvas on met l'image maintenant
+                        if (i == 0)//premier poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+
+                        }
+                        else if (i == 1)//deuxième poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+                        else if (i == 2)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 3)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 4)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 5)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 6)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else //if (i == 7)//8eme poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+
+
+
+                    }
+
+                    if (Nombre[j] == '9')
+                    {
+                        //print("on va y arriver");
+                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                        //on va donc chercher sur quel canvas on met l'image maintenant
+                        if (i == 0)//premier poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+
+                        }
+                        else if (i == 1)//deuxième poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+                        else if (i == 2)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 3)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 4)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 5)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else if (i == 6)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+                        else //if (i == 7)//8eme poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("dcrt");
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("gkjn");
+                            }
+                        }
+
+
+
+
+                    }
+
+
 
 
 

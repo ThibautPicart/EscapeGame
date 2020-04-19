@@ -17,7 +17,7 @@ public class LevelDifficulty : MonoBehaviour
         levelText.GetComponent<TMPro.TextMeshProUGUI>().text = " Level selected : Easy ";
         levelText.SetActive(true);
 
-        print("je passe dans le easy");
+        //print("je passe dans le easy");
     }
 
     public void IntermediateLevelDifficulty()

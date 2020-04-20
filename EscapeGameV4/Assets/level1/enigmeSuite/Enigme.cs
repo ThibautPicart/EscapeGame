@@ -17,6 +17,7 @@ public class enigme : MonoBehaviour
     public Image septC0;
     public Image huitC0;
     public Image neufC0;
+    public Image interrogationC0;
     //pour Canevas1
     public Image zeroC1;
     public Image unC1;
@@ -28,6 +29,7 @@ public class enigme : MonoBehaviour
     public Image septC1;
     public Image huitC1;
     public Image neufC1;
+    public Image interrogationC1;
     //pour Canevas2
     public Image zeroC2;
     public Image unC2;
@@ -39,6 +41,7 @@ public class enigme : MonoBehaviour
     public Image septC2;
     public Image huitC2;
     public Image neufC2;
+    public Image interrogationC2;
     //pour Canevas3
     public Image zeroC3;
     public Image unC3;
@@ -50,6 +53,7 @@ public class enigme : MonoBehaviour
     public Image septC3;
     public Image huitC3;
     public Image neufC3;
+    public Image interrogationC3;
     //pour Canevas4
     public Image zeroC4;
     public Image unC4;
@@ -61,6 +65,7 @@ public class enigme : MonoBehaviour
     public Image septC4;
     public Image huitC4;
     public Image neufC4;
+    public Image interrogationC4;
     //pour Canevas5
     public Image zeroC5;
     public Image unC5;
@@ -72,6 +77,7 @@ public class enigme : MonoBehaviour
     public Image septC5;
     public Image huitC5;
     public Image neufC5;
+    public Image interrogationC5;
     //pour Canevas6
     public Image zeroC6;
     public Image unC6;
@@ -83,6 +89,7 @@ public class enigme : MonoBehaviour
     public Image septC6;
     public Image huitC6;
     public Image neufC6;
+    public Image interrogationC6;
     //pour Canevas7
     public Image zeroC7;
     public Image unC7;
@@ -94,6 +101,7 @@ public class enigme : MonoBehaviour
     public Image septC7;
     public Image huitC7;
     public Image neufC7;
+    public Image interrogationC7;
     //pour Canevas8
     public Image zeroC8;
     public Image unC8;
@@ -105,6 +113,7 @@ public class enigme : MonoBehaviour
     public Image septC8;
     public Image huitC8;
     public Image neufC8;
+    public Image interrogationC8;
     //pour Canevas9
     public Image zeroC9;
     public Image unC9;
@@ -116,6 +125,7 @@ public class enigme : MonoBehaviour
     public Image septC9;
     public Image huitC9;
     public Image neufC9;
+    public Image interrogationC9;
     //pour Canevas10
     public Image zeroC10;
     public Image unC10;
@@ -127,6 +137,7 @@ public class enigme : MonoBehaviour
     public Image septC10;
     public Image huitC10;
     public Image neufC10;
+    public Image interrogationC10;
     //pour Canevas11
     public Image zeroC11;
     public Image unC11;
@@ -138,6 +149,7 @@ public class enigme : MonoBehaviour
     public Image septC11;
     public Image huitC11;
     public Image neufC11;
+    public Image interrogationC11;
     //pour Canevas12
     public Image zeroC12;
     public Image unC12;
@@ -149,6 +161,7 @@ public class enigme : MonoBehaviour
     public Image septC12;
     public Image huitC12;
     public Image neufC12;
+    public Image interrogationC12;
     //pour Canevas13
     public Image zeroC13;
     public Image unC13;
@@ -160,6 +173,7 @@ public class enigme : MonoBehaviour
     public Image septC13;
     public Image huitC13;
     public Image neufC13;
+    public Image interrogationC13;
     //pour Canevas14
     public Image zeroC14;
     public Image unC14;
@@ -171,6 +185,7 @@ public class enigme : MonoBehaviour
     public Image septC14;
     public Image huitC14;
     public Image neufC14;
+    public Image interrogationC14;
     //pour Canevas15
     public Image zeroC15;
     public Image unC15;
@@ -182,6 +197,7 @@ public class enigme : MonoBehaviour
     public Image septC15;
     public Image huitC15;
     public Image neufC15;
+    public Image interrogationC15;
 
     //liste des canevas correpondant aux images on en met 2 par lier pour l'instant
     public GameObject caneva0;
@@ -206,6 +222,7 @@ public class enigme : MonoBehaviour
 
 
 
+
     //forcement au moment où on lit ce script enigme, on est déjà passé par le menu et il y a donc un niveau de difficulté de selectionné
     private static readonly string levelDifficulty = "levelDifficulty";
     private string levelString;
@@ -214,8 +231,8 @@ public class enigme : MonoBehaviour
     void Start()
     {
         //déclaration des suites faciles
-        List<string> SuiteFacile1 = new List<string>() { "00", "00", "00", "00", "00", "00", "00","??" };
-        List<string> SuiteFacile2 = new List<string>() { "0", "4", "6", "8", "10", "12", "14" };
+        List<string> SuiteFacile1 = new List<string>() { "00", "00", "00", "00", "00", "00", "??","00" };
+        List<string> SuiteFacile2 = new List<string>() { "0", "4", "6", "8", "10", "12", "14","??" };
 
         // déclaration des suite intermédiaires
         List<string> SuiteIntermediaire1 = new List<string>() { "10", "20", "30", "40", "50", "60", "70" };
@@ -268,10 +285,141 @@ public class enigme : MonoBehaviour
                 for(int j=0;j< nombreDeChiffre; ++j)
                 {
                     Nombre.Add(nombre[j]);//la liste Nombre contient donc chaque caractère composant le nombre = chaque chiffe
-                    //associer le chiffre à l'image
-                    //print(Nombre[j]);
+                                          //associer le chiffre à l'image
+                                          //print(Nombre[j]);
+                    if (Nombre[j] == '?')
+                    {
+                        //print("on va y arriver");
+                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
 
-                    if (Nombre[j] == '0')
+
+                        //on va donc chercher sur quel canvas on met l'image maintenant
+                        if (i == 0)//premier poteau car i va de 0 à 7
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre pour trouver le bon canevas
+                            {
+                                print("prmier chiffre du nombre");
+                                //on va donc mettre un zéro sur le canvas0
+                                interrogationC0.enabled = true;
+
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("deuxième chiffre du nombre");
+                                //on va mettre un zéro dans le canevas1
+                                
+                                interrogationC1.enabled = true;
+                            }
+
+                        }
+                        else if (i == 1)//deuxième poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("prmier chiffre du nombre");
+                                interrogationC2.enabled = true;
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("deuxième chiffre du nombre");
+                                interrogationC3.enabled = true;
+                            }
+                        }
+                        else if (i == 2)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("prmier chiffre du nombre");
+                                interrogationC4.enabled = true;
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("deuxième chiffre du nombre");
+                                interrogationC5.enabled = true;
+                            }
+                        }
+
+                        else if (i == 3)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("prmier chiffre du nombre");
+                                interrogationC6.enabled = true;
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("deuxième chiffre du nombre");
+                                interrogationC7.enabled = true;
+                            }
+                        }
+
+                        else if (i == 4)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("prmier chiffre du nombre");
+                                interrogationC8.enabled = true;
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("deuxième chiffre du nombre");
+                                interrogationC9.enabled = true;
+                            }
+                        }
+
+                        else if (i == 5)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("prmier chiffre du nombre");
+                                interrogationC10.enabled = true;
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("deuxième chiffre du nombre");
+                                interrogationC11.enabled = true;
+                            }
+                        }
+
+                        else if (i == 6)
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("prmier chiffre du nombre");
+                                interrogationC12.enabled = true;
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("deuxième chiffre du nombre");
+                                interrogationC13.enabled = true;
+                            }
+                        }
+
+                        else //if (i == 7)//8eme poteau
+                        {
+                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                            if (j == 0)//si c'est le premier chiffre
+                            {
+                                print("prmier chiffre du nombre");
+                                interrogationC14.enabled = true;
+                            }
+                            else//si c'est le deuxième chiffre du nommbre
+                            {
+                                print("deuxième chiffre du nombre");
+                                interrogationC15.enabled = true;
+                            }
+                        }
+                    }
+
+                        if (Nombre[j] == '0')
                     {
                         //print("on va y arriver");
                         //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire

@@ -6,24 +6,18 @@ using UnityEngine.UI;
 
 public class click : MonoBehaviour
 {
-    // Update is called once per frame
-
-    public bool display = true;
-
-    public Texture2D text;
-
-    void OnGui()
+    // Start is called before the first frame update
+    void Start()
     {
-        if(display==true)
-        {
-            GUI.DrawTexture(new Rect(10, 10, 60, 60), text, ScaleMode.ScaleToFit, true, 10.0f);
-        }
+       
     }
 
-
+    // Update is called once per frame
+    
+   
     void OnMouseDown()
       {
-        display = !display;
+       SceneManager.LoadScene(0);
       }
     
 }

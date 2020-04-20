@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class enigme : MonoBehaviour
+public class Enigme : MonoBehaviour
 {
     //liste des images pour y glisser les images gameObject
     //pour Canevas0

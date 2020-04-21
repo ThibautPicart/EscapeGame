@@ -76,7 +76,15 @@ public class animatorSphynx : MonoBehaviour
     public void unClick()
     {
         un = !un;
-        reponse.Add('1');
+        if (un)
+        {
+            reponse.Add('1');
+        }
+        else
+        {
+            reponse.Remove('1');
+        }
+        
         Reponse();
 
     }
@@ -84,7 +92,14 @@ public class animatorSphynx : MonoBehaviour
     public void deuxClick()
     {
         deux = !deux;
-        reponse.Add('2');
+        if (deux)
+        {
+            reponse.Add('2');
+        }
+        else
+        {
+            reponse.Remove('2');
+        }
         Reponse();
 
 
@@ -92,7 +107,14 @@ public class animatorSphynx : MonoBehaviour
     public void troisClick()
     {
         trois = !trois;
-        reponse.Add('3');
+        if (trois)
+        {
+            reponse.Add('3');
+        }
+        else
+        {
+            reponse.Remove('3');
+        }
         Reponse();
 
 
@@ -100,7 +122,14 @@ public class animatorSphynx : MonoBehaviour
     public void quatreClick()
     {
         quatre = !quatre;
-        reponse.Add('4');
+        if (quatre)
+        {
+            reponse.Add('4');
+        }
+        else
+        {
+            reponse.Remove('4');
+        }
         Reponse();
 
 
@@ -108,7 +137,14 @@ public class animatorSphynx : MonoBehaviour
     public void cinqClick()
     {
         cinq = !cinq;
-        reponse.Add('5');
+        if (cinq)
+        {
+            reponse.Add('5');
+        }
+        else
+        {
+            reponse.Remove('5');
+        }
         Reponse();
 
 
@@ -116,7 +152,14 @@ public class animatorSphynx : MonoBehaviour
     public void sixClick()
     {
         six = !six;
-        reponse.Add('6');
+        if (six)
+        {
+            reponse.Add('6');
+        }
+        else
+        {
+            reponse.Remove('6');
+        }
         Reponse();
 
 
@@ -124,14 +167,28 @@ public class animatorSphynx : MonoBehaviour
     public void septClick()
     {
         sept = !sept;
-        reponse.Add('7');
+        if (sept)
+        {
+            reponse.Add('7');
+        }
+        else
+        {
+            reponse.Remove('7');
+        }
         Reponse();
 
     }
     public void huitClick()
     {
         huit = !huit;
-        reponse.Add('8');
+        if (huit)
+        {
+            reponse.Add('8');
+        }
+        else
+        {
+            reponse.Remove('8');
+        }
         Reponse();
 
 
@@ -140,7 +197,14 @@ public class animatorSphynx : MonoBehaviour
     public void neufClick()
     {
         neuf = !neuf;
-        reponse.Add('9');
+        if (neuf)
+        {
+            reponse.Add('9');
+        }
+        else
+        {
+            reponse.Remove('9');
+        }
         Reponse();
 
     }

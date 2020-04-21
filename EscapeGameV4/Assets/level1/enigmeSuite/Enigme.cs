@@ -238,8 +238,8 @@ public class Enigme : MonoBehaviour
         List<string> SuiteIntermediaire1 = new List<string>() { "10", "20", "30", "40", "50", "60", "70" };
         List<string> SuiteIntermediaire2 = new List<string>() { "20", "40", "60", "80", "100", "120", "140}" };
         //déclaration des suite compliquées
-        List<string> SuiteDifficile1 = new List<string>() { "10000", "20000", "30000", "40000", "50000", "60000", "70000" };
-        List<string> SuiteDifficile2 = new List<string>() { "20000", "40000", "60000", "80000", "100000", "120000", "140000}" };
+        List<string> SuiteDifficile1 = new List<string>() { "0", "1", "10", "11", "??", "5", "6","7" };
+        List<string> SuiteDifficile2 = new List<string>() { "20", "4", "60", "80", "10", "10", "14","??"};
 
         //on fait les listes composées de toutes les listes
         List<List<string>> SuitesFaciles = new List<List<string>>() { SuiteFacile1, SuiteFacile2 };
@@ -268,7 +268,7 @@ public class Enigme : MonoBehaviour
             List<string> SuiteChosen = EasyRandom;
 
 
-            //à partir de maintenant le ode que je veux mettre à l'exterieur des blocs if
+            //à partir de maintenant le code que je veux mettre à l'exterieur des blocs if
             
             string nombre;
             int nombreDeChiffre;
@@ -1771,6 +1771,8 @@ public class Enigme : MonoBehaviour
 
             }
 
+
+
         }
 
 
@@ -1807,22 +1809,13 @@ public class Enigme : MonoBehaviour
 
 
 
-        //maintenant que nous avons la suite, il convient de faire correspondre à chaque numéro une image
-
-        
-
-
-
+       
 
     }
 
 
 
+    //il faut donc faire correpondre à chaque suite sa solution et lorsqu'on va cliquer sur les bons symboles sur le mur; le sphynx se décalera 
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }

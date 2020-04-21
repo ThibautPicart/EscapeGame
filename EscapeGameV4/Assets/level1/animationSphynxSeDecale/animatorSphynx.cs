@@ -20,6 +20,26 @@ public class animatorSphynx : MonoBehaviour
     public Image septMur;
     public Image huitMur;
     public Image neufMur;
+
+    //on initialise toute les bouton à false pour dire que de base ils ne sont pas cliqués
+    bool zero = false;
+    bool un = false;
+    bool deux = false;
+    bool trois = false;
+    bool quatre = false;
+    bool cinq = false;
+    bool six = false;
+    bool sept = false;
+    bool huit = false;
+    bool neuf = false;
+
+    //on va séparer caque chiffre du string en char 
+    List<char> charList = new List<char>();
+
+    //je crée une liste de char ou l'on ajoutera un char a cette liste des que le joeur va cliquer sur un symbole sur le mur
+    List<char> reponse = new List<char>();
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,20 +49,149 @@ public class animatorSphynx : MonoBehaviour
         int nombreChiffreSolution = Solution.Length;
 
         //on va séparer caque chiffre du string en char 
-        List<char> charList = new List<char>();
+       
         for(int i=0; i < nombreChiffreSolution; ++i)
         {
             charList.Add(Solution[i]);
         }
     }
 
+    public void zeroClick()
+    {
+        zero=!zero;
+        if (zero)
+        {
+            reponse.Add('0');
+        }
+        else
+        {
+            reponse.Remove('0');
+        }
+        
+        Reponse();
+
+
+    }
+
+    public void unClick()
+    {
+        un = !un;
+        reponse.Add('1');
+        Reponse();
+
+    }
+
+    public void deuxClick()
+    {
+        deux = !deux;
+        reponse.Add('2');
+        Reponse();
+
+
+    }
+    public void troisClick()
+    {
+        trois = !trois;
+        reponse.Add('3');
+        Reponse();
+
+
+    }
+    public void quatreClick()
+    {
+        quatre = !quatre;
+        reponse.Add('4');
+        Reponse();
+
+
+    }
+    public void cinqClick()
+    {
+        cinq = !cinq;
+        reponse.Add('5');
+        Reponse();
+
+
+    }
+    public void sixClick()
+    {
+        six = !six;
+        reponse.Add('6');
+        Reponse();
+
+
+    }
+    public void septClick()
+    {
+        sept = !sept;
+        reponse.Add('7');
+        Reponse();
+
+    }
+    public void huitClick()
+    {
+        huit = !huit;
+        reponse.Add('8');
+        Reponse();
+
+
+
+    }
+    public void neufClick()
+    {
+        neuf = !neuf;
+        reponse.Add('9');
+        Reponse();
+
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (1==2)
+        
+    }
+
+    public void Reponse()
+    {
+        print("je suis dans la fonction reponse");
+        print("reponse: " );
+        for (int i= 0;i< reponse.Count; ++i)
         {
+            print(reponse[i]);
+        }
+        print("charList : ");
+        for (int i = 0; i < charList.Count; ++i)
+        {
+            print(charList[i]);
+        }
+
+        bool result = false;
+        bool detect = false;
+        if (charList.Count == reponse.Count)
+        {
+            for (int i = 0; i < charList.Count; ++i)
+            {
+
+                if (reponse[i] == charList[i])
+                {
+                    result = true;
+                }
+                else
+                {
+                    detect = true;
+                }
+            }
+        }
+       
+        
+
+        if (result==true && detect==false)
+        {
+            print("bonne réponse");
             anim.SetBool("SphynxMove", true);
         }
+        
+        
     }
 }
 

@@ -19,7 +19,6 @@ public class displayText : MonoBehaviour
 
     public void OnMouseDown()
       {
-        print("click");
         text.enabled = true;
         croix.enabled = true;
         
@@ -27,9 +26,10 @@ public class displayText : MonoBehaviour
 
     public void exitImage()
     {
+        print("bhbh");
         text.enabled = false;
         croix.enabled = false;
-        print("bhbh");
+        
     }
     
 }

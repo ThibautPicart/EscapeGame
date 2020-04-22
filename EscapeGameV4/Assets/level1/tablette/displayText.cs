@@ -6,23 +6,21 @@ using UnityEngine.UI;
 
 public class displayText : MonoBehaviour
 {
+    // Update is called once per frame
 
+    public bool display = true;
     [SerializeField] private Image text;
-    [SerializeField] private Image croix;
 
-  
+    void Start()
+    {
+        //text.enabled = false;
+    }
 
     public void OnMouseDown()
       {
         print("click");
-        text.enabled = true;
-        croix.enabled = true;
+        text.enabled = display;
+        display = !display;
       }
-
-    public void exitImage()
-    {
-        text.enabled = false;
-        croix.enabled = false;
-    }
     
 }

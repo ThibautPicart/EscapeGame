@@ -44,6 +44,7 @@ public class animatorSphynx : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        print("byhubhjkl,;");
         anim = GetComponent<Animator>();
         string Solution = PlayerPrefs.GetString(solutionSuite);
         print("la solution a la suite est : " + Solution);

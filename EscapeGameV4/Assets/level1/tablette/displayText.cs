@@ -8,8 +8,9 @@ public class displayText : MonoBehaviour
 {
     // Update is called once per frame
 
-    public bool display = true;
+   
     [SerializeField] private Image text;
+    [SerializeField] private Image croix;
 
     void Start()
     {
@@ -19,8 +20,16 @@ public class displayText : MonoBehaviour
     public void OnMouseDown()
       {
         print("click");
-        text.enabled = display;
-        display = !display;
+        text.enabled = true;
+        croix.enabled = true;
+        
       }
+
+    public void exitImage()
+    {
+        text.enabled = false;
+        croix.enabled = false;
+        print("bhbh");
+    }
     
 }

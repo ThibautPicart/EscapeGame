@@ -216,11 +216,9 @@ public class Enigme : MonoBehaviour
     public GameObject caneva13;
     public GameObject caneva14;
     public GameObject caneva15;
-    
 
-
-
-
+    //playerPref pour envoyer la solution de la suite au script qui fait bouger le sphynx
+    private static readonly string solutionSuite = "solutionSuite";
 
 
     //forcement au moment où on lit ce script enigme, on est déjà passé par le menu et il y a donc un niveau de difficulté de selectionné
@@ -232,19 +230,37 @@ public class Enigme : MonoBehaviour
     {
         //déclaration des suites faciles
         List<string> SuiteFacile1 = new List<string>() { "00", "00", "00", "00", "00", "00", "??","00" };
-        List<string> SuiteFacile2 = new List<string>() { "0", "4", "6", "8", "10", "12", "14","??" };
+        List<string> SuiteFacile2 = new List<string>() { "2", "4", "6", "8", "10", "12", "14","??" };
+
+        //déclaration des solutions des suites faciles
+        string SolutionSuiteFacile1 = "48";
+        string SolutionSuiteFacile2 = "16";
 
         // déclaration des suite intermédiaires
-        List<string> SuiteIntermediaire1 = new List<string>() { "10", "20", "30", "40", "50", "60", "70" };
-        List<string> SuiteIntermediaire2 = new List<string>() { "20", "40", "60", "80", "100", "120", "140}" };
+        List<string> SuiteIntermediaire1 = new List<string>() { "10", "20", "30", "40", "50", "60", "70","??" };
+        List<string> SuiteIntermediaire2 = new List<string>() { "20", "40", "60", "80", "100", "120", "140","??" };
+
+        //déclaration des solutions des suites intermediaires
+        string SolutionSuiteIntermediaire1 = "00";
+        string SolutionSuiteIntermediaire2 = "16";
+
         //déclaration des suite compliquées
-        List<string> SuiteDifficile1 = new List<string>() { "10000", "20000", "30000", "40000", "50000", "60000", "70000" };
-        List<string> SuiteDifficile2 = new List<string>() { "20000", "40000", "60000", "80000", "100000", "120000", "140000}" };
+        List<string> SuiteDifficile1 = new List<string>() { "0", "1", "10", "11", "??", "5", "6","7" };
+        List<string> SuiteDifficile2 = new List<string>() { "20", "4", "60", "80", "10", "10", "14","??"};
+
+        //déclaration des solutions des suites compliquées
+        string SolutionSuiteDifficile1 = "00";
+        string SolutionSuiteDifficile2 = "16";
 
         //on fait les listes composées de toutes les listes
         List<List<string>> SuitesFaciles = new List<List<string>>() { SuiteFacile1, SuiteFacile2 };
         List<List<string>> SuitesIntermediaires = new List<List<string>>() { SuiteIntermediaire1, SuiteIntermediaire2 };
         List<List<string>> SuitesDifficiles = new List<List<string>>() { SuiteDifficile1, SuiteDifficile2 };
+
+        //on fait une liste composée de toutes les solution
+        List<string> SolutionsFaciles = new List<string>() { SolutionSuiteFacile1, SolutionSuiteFacile2 };
+        List<string> SolutionsIntermediaires = new List<string>() { SolutionSuiteIntermediaire1, SolutionSuiteIntermediaire2 };
+        List<string> SolutionsDifficiles = new List<string>() { SolutionSuiteDifficile1, SolutionSuiteDifficile2 };
 
 
 
@@ -263,13 +279,21 @@ public class Enigme : MonoBehaviour
             print("le nombre tiré au hasard est :" + randomInt);
             //on va donc selectionner la bonne suite maintenant
             List<string> EasyRandom = SuitesFaciles[randomInt];
+
+            //je selectionne aussi la bonne réponse correpondante afin de l'envoyer danns le script qui fait bouger le sphynx
+            string Solution = SolutionsFaciles[randomInt];
+
             //j'écris la suite selectionnée dans la console
             print("la suite tirée au hasard est :"+EasyRandom[0]+","+ EasyRandom[1] + ","+EasyRandom[2] +","+ EasyRandom[3] +","+ EasyRandom[4] +","+ EasyRandom[5] +","+ EasyRandom[6] );
             List<string> SuiteChosen = EasyRandom;
+            string SolutionChosen = Solution;
 
 
-            //à partir de maintenant le ode que je veux mettre à l'exterieur des blocs if
-            
+            //à partir de maintenant le code que je veux mettre à l'exterieur des blocs if
+
+            //j'envoi la solution au script du sphynx => je créer un playerPref
+            PlayerPrefs.SetString(solutionSuite, SolutionChosen);
+
             string nombre;
             int nombreDeChiffre;
             for (int i = 0; i < SuiteChosen.Count; ++i)
@@ -1771,6 +1795,8 @@ public class Enigme : MonoBehaviour
 
             }
 
+
+
         }
 
 
@@ -1807,22 +1833,13 @@ public class Enigme : MonoBehaviour
 
 
 
-        //maintenant que nous avons la suite, il convient de faire correspondre à chaque numéro une image
-
-        
-
-
-
+       
 
     }
 
 
 
+    //il faut donc faire correpondre à chaque suite sa solution et lorsqu'on va cliquer sur les bons symboles sur le mur; le sphynx se décalera 
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }

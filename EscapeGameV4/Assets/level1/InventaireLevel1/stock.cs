@@ -40,7 +40,7 @@ public class stock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("t") && Vector3.Distance(myself.transform.position, player.transform.position) < 2) // distance à rajouter
+        if (Input.GetKeyDown("t") && Vector3.Distance(myself.transform.position, player.transform.position) < 2) 
         {
             myself.SetActive(false);  // On enlève de la scène l'objet placé dans l'inventaire
             StockInTheRightPanel();   // On appelle la fonction qui l'affiche dans l'inventaire

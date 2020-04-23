@@ -9,6 +9,7 @@ public class animatorSphynx : MonoBehaviour
     //pour récuperer la solution associée à la suite qui a été tirée au sort dans le script enigme
     private static readonly string solutionSuite = "solutionSuite";
     private Animator anim;
+    public Animator zeroPousse;
 
     //liste des images du murs pour voir si le joueur a cliqué dessus
     public Image zeroMur;
@@ -64,10 +65,14 @@ public class animatorSphynx : MonoBehaviour
         if (zero)
         {
             reponse.Add('0');
+            zeroPousse.SetBool("0Pousse", true);
+            zeroPousse.SetBool("0comeback", false);
         }
         else
         {
             reponse.Remove('0');
+            zeroPousse.SetBool("0comeback", true);
+            zeroPousse.SetBool("0Pousse", false);
         }
         
         Reponse();

@@ -135,8 +135,8 @@ public class animatorSphynx : MonoBehaviour
         if (trois)
         {
             reponse.Add('3');
-            troisPousse.SetBool("3move", false);
-            troisPousse.SetBool("3comeback", true);
+            troisPousse.SetBool("3move", true);
+            troisPousse.SetBool("3comeback", false);
         }
         else
         {
@@ -154,8 +154,8 @@ public class animatorSphynx : MonoBehaviour
         if (quatre)
         {
             reponse.Add('4');
-            quatrePousse.SetBool("4move", false);
-            quatrePousse.SetBool("4comeback", true);
+            quatrePousse.SetBool("4move", true);
+            quatrePousse.SetBool("4comeback", false);
         }
         else
         {
@@ -173,8 +173,8 @@ public class animatorSphynx : MonoBehaviour
         if (cinq)
         {
             reponse.Add('5');
-            cinqPousse.SetBool("5move", false);
-            cinqPousse.SetBool("5comeback", true);
+            cinqPousse.SetBool("5move", true);
+            cinqPousse.SetBool("5comeback", false);
         }
         else
         {
@@ -192,8 +192,8 @@ public class animatorSphynx : MonoBehaviour
         if (six)
         {
             reponse.Add('6');
-            sixPousse.SetBool("6move", false);
-            sixPousse.SetBool("6comeback", true);
+            sixPousse.SetBool("6move", true);
+            sixPousse.SetBool("6comeback", false);
         }
         else
         {
@@ -211,8 +211,8 @@ public class animatorSphynx : MonoBehaviour
         if (sept)
         {
             reponse.Add('7');
-            septPousse.SetBool("7move", false);
-            septPousse.SetBool("7comeback", true);
+            septPousse.SetBool("7move", true);
+            septPousse.SetBool("7comeback", false);
         }
         else
         {
@@ -229,8 +229,8 @@ public class animatorSphynx : MonoBehaviour
         if (huit)
         {
             reponse.Add('8');
-            huitPousse.SetBool("8move", false);
-            huitPousse.SetBool("8comeback", true);
+            huitPousse.SetBool("8move", true);
+            huitPousse.SetBool("8comeback", false);
         }
         else
         {
@@ -249,8 +249,8 @@ public class animatorSphynx : MonoBehaviour
         if (neuf)
         {
             reponse.Add('9');
-            neufPousse.SetBool("9move", false);
-            neufPousse.SetBool("9comeback", true);
+            neufPousse.SetBool("9move", true);
+            neufPousse.SetBool("9comeback", false);
         }
         else
         {

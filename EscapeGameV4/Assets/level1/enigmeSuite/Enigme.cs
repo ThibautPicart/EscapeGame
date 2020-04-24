@@ -233,7 +233,7 @@ public class Enigme : MonoBehaviour
         List<string> SuiteFacile2 = new List<string>() { "2", "4", "6", "8", "10", "12", "14","??" };
 
         //déclaration des solutions des suites faciles
-        string SolutionSuiteFacile1 = "48";
+        string SolutionSuiteFacile1 = "16";
         string SolutionSuiteFacile2 = "16";
 
         // déclaration des suite intermédiaires

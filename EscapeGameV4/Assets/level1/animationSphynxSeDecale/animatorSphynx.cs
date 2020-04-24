@@ -51,6 +51,12 @@ public class animatorSphynx : MonoBehaviour
     //je crée une liste de char ou l'on ajoutera un char a cette liste des que le joeur va cliquer sur un symbole sur le mur
     List<char> reponse = new List<char>();
 
+    //pour faire la temporisation avnt de faire monter l'excalier une fois que le sphynx s'est bougé
+    public float tempsTemporisation = 9;
+
+    //pour l'animation de l'escalier
+    public Animator escalier;
+
 
     // Start is called before the first frame update
     void Start()
@@ -67,8 +73,25 @@ public class animatorSphynx : MonoBehaviour
         {
             charList.Add(Solution[i]);
         }
+
+        
     }
 
+
+    //pour la temporisation
+
+    IEnumerator ExampleCoroutine()
+    {
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(tempsTemporisation);
+
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        escalier.SetBool("escalierMonte", true);
+    }
     public void zeroClick()
     {
         zero=!zero;
@@ -306,6 +329,10 @@ public class animatorSphynx : MonoBehaviour
         {
             print("bonne réponse");
             anim.SetBool("SphynxMove", true);
+            //pour la temporisation
+            StartCoroutine(ExampleCoroutine());
+           
+
         }
         
         

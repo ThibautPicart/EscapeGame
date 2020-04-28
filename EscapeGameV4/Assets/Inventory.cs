@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
     public GameObject InventoryCanvas;
     public GameObject HelpPopup;
+    public GameObject camera;
+    public InputField inputField;
 
     //liste des items que l'on peut ramasser
     public GameObject tablette;
@@ -31,9 +34,11 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("i"))
+        if (Input.GetKeyDown("i") && inputField.isFocused == false)
         {
             InventoryCanvas.SetActive(!InventoryCanvas.activeSelf);
+            camera.SetActive(!camera.activeSelf);
+            player.SetActive(!player.activeSelf);
         }
 
         foreach(GameObject item in items)

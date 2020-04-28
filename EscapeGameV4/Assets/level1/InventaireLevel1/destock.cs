@@ -33,26 +33,23 @@ public class destock : MonoBehaviour
 
     void Start()
     {
-        print("start");
-        //Pour détecter les clics sur les items
-        ButtonTablette1.onClick.AddListener(ClickOnBtnTab1);
+        
+        ButtonTablette1.onClick.AddListener(() => ClickOnBtnTab1());
 
-        ButtonStick1.onClick.AddListener(ClickOnBtnStick1);
+        ButtonStick1.onClick.AddListener(() => ClickOnBtnStick1()); 
 
-        ButtonTablette2.onClick.AddListener(ClickOnBtnTab2);
+        ButtonTablette2.onClick.AddListener(() => ClickOnBtnTab2());
 
-        ButtonStick2.onClick.AddListener(ClickOnBtnStick2);
+        ButtonStick2.onClick.AddListener(() => ClickOnBtnStick2());
 
         //Bouton du popup de drop
-        DropItemButton.onClick.AddListener(ClickOnDropItem);
-
-
+        DropItemButton.onClick.AddListener(() => ClickOnDropItem());
 
     }
+
     
     void ClickOnBtnTab1()
     {
-        print("coucoucococu");
         panelToRemove = TablettePanel1;
         objectADrop = tablette;
         ClickOnItemPanel.SetActive(true);

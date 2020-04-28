@@ -33,6 +33,8 @@ public class destock : MonoBehaviour
     public GameObject panelToRemove = null;
     public GameObject objectADrop = null;
 
+    public int pos;
+
     void Start()
     {
         
@@ -47,6 +49,8 @@ public class destock : MonoBehaviour
         //Bouton du popup de drop
         DropItemButton.onClick.AddListener(() => ClickOnDropItem());
 
+        
+
     }
 
     
@@ -55,7 +59,7 @@ public class destock : MonoBehaviour
         panelToRemove = TablettePanel1;
         objectADrop = tablette;
         ClickOnItemPanel.SetActive(true);
-
+        pos = 1;
     }
 
     public void ClickOnBtnTab2()
@@ -64,6 +68,7 @@ public class destock : MonoBehaviour
         panelToRemove = TablettePanel2;
         objectADrop = tablette;
         ClickOnItemPanel.SetActive(true);
+        pos = 2;
     }
 
     public void ClickOnBtnStick1()
@@ -72,6 +77,7 @@ public class destock : MonoBehaviour
         panelToRemove = StickPanel1;
         objectADrop = stick;
         ClickOnItemPanel.SetActive(true);
+        pos = 1;
     }
 
     public void ClickOnBtnStick2()
@@ -80,6 +86,7 @@ public class destock : MonoBehaviour
         panelToRemove = StickPanel2;
         objectADrop = stick;
         ClickOnItemPanel.SetActive(true);
+        pos = 2;
     }
 
     public void ClickOnDropItem()
@@ -87,6 +94,9 @@ public class destock : MonoBehaviour
         objectADrop.transform.position = player.transform.position;
         objectADrop.SetActive(true);
         panelToRemove.SetActive(false);
+        ClickOnItemPanel.SetActive(false);
+        PlayerPrefs.SetInt("EmplacementDispoPref", PlayerPrefs.GetInt("EmplacementDispoPref") - 1);
+        tablette.GetComponent<stock>().MiseAJourItems(pos);
     }
 
 

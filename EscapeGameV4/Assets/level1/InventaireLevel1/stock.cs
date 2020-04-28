@@ -27,6 +27,8 @@ public class stock : MonoBehaviour
     //Déclaration de la liste des emplacements
     public List<List<GameObject>> Emplacements;
 
+    
+
     void Start()
     {
         Emplacement1 = new List<GameObject>() { ItemTablette1, ItemStick1 };
@@ -62,6 +64,20 @@ public class stock : MonoBehaviour
 
         Emplacements[EmplacementDispoInt - 1][Position].SetActive(true);
         PlayerPrefs.SetInt(EmplacementDispoPref, EmplacementDispoInt + 1);
+    }
 
+    public void MiseAJourItems(int pos)
+    {
+        for (int i=pos;i<Emplacements.Count;i++)
+        {
+            for(int j=0;j<Emplacements[i].Count;j++)
+            {
+                if(Emplacements[i][j].activeSelf==true)
+                {
+                    Emplacements[i - 1][j].SetActive(true);
+                    Emplacements[i][j].SetActive(false);
+                }
+            }
+        }
     }
 }

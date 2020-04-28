@@ -14312,7 +14312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InventoryCanvas: {fileID: 1515656733}
   HelpPopup: {fileID: 1434286469}
-  camera: {fileID: 15168482}
+  camera2: {fileID: 15168482}
   inputField: {fileID: 819166660}
   tablette: {fileID: 89605249}
   stick: {fileID: 1241508479}
@@ -19331,7 +19331,8 @@ MonoBehaviour:
   TablettePanel2: {fileID: 2036284827}
   StickPanel2: {fileID: 1832405737}
   panelToRemove: {fileID: 0}
-  objectADrop: {fileID: 0}
+  objectADrop: {fileID: 1241508479}
+  pos: 0
 --- !u!1 &1529961605
 GameObject:
   m_ObjectHideFlags: 0
@@ -25806,6 +25807,28 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 15168482}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 994446699}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2142613702
 MonoBehaviour:

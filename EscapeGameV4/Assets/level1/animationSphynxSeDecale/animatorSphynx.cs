@@ -9,17 +9,6 @@ public class animatorSphynx : MonoBehaviour
     //pour récuperer la solution associée à la suite qui a été tirée au sort dans le script enigme
     private static readonly string solutionSuite = "solutionSuite";
     private Animator anim;
-    public Animator zeroPousse;
-    public Animator unPousse;
-    public Animator deuxPousse;
-    public Animator troisPousse;
-    public Animator quatrePousse;
-    public Animator cinqPousse;
-    public Animator sixPousse;
-    public Animator septPousse;
-    public Animator huitPousse;
-    public Animator neufPousse;
-    
 
     //liste des images du murs pour voir si le joueur a cliqué dessus
     public Image zeroMur;
@@ -51,12 +40,6 @@ public class animatorSphynx : MonoBehaviour
     //je crée une liste de char ou l'on ajoutera un char a cette liste des que le joeur va cliquer sur un symbole sur le mur
     List<char> reponse = new List<char>();
 
-    //pour faire la temporisation avnt de faire monter l'excalier une fois que le sphynx s'est bougé
-    public float tempsTemporisation = 9;
-
-    //pour l'animation de l'escalier
-    public Animator escalier;
-
 
     // Start is called before the first frame update
     void Start()
@@ -73,39 +56,18 @@ public class animatorSphynx : MonoBehaviour
         {
             charList.Add(Solution[i]);
         }
-
-        
     }
 
-
-    //pour la temporisation
-
-    IEnumerator ExampleCoroutine()
-    {
-        //Print the time of when the function is first called.
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
-
-        //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(tempsTemporisation);
-
-        //After we have waited 5 seconds print the time again.
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
-        escalier.SetBool("escalierMonte", true);
-    }
     public void zeroClick()
     {
         zero=!zero;
         if (zero)
         {
             reponse.Add('0');
-            zeroPousse.SetBool("0Pousse", true);
-            zeroPousse.SetBool("0comeback", false);
         }
         else
         {
             reponse.Remove('0');
-            zeroPousse.SetBool("0comeback", true);
-            zeroPousse.SetBool("0Pousse", false);
         }
         
         Reponse();
@@ -119,14 +81,10 @@ public class animatorSphynx : MonoBehaviour
         if (un)
         {
             reponse.Add('1');
-            unPousse.SetBool("1move", true);
-            unPousse.SetBool("1comeback", false);
         }
         else
         {
             reponse.Remove('1');
-            unPousse.SetBool("1comeback", true);
-            unPousse.SetBool("1move", false);
         }
         
         Reponse();
@@ -139,14 +97,10 @@ public class animatorSphynx : MonoBehaviour
         if (deux)
         {
             reponse.Add('2');
-            deuxPousse.SetBool("2move",true);
-            deuxPousse.SetBool("2comeback", false);
         }
         else
         {
             reponse.Remove('2');
-            deuxPousse.SetBool("2move", false);
-            deuxPousse.SetBool("2comeback", true);
         }
         Reponse();
 
@@ -158,14 +112,10 @@ public class animatorSphynx : MonoBehaviour
         if (trois)
         {
             reponse.Add('3');
-            troisPousse.SetBool("3move", true);
-            troisPousse.SetBool("3comeback", false);
         }
         else
         {
             reponse.Remove('3');
-            troisPousse.SetBool("3move", false);
-            troisPousse.SetBool("3comeback", true);
         }
         Reponse();
 
@@ -177,14 +127,10 @@ public class animatorSphynx : MonoBehaviour
         if (quatre)
         {
             reponse.Add('4');
-            quatrePousse.SetBool("4move", true);
-            quatrePousse.SetBool("4comeback", false);
         }
         else
         {
             reponse.Remove('4');
-            quatrePousse.SetBool("4move", false);
-            quatrePousse.SetBool("4comeback", true);
         }
         Reponse();
 
@@ -196,14 +142,10 @@ public class animatorSphynx : MonoBehaviour
         if (cinq)
         {
             reponse.Add('5');
-            cinqPousse.SetBool("5move", true);
-            cinqPousse.SetBool("5comeback", false);
         }
         else
         {
             reponse.Remove('5');
-            cinqPousse.SetBool("5move", false);
-            cinqPousse.SetBool("5comeback", true);
         }
         Reponse();
 
@@ -215,14 +157,10 @@ public class animatorSphynx : MonoBehaviour
         if (six)
         {
             reponse.Add('6');
-            sixPousse.SetBool("6move", true);
-            sixPousse.SetBool("6comeback", false);
         }
         else
         {
             reponse.Remove('6');
-            sixPousse.SetBool("6move", false);
-            sixPousse.SetBool("6comeback", true);
         }
         Reponse();
 
@@ -234,14 +172,10 @@ public class animatorSphynx : MonoBehaviour
         if (sept)
         {
             reponse.Add('7');
-            septPousse.SetBool("7move", true);
-            septPousse.SetBool("7comeback", false);
         }
         else
         {
             reponse.Remove('7');
-            septPousse.SetBool("7move", false);
-            septPousse.SetBool("7comeback", true);
         }
         Reponse();
 
@@ -252,14 +186,10 @@ public class animatorSphynx : MonoBehaviour
         if (huit)
         {
             reponse.Add('8');
-            huitPousse.SetBool("8move", true);
-            huitPousse.SetBool("8comeback", false);
         }
         else
         {
             reponse.Remove('8');
-            huitPousse.SetBool("8move", false);
-            huitPousse.SetBool("8comeback", true);
         }
         Reponse();
 
@@ -272,14 +202,10 @@ public class animatorSphynx : MonoBehaviour
         if (neuf)
         {
             reponse.Add('9');
-            neufPousse.SetBool("9move", true);
-            neufPousse.SetBool("9comeback", false);
         }
         else
         {
             reponse.Remove('9');
-            neufPousse.SetBool("9move", false);
-            neufPousse.SetBool("9comeback", true);
         }
         Reponse();
 
@@ -329,10 +255,6 @@ public class animatorSphynx : MonoBehaviour
         {
             print("bonne réponse");
             anim.SetBool("SphynxMove", true);
-            //pour la temporisation
-            StartCoroutine(ExampleCoroutine());
-           
-
         }
         
         

@@ -352,10 +352,11 @@ public class animatorSphynx : MonoBehaviour
                 }
             }
         }
-       
-        
 
-        if (result==true && detect==false)
+
+        int variableFin = 0;
+        if (result==true && detect==false&&variableFin==0)
+            //varaibleFin sert à ne passer qu'une seul fois dans cette fonction
         {
             print("bonne réponse");
             anim.SetBool("SphynxMove", true);
@@ -363,7 +364,7 @@ public class animatorSphynx : MonoBehaviour
 
             //pour la temporisation
             StartCoroutine(sphynxCoroutine());
-           
+            variableFin = 1;
 
         }
         

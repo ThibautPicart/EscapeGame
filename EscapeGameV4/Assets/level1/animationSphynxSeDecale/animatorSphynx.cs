@@ -1,11 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class animatorSphynx : MonoBehaviour
 {
+
+    //pour mettre du son quand le sphynx se décale
+    public AudioSource sonSphynx;
+
+    //pour mettre du son quand les pierres sont pousées où tirées par le personnage
+    public AudioSource sonPierres;
+
     //pour récuperer la solution associée à la suite qui a été tirée au sort dans le script enigme
     private static readonly string solutionSuite = "solutionSuite";
     private Animator anim;
@@ -80,9 +87,9 @@ public class animatorSphynx : MonoBehaviour
 
     //pour la temporisation
 
-    IEnumerator ExampleCoroutine()
+    IEnumerator sphynxCoroutine()
     {
-        //Print the time of when the function is first called.
+        //pn ecris le temps la premiere fois que la fonction est appelée
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
 
         //yield on a new YieldInstruction that waits for 5 seconds.
@@ -91,6 +98,7 @@ public class animatorSphynx : MonoBehaviour
         //After we have waited 5 seconds print the time again.
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
         escalier.SetBool("escalierMonte", true);
+        sonSphynx.Stop();
     }
     public void zeroClick()
     {
@@ -100,12 +108,16 @@ public class animatorSphynx : MonoBehaviour
             reponse.Add('0');
             zeroPousse.SetBool("0Pousse", true);
             zeroPousse.SetBool("0comeback", false);
+            sonPierres.Play();
+            
+
         }
         else
         {
             reponse.Remove('0');
             zeroPousse.SetBool("0comeback", true);
             zeroPousse.SetBool("0Pousse", false);
+            sonPierres.Play();
         }
         
         Reponse();
@@ -121,12 +133,14 @@ public class animatorSphynx : MonoBehaviour
             reponse.Add('1');
             unPousse.SetBool("1move", true);
             unPousse.SetBool("1comeback", false);
+            sonPierres.Play();
         }
         else
         {
             reponse.Remove('1');
             unPousse.SetBool("1comeback", true);
             unPousse.SetBool("1move", false);
+            sonPierres.Play();
         }
         
         Reponse();
@@ -141,12 +155,14 @@ public class animatorSphynx : MonoBehaviour
             reponse.Add('2');
             deuxPousse.SetBool("2move",true);
             deuxPousse.SetBool("2comeback", false);
+            sonPierres.Play();
         }
         else
         {
             reponse.Remove('2');
             deuxPousse.SetBool("2move", false);
             deuxPousse.SetBool("2comeback", true);
+            sonPierres.Play();
         }
         Reponse();
 
@@ -160,12 +176,14 @@ public class animatorSphynx : MonoBehaviour
             reponse.Add('3');
             troisPousse.SetBool("3move", true);
             troisPousse.SetBool("3comeback", false);
+            sonPierres.Play();
         }
         else
         {
             reponse.Remove('3');
             troisPousse.SetBool("3move", false);
             troisPousse.SetBool("3comeback", true);
+            sonPierres.Play();
         }
         Reponse();
 
@@ -179,12 +197,14 @@ public class animatorSphynx : MonoBehaviour
             reponse.Add('4');
             quatrePousse.SetBool("4move", true);
             quatrePousse.SetBool("4comeback", false);
+            sonPierres.Play();
         }
         else
         {
             reponse.Remove('4');
             quatrePousse.SetBool("4move", false);
             quatrePousse.SetBool("4comeback", true);
+            sonPierres.Play();
         }
         Reponse();
 
@@ -198,12 +218,14 @@ public class animatorSphynx : MonoBehaviour
             reponse.Add('5');
             cinqPousse.SetBool("5move", true);
             cinqPousse.SetBool("5comeback", false);
+            sonPierres.Play();
         }
         else
         {
             reponse.Remove('5');
             cinqPousse.SetBool("5move", false);
             cinqPousse.SetBool("5comeback", true);
+            sonPierres.Play();
         }
         Reponse();
 
@@ -217,12 +239,14 @@ public class animatorSphynx : MonoBehaviour
             reponse.Add('6');
             sixPousse.SetBool("6move", true);
             sixPousse.SetBool("6comeback", false);
+            sonPierres.Play();
         }
         else
         {
             reponse.Remove('6');
             sixPousse.SetBool("6move", false);
             sixPousse.SetBool("6comeback", true);
+            sonPierres.Play();
         }
         Reponse();
 
@@ -236,12 +260,14 @@ public class animatorSphynx : MonoBehaviour
             reponse.Add('7');
             septPousse.SetBool("7move", true);
             septPousse.SetBool("7comeback", false);
+            sonPierres.Play();
         }
         else
         {
             reponse.Remove('7');
             septPousse.SetBool("7move", false);
             septPousse.SetBool("7comeback", true);
+            sonPierres.Play();
         }
         Reponse();
 
@@ -254,12 +280,14 @@ public class animatorSphynx : MonoBehaviour
             reponse.Add('8');
             huitPousse.SetBool("8move", true);
             huitPousse.SetBool("8comeback", false);
+            sonPierres.Play();
         }
         else
         {
             reponse.Remove('8');
             huitPousse.SetBool("8move", false);
             huitPousse.SetBool("8comeback", true);
+            sonPierres.Play();
         }
         Reponse();
 
@@ -274,12 +302,14 @@ public class animatorSphynx : MonoBehaviour
             reponse.Add('9');
             neufPousse.SetBool("9move", true);
             neufPousse.SetBool("9comeback", false);
+            sonPierres.Play();
         }
         else
         {
             reponse.Remove('9');
             neufPousse.SetBool("9move", false);
             neufPousse.SetBool("9comeback", true);
+            sonPierres.Play();
         }
         Reponse();
 
@@ -329,8 +359,10 @@ public class animatorSphynx : MonoBehaviour
         {
             print("bonne réponse");
             anim.SetBool("SphynxMove", true);
+            sonSphynx.Play();
+
             //pour la temporisation
-            StartCoroutine(ExampleCoroutine());
+            StartCoroutine(sphynxCoroutine());
            
 
         }

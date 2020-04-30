@@ -253,8 +253,8 @@ public class Enigme : MonoBehaviour
         List<string> SuiteDifficile2 = new List<string>() { "20", "4", "60", "80", "10", "10", "14", "??" };
 
         //déclaration des solutions des suites compliquées
-        string SolutionSuiteDifficile1 = "22";
-        string SolutionSuiteDifficile2 = "22";
+        string SolutionSuiteDifficile1 = "21";
+        string SolutionSuiteDifficile2 = "21";
 
         //on fait les listes composées de toutes les listes
         List<List<string>> SuitesFaciles = new List<List<string>>() { SuiteFacile1, SuiteFacile2 };

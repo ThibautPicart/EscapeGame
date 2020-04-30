@@ -17,8 +17,8 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        firstPlayInt = PlayerPrefs.GetInt(FirstPlayPref);      
-
+        firstPlayInt = PlayerPrefs.GetInt(FirstPlayPref);
+        
         if(firstPlayInt == 0)
         {
             print("je passe pour la première fois ");

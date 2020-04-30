@@ -9,27 +9,19 @@ public class displayText : MonoBehaviour
     // Update is called once per frame
 
    
-    [SerializeField] private Image text;
-    [SerializeField] private Image croix;
+    public GameObject text;
+    public GameObject player;
+    public GameObject tablette;
 
-    void Start()
-    {
-        //text.enabled = false;
-    }
 
     public void OnMouseDown()
       {
-        print("click");
-        text.enabled = true;
-        croix.enabled = true;
+        if ((Vector3.Distance(tablette.transform.position, player.transform.position)) < 2)
+        {
+            text.SetActive(true);
+        }
+        
         
       }
 
-    public void exitImage()
-    {
-        text.enabled = false;
-        croix.enabled = false;
-        print("bhbh");
-    }
-    
 }

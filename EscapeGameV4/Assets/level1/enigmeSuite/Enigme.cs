@@ -225,32 +225,36 @@ public class Enigme : MonoBehaviour
     private static readonly string levelDifficulty = "levelDifficulty";
     private string levelString;
 
+    public List<string> SuiteChosen;
+    public string Solution;
+    public string SolutionChosen;
+
     // Start is called before the first frame update
     void Start()
     {
         //déclaration des suites faciles
-        List<string> SuiteFacile1 = new List<string>() { "00", "00", "00", "00", "00", "00", "??","00" };
-        List<string> SuiteFacile2 = new List<string>() { "2", "4", "6", "8", "10", "12", "14","??" };
+        List<string> SuiteFacile1 = new List<string>() { "0", "1", "2", "00", "00", "00", "??", "00" };
+        List<string> SuiteFacile2 = new List<string>() { "2", "4", "6", "8", "10", "12", "14", "??" };
 
         //déclaration des solutions des suites faciles
-        string SolutionSuiteFacile1 = "16";
-        string SolutionSuiteFacile2 = "16";
+        string SolutionSuiteFacile1 = "0";
+        string SolutionSuiteFacile2 = "0";
 
         // déclaration des suite intermédiaires
-        List<string> SuiteIntermediaire1 = new List<string>() { "10", "20", "30", "40", "50", "60", "70","??" };
-        List<string> SuiteIntermediaire2 = new List<string>() { "20", "40", "60", "80", "100", "120", "140","??" };
+        List<string> SuiteIntermediaire1 = new List<string>() { "10", "20", "30", "40", "50", "60", "70", "??" };
+        List<string> SuiteIntermediaire2 = new List<string>() { "20", "40", "60", "80", "100", "120", "140", "??" };
 
         //déclaration des solutions des suites intermediaires
-        string SolutionSuiteIntermediaire1 = "00";
-        string SolutionSuiteIntermediaire2 = "16";
+        string SolutionSuiteIntermediaire1 = "11";
+        string SolutionSuiteIntermediaire2 = "11";
 
         //déclaration des suite compliquées
-        List<string> SuiteDifficile1 = new List<string>() { "0", "1", "10", "11", "??", "5", "6","7" };
-        List<string> SuiteDifficile2 = new List<string>() { "20", "4", "60", "80", "10", "10", "14","??"};
+        List<string> SuiteDifficile1 = new List<string>() { "0", "1", "10", "11", "??", "5", "6", "7" };
+        List<string> SuiteDifficile2 = new List<string>() { "20", "4", "60", "80", "10", "10", "14", "??" };
 
         //déclaration des solutions des suites compliquées
-        string SolutionSuiteDifficile1 = "00";
-        string SolutionSuiteDifficile2 = "16";
+        string SolutionSuiteDifficile1 = "22";
+        string SolutionSuiteDifficile2 = "22";
 
         //on fait les listes composées de toutes les listes
         List<List<string>> SuitesFaciles = new List<List<string>>() { SuiteFacile1, SuiteFacile2 };
@@ -267,13 +271,13 @@ public class Enigme : MonoBehaviour
         int NombreSuitesFaciles = SuitesFaciles.Count;
         int NombreSuitesIntermediaires = SuitesIntermediaires.Count;
         int NombreSuitesDifficiles = SuitesDifficiles.Count;
-       
+
         levelString = PlayerPrefs.GetString(levelDifficulty);
         print(levelString);
 
 
-        
-        if (levelString== "Easy")
+
+        if (levelString == "Easy")
         {
             int randomInt = Random.Range(0, NombreSuitesFaciles); //Génère un entier compris entre 0 et le nombre d'élément de la liste
             print("le nombre tiré au hasard est :" + randomInt);
@@ -281,1517 +285,1549 @@ public class Enigme : MonoBehaviour
             List<string> EasyRandom = SuitesFaciles[randomInt];
 
             //je selectionne aussi la bonne réponse correpondante afin de l'envoyer danns le script qui fait bouger le sphynx
-            string Solution = SolutionsFaciles[randomInt];
+            Solution = SolutionsFaciles[randomInt];
 
             //j'écris la suite selectionnée dans la console
-            print("la suite tirée au hasard est :"+EasyRandom[0]+","+ EasyRandom[1] + ","+EasyRandom[2] +","+ EasyRandom[3] +","+ EasyRandom[4] +","+ EasyRandom[5] +","+ EasyRandom[6] );
-            List<string> SuiteChosen = EasyRandom;
-            string SolutionChosen = Solution;
+            print("la suite tirée au hasard est :" + EasyRandom[0] + "," + EasyRandom[1] + "," + EasyRandom[2] + "," + EasyRandom[3] + "," + EasyRandom[4] + "," + EasyRandom[5] + "," + EasyRandom[6]);
+            SuiteChosen = EasyRandom;
+            SolutionChosen = Solution;
+
+        }
 
 
-            //à partir de maintenant le code que je veux mettre à l'exterieur des blocs if
+        else if (levelString == "Intermediate")
+        {
+            int randomInt = Random.Range(0, NombreSuitesIntermediaires); //Génère un entier compris entre 0 et le nombre d'élément de la liste
+            print("le nombre tiré au hasard est :" + randomInt);
+            //on va donc selectionner la bonne suite maintenant
+            List<string> IntermediateRandom = SuitesIntermediaires[randomInt];
 
-            //j'envoi la solution au script du sphynx => je créer un playerPref
-            PlayerPrefs.SetString(solutionSuite, SolutionChosen);
+            //je selectionne aussi la bonne réponse correpondante afin de l'envoyer danns le script qui fait bouger le sphynx
+            Solution = SolutionsIntermediaires[randomInt];
 
-            string nombre;
-            int nombreDeChiffre;
-            for (int i = 0; i < SuiteChosen.Count; ++i)
+            //j'écris la suite selectionnée dans la console
+            print("la suite tirée au hasard est :" + IntermediateRandom[0] + "," + IntermediateRandom[1] + "," + IntermediateRandom[2] + "," + IntermediateRandom[3] + "," + IntermediateRandom[4] + "," + IntermediateRandom[5] + "," + IntermediateRandom[6]);
+            SuiteChosen = IntermediateRandom;
+            SolutionChosen = Solution;
+        }
+
+        else //if(levelString == "Difficult")
+        {
+            int randomInt = Random.Range(0, NombreSuitesDifficiles); //Génère un entier compris entre 0 et le nombre d'élément de la liste
+            print("le nombre tiré au hasard est :" + randomInt);
+            //on va donc selectionner la bonne suite maintenant
+            List<string> DifficileRandom = SuitesDifficiles[randomInt];
+
+            //je selectionne aussi la bonne réponse correpondante afin de l'envoyer danns le script qui fait bouger le sphynx
+            Solution = SolutionsDifficiles[randomInt];
+
+            //j'écris la suite selectionnée dans la console
+            print("la suite tirée au hasard est :" + DifficileRandom[0] + "," + DifficileRandom[1] + "," + DifficileRandom[2] + "," + DifficileRandom[3] + "," + DifficileRandom[4] + "," + DifficileRandom[5] + "," + DifficileRandom[6]);
+            SuiteChosen = DifficileRandom;
+            SolutionChosen = Solution;
+
+
+        }
+
+        //à partir de maintenant le code que je veux mettre à l'exterieur des blocs if
+
+        //j'envoi la solution au script du sphynx => je créer un playerPref
+        PlayerPrefs.SetString(solutionSuite, SolutionChosen);
+
+        string nombre;
+        int nombreDeChiffre;
+        for (int i = 0; i < SuiteChosen.Count; ++i)
+        {
+            nombre = SuiteChosen[i];
+            //print("le " + (i+1) + " eme nombre de la suite est :" + nombre);
+            //maintenant on va séparé le nombre en chiffre si il est composé de plus de 1 chiffre
+            nombreDeChiffre = nombre.Length;
+            print(nombre + " est composé de " + nombreDeChiffre + " chiffre(s)");
+
+            //on va donc créer une liste composé de chaque chiffre du nombre
+            List<char> Nombre = new List<char>();
+            for (int j = 0; j < nombreDeChiffre; ++j)
             {
-                nombre = SuiteChosen[i];
-                //print("le " + (i+1) + " eme nombre de la suite est :" + nombre);
-                //maintenant on va séparé le nombre en chiffre si il est composé de plus de 1 chiffre
-                nombreDeChiffre = nombre.Length;
-                print(nombre + " est composé de " + nombreDeChiffre + " chiffre(s)");
-
-                //on va donc créer une liste composé de chaque chiffre du nombre
-                List<char> Nombre = new List<char>();
-                for(int j=0;j< nombreDeChiffre; ++j)
+                Nombre.Add(nombre[j]);//la liste Nombre contient donc chaque caractère composant le nombre = chaque chiffe
+                                      //associer le chiffre à l'image
+                                      //print(Nombre[j]);
+                if (Nombre[j] == '?')
                 {
-                    Nombre.Add(nombre[j]);//la liste Nombre contient donc chaque caractère composant le nombre = chaque chiffe
-                                          //associer le chiffre à l'image
-                                          //print(Nombre[j]);
-                    if (Nombre[j] == '?')
+                    //print("on va y arriver");
+                    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                    //on va donc chercher sur quel canvas on met l'image maintenant
+                    if (i == 0)//premier poteau car i va de 0 à 7
                     {
-                        //print("on va y arriver");
-                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                        //on va donc chercher sur quel canvas on met l'image maintenant
-                        if (i == 0)//premier poteau car i va de 0 à 7
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre pour trouver le bon canevas
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre pour trouver le bon canevas
-                            {
-                                print("prmier chiffre du nombre");
-                                //on va donc mettre un zéro sur le canvas0
-                                interrogationC0.enabled = true;
-
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième chiffre du nombre");
-                                //on va mettre un zéro dans le canevas1
-                                
-                                interrogationC1.enabled = true;
-                            }
+                            print("prmier chiffre du nombre");
+                            //on va donc mettre un zéro sur le canvas0
+                            interrogationC0.enabled = true;
 
                         }
-                        else if (i == 1)//deuxième poteau
+                        else//si c'est le deuxième chiffre du nommbre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("prmier chiffre du nombre");
-                                interrogationC2.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième chiffre du nombre");
-                                interrogationC3.enabled = true;
-                            }
-                        }
-                        else if (i == 2)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("prmier chiffre du nombre");
-                                interrogationC4.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième chiffre du nombre");
-                                interrogationC5.enabled = true;
-                            }
+                            print("deuxième chiffre du nombre");
+                            //on va mettre un zéro dans le canevas1
+
+                            interrogationC1.enabled = true;
                         }
 
-                        else if (i == 3)
+                    }
+                    else if (i == 1)//deuxième poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("prmier chiffre du nombre");
-                                interrogationC6.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième chiffre du nombre");
-                                interrogationC7.enabled = true;
-                            }
+                            print("prmier chiffre du nombre");
+                            interrogationC2.enabled = true;
                         }
-
-                        else if (i == 4)
+                        else//si c'est le deuxième chiffre du nommbre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("prmier chiffre du nombre");
-                                interrogationC8.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième chiffre du nombre");
-                                interrogationC9.enabled = true;
-                            }
+                            print("deuxième chiffre du nombre");
+                            interrogationC3.enabled = true;
                         }
-
-                        else if (i == 5)
+                    }
+                    else if (i == 2)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("prmier chiffre du nombre");
-                                interrogationC10.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième chiffre du nombre");
-                                interrogationC11.enabled = true;
-                            }
+                            print("prmier chiffre du nombre");
+                            interrogationC4.enabled = true;
                         }
-
-                        else if (i == 6)
+                        else//si c'est le deuxième chiffre du nommbre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("prmier chiffre du nombre");
-                                interrogationC12.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième chiffre du nombre");
-                                interrogationC13.enabled = true;
-                            }
-                        }
-
-                        else //if (i == 7)//8eme poteau
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("prmier chiffre du nombre");
-                                interrogationC14.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième chiffre du nombre");
-                                interrogationC15.enabled = true;
-                            }
+                            print("deuxième chiffre du nombre");
+                            interrogationC5.enabled = true;
                         }
                     }
 
-                        if (Nombre[j] == '0')
+                    else if (i == 3)
                     {
-                        //print("on va y arriver");
-                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                        //on va donc chercher sur quel canvas on met l'image maintenant
-                        if (i == 0)//premier poteau car i va de 0 à 7
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre pour trouver le bon canevas
-                            {
-                                print("prmier chiffre du nombre");
-                                //on va donc mettre un zéro sur le canvas0
-                                zeroC0.enabled = true;
-
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième chiffre du nombre");
-                                //on va mettre un zéro dans le canevas1
-                                zeroC1.enabled = true;
-                            }
-
+                            print("prmier chiffre du nombre");
+                            interrogationC6.enabled = true;
                         }
-                        else if (i == 1)//deuxième poteau
+                        else//si c'est le deuxième chiffre du nommbre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("prmier chiffre du nombre");
-                                zeroC2.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième chiffre du nombre");
-                                zeroC3.enabled = true;
-                            }
+                            print("deuxième chiffre du nombre");
+                            interrogationC7.enabled = true;
                         }
-                        else if (i == 2)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("prmier chiffre du nombre");
-                                zeroC4.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième chiffre du nombre");
-                                zeroC5.enabled = true;
-                            }
-                        }
-
-                        else if (i == 3)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("prmier chiffre du nombre");
-                                zeroC6.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième chiffre du nombre");
-                                zeroC7.enabled = true;
-                            }
-                        }
-
-                        else if (i == 4)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("prmier chiffre du nombre");
-                                zeroC8.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième chiffre du nombre");
-                                zeroC9.enabled = true;
-                            }
-                        }
-
-                        else if (i == 5)
-                        {
-                           //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("prmier chiffre du nombre");
-                                zeroC10.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième chiffre du nombre");
-                                zeroC11.enabled = true;
-                            }
-                        }
-
-                        else if (i == 6)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("prmier chiffre du nombre");
-                                zeroC12.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième chiffre du nombre");
-                                zeroC13.enabled = true;
-                            }
-                        }
-
-                        else //if (i == 7)//8eme poteau
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("prmier chiffre du nombre");
-                                zeroC14.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième chiffre du nombre");
-                                zeroC15.enabled = true;
-                            }
-                        }
-
-                        
-
-
                     }
 
-                    if (Nombre[j] == '1')
+                    else if (i == 4)
                     {
-                        //print("on va y arriver");
-                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                        //on va donc chercher sur quel canvas on met l'image maintenant
-                        if (i == 0)//premier poteau
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                unC0.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                unC1.enabled = true;
-                            }
-
+                            print("prmier chiffre du nombre");
+                            interrogationC8.enabled = true;
                         }
-                        else if (i == 1)//deuxième poteau
+                        else//si c'est le deuxième chiffre du nommbre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                unC2.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                unC3.enabled = true;
-                            }
+                            print("deuxième chiffre du nombre");
+                            interrogationC9.enabled = true;
                         }
-                        else if (i == 2)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                unC4.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                unC5.enabled = true;
-                            }
-                        }
-
-                        else if (i == 3)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                unC6.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                unC7.enabled = true;
-                            }
-                        }
-
-                        else if (i == 4)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                unC8.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                unC9.enabled = true;
-                            }
-                        }
-
-                        else if (i == 5)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                unC10.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                unC11.enabled = true;
-                            }
-                        }
-
-                        else if (i == 6)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                unC12.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                unC13.enabled = true;
-                            }
-                        }
-
-                        else //if (i == 7)//8eme poteau
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                unC14.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                unC15.enabled = true;
-                            }
-                        }
-
-
-
-
                     }
 
-                    if (Nombre[j] == '2')
+                    else if (i == 5)
                     {
-                        //print("on va y arriver");
-                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                        //on va donc chercher sur quel canvas on met l'image maintenant
-                        if (i == 0)//premier poteau
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                deuxC0.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                deuxC1.enabled = true;
-                            }
-
+                            print("prmier chiffre du nombre");
+                            interrogationC10.enabled = true;
                         }
-                        else if (i == 1)//deuxième poteau
+                        else//si c'est le deuxième chiffre du nommbre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                deuxC2.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                deuxC3.enabled = true;
-                            }
+                            print("deuxième chiffre du nombre");
+                            interrogationC11.enabled = true;
                         }
-                        else if (i == 2)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                deuxC4.enabled = true;
-
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                deuxC5.enabled = true;
-                            }
-                        }
-
-                        else if (i == 3)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                deuxC6.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                deuxC7.enabled = true;
-                            }
-                        }
-
-                        else if (i == 4)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                deuxC8.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                deuxC9.enabled = true;
-                            }
-                        }
-
-                        else if (i == 5)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                deuxC10.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                deuxC11.enabled = true;
-                            }
-                        }
-
-                        else if (i == 6)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                deuxC12.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                deuxC13.enabled = true;
-                            }
-                        }
-
-                        else //if (i == 7)//8eme poteau
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                deuxC14.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                deuxC15.enabled = true;
-                            }
-                        }
-
-
-
-
                     }
 
-                    if (Nombre[j] == '3')
+                    else if (i == 6)
                     {
-                        //print("on va y arriver");
-                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                        //on va donc chercher sur quel canvas on met l'image maintenant
-                        if (i == 0)//premier poteau
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                troisC0.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                troisC1.enabled = true;
-                            }
-
+                            print("prmier chiffre du nombre");
+                            interrogationC12.enabled = true;
                         }
-                        else if (i == 1)//deuxième poteau
+                        else//si c'est le deuxième chiffre du nommbre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                troisC2.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                troisC3.enabled = true;
-                            }
+                            print("deuxième chiffre du nombre");
+                            interrogationC13.enabled = true;
                         }
-                        else if (i == 2)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                troisC4.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                troisC5.enabled = true;
-                            }
-                        }
-
-                        else if (i == 3)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                troisC6.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                troisC7.enabled = true;
-                            }
-                        }
-
-                        else if (i == 4)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                troisC8.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                troisC9.enabled = true;
-                            }
-                        }
-
-                        else if (i == 5)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                troisC10.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                troisC11.enabled = true;
-                            }
-                        }
-
-                        else if (i == 6)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                troisC12.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                troisC13.enabled = true;
-                            }
-                        }
-
-                        else //if (i == 7)//8eme poteau
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                troisC14.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                troisC15.enabled = true;
-                            }
-                        }
-
-
-
-
                     }
 
-                    if (Nombre[j] == '4')
+                    else //if (i == 7)//8eme poteau
                     {
-                        //print("on va y arriver");
-                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                        //on va donc chercher sur quel canvas on met l'image maintenant
-                        if (i == 0)//premier poteau
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                quatreC0.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                quatreC1.enabled = true;
-                            }
+                            print("prmier chiffre du nombre");
+                            interrogationC14.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième chiffre du nombre");
+                            interrogationC15.enabled = true;
+                        }
+                    }
+                }
+
+                if (Nombre[j] == '0')
+                {
+                    //print("on va y arriver");
+                    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                    //on va donc chercher sur quel canvas on met l'image maintenant
+                    if (i == 0)//premier poteau car i va de 0 à 7
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre pour trouver le bon canevas
+                        {
+                            print("prmier chiffre du nombre");
+                            //on va donc mettre un zéro sur le canvas0
+                            zeroC0.enabled = true;
 
                         }
-                        else if (i == 1)//deuxième poteau
+                        else//si c'est le deuxième chiffre du nommbre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                quatreC2.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                quatreC3.enabled = true;
-                            }
+                            print("deuxième chiffre du nombre");
+                            //on va mettre un zéro dans le canevas1
+                            zeroC1.enabled = true;
                         }
-                        else if (i == 2)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                quatreC4.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                quatreC5.enabled = true;
-                            }
-                        }
-
-                        else if (i == 3)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                quatreC6.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                quatreC7.enabled = true;
-                            }
-                        }
-
-                        else if (i == 4)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                quatreC8.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                quatreC9.enabled = true;
-                            }
-                        }
-
-                        else if (i == 5)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                quatreC10.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                quatreC11.enabled = true;
-                            }
-                        }
-
-                        else if (i == 6)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                quatreC12.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                quatreC13.enabled = true;
-                            }
-                        }
-
-                        else //if (i == 7)//8eme poteau
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                quatreC14.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                quatreC15.enabled = true;
-                            }
-                        }
-
-
-
 
                     }
-
-                    if (Nombre[j] == '5')
+                    else if (i == 1)//deuxième poteau
                     {
-                        //print("on va y arriver");
-                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                        //on va donc chercher sur quel canvas on met l'image maintenant
-                        if (i == 0)//premier poteau
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                cinqC0.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                cinqC1.enabled = true;
-                            }
-
+                            print("prmier chiffre du nombre");
+                            zeroC2.enabled = true;
                         }
-                        else if (i == 1)//deuxième poteau
+                        else//si c'est le deuxième chiffre du nommbre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                cinqC2.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                cinqC3.enabled = true;
-                            }
+                            print("deuxième chiffre du nombre");
+                            zeroC3.enabled = true;
                         }
-                        else if (i == 2)
+                    }
+                    else if (i == 2)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                cinqC4.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                cinqC5.enabled = true;
-                            }
+                            print("prmier chiffre du nombre");
+                            zeroC4.enabled = true;
                         }
-
-                        else if (i == 3)
+                        else//si c'est le deuxième chiffre du nommbre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                cinqC6.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                cinqC7.enabled = true;
-                            }
+                            print("deuxième chiffre du nombre");
+                            zeroC5.enabled = true;
                         }
-
-                        else if (i == 4)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                cinqC8.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                cinqC9.enabled = true;
-                            }
-                        }
-
-                        else if (i == 5)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                cinqC10.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                cinqC11.enabled = true;
-                            }
-                        }
-
-                        else if (i == 6)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                cinqC12.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                cinqC13.enabled = true;
-                            }
-                        }
-
-                        else //if (i == 7)//8eme poteau
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                cinqC14.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                cinqC15.enabled = true;
-                            }
-                        }
-
-
-
-
                     }
 
-                    if (Nombre[j] == '6')
+                    else if (i == 3)
                     {
-                        //print("on va y arriver");
-                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                        //on va donc chercher sur quel canvas on met l'image maintenant
-                        if (i == 0)//premier poteau
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                sixC0.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                sixC1.enabled = true;
-
-                            }
-
+                            print("prmier chiffre du nombre");
+                            zeroC6.enabled = true;
                         }
-                        else if (i == 1)//deuxième poteau
+                        else//si c'est le deuxième chiffre du nommbre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                sixC2.enabled = true;
-
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                sixC3.enabled = true;
-
-                            }
+                            print("deuxième chiffre du nombre");
+                            zeroC7.enabled = true;
                         }
-                        else if (i == 2)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                sixC4.enabled = true;
-
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                sixC5.enabled = true;
-
-                            }
-                        }
-
-                        else if (i == 3)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                sixC6.enabled = true;
-
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                sixC7.enabled = true;
-
-                            }
-                        }
-
-                        else if (i == 4)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                sixC8.enabled = true;
-
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                sixC9.enabled = true;
-
-                            }
-                        }
-
-                        else if (i == 5)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                sixC10.enabled = true;
-
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                sixC11.enabled = true;
-
-                            }
-                        }
-
-                        else if (i == 6)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                sixC12.enabled = true;
-
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                sixC13.enabled = true;
-
-                            }
-                        }
-
-                        else //if (i == 7)//8eme poteau
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                sixC14.enabled = true;
-
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                sixC15.enabled = true;
-
-                            }
-                        }
-
-
-
-
                     }
 
-                    if (Nombre[j] == '7')
+                    else if (i == 4)
                     {
-                        //print("on va y arriver");
-                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                        //on va donc chercher sur quel canvas on met l'image maintenant
-                        if (i == 0)//premier poteau
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                septC0.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                septC1.enabled = true;
-                            }
-
+                            print("prmier chiffre du nombre");
+                            zeroC8.enabled = true;
                         }
-                        else if (i == 1)//deuxième poteau
+                        else//si c'est le deuxième chiffre du nommbre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                septC2.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                septC3.enabled = true;
-                            }
+                            print("deuxième chiffre du nombre");
+                            zeroC9.enabled = true;
                         }
-                        else if (i == 2)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                septC4.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                septC5.enabled = true;
-                            }
-                        }
-
-                        else if (i == 3)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                septC6.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                septC7.enabled = true;
-                            }
-                        }
-
-                        else if (i == 4)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                septC8.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                septC9.enabled = true;
-                            }
-                        }
-
-                        else if (i == 5)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                septC10.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                septC11.enabled = true;
-                            }
-                        }
-
-                        else if (i == 6)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                septC12.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                septC13.enabled = true;
-                            }
-                        }
-
-                        else //if (i == 7)//8eme poteau
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                septC14.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                septC15.enabled = true;
-                            }
-                        }
-
-
-
-
                     }
 
-                    if (Nombre[j] == '8')
+                    else if (i == 5)
                     {
-                        //print("on va y arriver");
-                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                        //on va donc chercher sur quel canvas on met l'image maintenant
-                        if (i == 0)//premier poteau
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                huitC0.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                huitC1.enabled = true;
-                            }
-
+                            print("prmier chiffre du nombre");
+                            zeroC10.enabled = true;
                         }
-                        else if (i == 1)//deuxième poteau
+                        else//si c'est le deuxième chiffre du nommbre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                huitC2.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                huitC3.enabled = true;
-                            }
+                            print("deuxième chiffre du nombre");
+                            zeroC11.enabled = true;
                         }
-                        else if (i == 2)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                huitC4.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                huitC5.enabled = true;
-                            }
-                        }
-
-                        else if (i == 3)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                huitC6.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                huitC7.enabled = true;
-                            }
-                        }
-
-                        else if (i == 4)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                huitC8.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                huitC9.enabled = true;
-                            }
-                        }
-
-                        else if (i == 5)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                huitC10.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                huitC11.enabled = true;
-                            }
-                        }
-
-                        else if (i == 6)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                huitC12.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                huitC13.enabled = true;
-                            }
-                        }
-
-                        else //if (i == 7)//8eme poteau
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                huitC14.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                huitC15.enabled = true;
-                            }
-                        }
-
-
-
-
                     }
 
-                    if (Nombre[j] == '9')
+                    else if (i == 6)
                     {
-                        //print("on va y arriver");
-                        //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
-                        //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
-
-
-                        //on va donc chercher sur quel canvas on met l'image maintenant
-                        if (i == 0)//premier poteau
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                neufC0.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                neufC1.enabled = true;
-                            }
-
+                            print("prmier chiffre du nombre");
+                            zeroC12.enabled = true;
                         }
-                        else if (i == 1)//deuxième poteau
+                        else//si c'est le deuxième chiffre du nommbre
                         {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                neufC2.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                neufC3.enabled = true;
-                            }
+                            print("deuxième chiffre du nombre");
+                            zeroC13.enabled = true;
                         }
-                        else if (i == 2)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                neufC4.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                neufC5.enabled = true;
-                            }
-                        }
-
-                        else if (i == 3)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                neufC6.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                neufC7.enabled = true;
-                            }
-                        }
-
-                        else if (i == 4)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                neufC8.enabled = true;
-
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                neufC9.enabled = true;
-                            }
-                        }
-
-                        else if (i == 5)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                neufC10.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                neufC11.enabled = true;
-                            }
-                        }
-
-                        else if (i == 6)
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                neufC12.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                neufC13.enabled = true;
-                            }
-                        }
-
-                        else //if (i == 7)//8eme poteau
-                        {
-                            //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
-                            if (j == 0)//si c'est le premier chiffre
-                            {
-                                print("premier chiffre du nombre");
-                                neufC14.enabled = true;
-                            }
-                            else//si c'est le deuxième chiffre du nommbre
-                            {
-                                print("deuxième  chiffre du nombre");
-                                neufC15.enabled = true;
-                            }
-                        }
-
-
-
-
                     }
 
-
-
+                    else //if (i == 7)//8eme poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("prmier chiffre du nombre");
+                            zeroC14.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième chiffre du nombre");
+                            zeroC15.enabled = true;
+                        }
+                    }
 
 
 
 
                 }
-                
-                
+
+                if (Nombre[j] == '1')
+                {
+                    //print("on va y arriver");
+                    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                    //on va donc chercher sur quel canvas on met l'image maintenant
+                    if (i == 0)//premier poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            unC0.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            unC1.enabled = true;
+                        }
+
+                    }
+                    else if (i == 1)//deuxième poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            unC2.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            unC3.enabled = true;
+                        }
+                    }
+                    else if (i == 2)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            unC4.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            unC5.enabled = true;
+                        }
+                    }
+
+                    else if (i == 3)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            unC6.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            unC7.enabled = true;
+                        }
+                    }
+
+                    else if (i == 4)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            unC8.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            unC9.enabled = true;
+                        }
+                    }
+
+                    else if (i == 5)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            unC10.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            unC11.enabled = true;
+                        }
+                    }
+
+                    else if (i == 6)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            unC12.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            unC13.enabled = true;
+                        }
+                    }
+
+                    else //if (i == 7)//8eme poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            unC14.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            unC15.enabled = true;
+                        }
+                    }
+
+
+
+
+                }
+
+                if (Nombre[j] == '2')
+                {
+                    //print("on va y arriver");
+                    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                    //on va donc chercher sur quel canvas on met l'image maintenant
+                    if (i == 0)//premier poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            deuxC0.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            deuxC1.enabled = true;
+                        }
+
+                    }
+                    else if (i == 1)//deuxième poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            deuxC2.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            deuxC3.enabled = true;
+                        }
+                    }
+                    else if (i == 2)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            deuxC4.enabled = true;
+
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            deuxC5.enabled = true;
+                        }
+                    }
+
+                    else if (i == 3)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            deuxC6.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            deuxC7.enabled = true;
+                        }
+                    }
+
+                    else if (i == 4)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            deuxC8.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            deuxC9.enabled = true;
+                        }
+                    }
+
+                    else if (i == 5)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            deuxC10.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            deuxC11.enabled = true;
+                        }
+                    }
+
+                    else if (i == 6)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            deuxC12.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            deuxC13.enabled = true;
+                        }
+                    }
+
+                    else //if (i == 7)//8eme poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            deuxC14.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            deuxC15.enabled = true;
+                        }
+                    }
+
+
+
+
+                }
+
+                if (Nombre[j] == '3')
+                {
+                    //print("on va y arriver");
+                    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                    //on va donc chercher sur quel canvas on met l'image maintenant
+                    if (i == 0)//premier poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            troisC0.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            troisC1.enabled = true;
+                        }
+
+                    }
+                    else if (i == 1)//deuxième poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            troisC2.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            troisC3.enabled = true;
+                        }
+                    }
+                    else if (i == 2)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            troisC4.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            troisC5.enabled = true;
+                        }
+                    }
+
+                    else if (i == 3)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            troisC6.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            troisC7.enabled = true;
+                        }
+                    }
+
+                    else if (i == 4)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            troisC8.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            troisC9.enabled = true;
+                        }
+                    }
+
+                    else if (i == 5)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            troisC10.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            troisC11.enabled = true;
+                        }
+                    }
+
+                    else if (i == 6)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            troisC12.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            troisC13.enabled = true;
+                        }
+                    }
+
+                    else //if (i == 7)//8eme poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            troisC14.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            troisC15.enabled = true;
+                        }
+                    }
+
+
+
+
+                }
+
+                if (Nombre[j] == '4')
+                {
+                    //print("on va y arriver");
+                    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                    //on va donc chercher sur quel canvas on met l'image maintenant
+                    if (i == 0)//premier poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            quatreC0.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            quatreC1.enabled = true;
+                        }
+
+                    }
+                    else if (i == 1)//deuxième poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            quatreC2.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            quatreC3.enabled = true;
+                        }
+                    }
+                    else if (i == 2)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            quatreC4.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            quatreC5.enabled = true;
+                        }
+                    }
+
+                    else if (i == 3)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            quatreC6.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            quatreC7.enabled = true;
+                        }
+                    }
+
+                    else if (i == 4)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            quatreC8.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            quatreC9.enabled = true;
+                        }
+                    }
+
+                    else if (i == 5)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            quatreC10.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            quatreC11.enabled = true;
+                        }
+                    }
+
+                    else if (i == 6)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            quatreC12.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            quatreC13.enabled = true;
+                        }
+                    }
+
+                    else //if (i == 7)//8eme poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            quatreC14.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            quatreC15.enabled = true;
+                        }
+                    }
+
+
+
+
+                }
+
+                if (Nombre[j] == '5')
+                {
+                    //print("on va y arriver");
+                    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                    //on va donc chercher sur quel canvas on met l'image maintenant
+                    if (i == 0)//premier poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            cinqC0.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            cinqC1.enabled = true;
+                        }
+
+                    }
+                    else if (i == 1)//deuxième poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            cinqC2.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            cinqC3.enabled = true;
+                        }
+                    }
+                    else if (i == 2)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            cinqC4.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            cinqC5.enabled = true;
+                        }
+                    }
+
+                    else if (i == 3)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            cinqC6.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            cinqC7.enabled = true;
+                        }
+                    }
+
+                    else if (i == 4)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            cinqC8.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            cinqC9.enabled = true;
+                        }
+                    }
+
+                    else if (i == 5)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            cinqC10.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            cinqC11.enabled = true;
+                        }
+                    }
+
+                    else if (i == 6)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            cinqC12.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            cinqC13.enabled = true;
+                        }
+                    }
+
+                    else //if (i == 7)//8eme poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            cinqC14.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            cinqC15.enabled = true;
+                        }
+                    }
+
+
+
+
+                }
+
+                if (Nombre[j] == '6')
+                {
+                    //print("on va y arriver");
+                    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                    //on va donc chercher sur quel canvas on met l'image maintenant
+                    if (i == 0)//premier poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            sixC0.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            sixC1.enabled = true;
+
+                        }
+
+                    }
+                    else if (i == 1)//deuxième poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            sixC2.enabled = true;
+
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            sixC3.enabled = true;
+
+                        }
+                    }
+                    else if (i == 2)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            sixC4.enabled = true;
+
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            sixC5.enabled = true;
+
+                        }
+                    }
+
+                    else if (i == 3)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            sixC6.enabled = true;
+
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            sixC7.enabled = true;
+
+                        }
+                    }
+
+                    else if (i == 4)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            sixC8.enabled = true;
+
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            sixC9.enabled = true;
+
+                        }
+                    }
+
+                    else if (i == 5)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            sixC10.enabled = true;
+
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            sixC11.enabled = true;
+
+                        }
+                    }
+
+                    else if (i == 6)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            sixC12.enabled = true;
+
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            sixC13.enabled = true;
+
+                        }
+                    }
+
+                    else //if (i == 7)//8eme poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            sixC14.enabled = true;
+
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            sixC15.enabled = true;
+
+                        }
+                    }
+
+
+
+
+                }
+
+                if (Nombre[j] == '7')
+                {
+                    //print("on va y arriver");
+                    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                    //on va donc chercher sur quel canvas on met l'image maintenant
+                    if (i == 0)//premier poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            septC0.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            septC1.enabled = true;
+                        }
+
+                    }
+                    else if (i == 1)//deuxième poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            septC2.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            septC3.enabled = true;
+                        }
+                    }
+                    else if (i == 2)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            septC4.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            septC5.enabled = true;
+                        }
+                    }
+
+                    else if (i == 3)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            septC6.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            septC7.enabled = true;
+                        }
+                    }
+
+                    else if (i == 4)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            septC8.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            septC9.enabled = true;
+                        }
+                    }
+
+                    else if (i == 5)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            septC10.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            septC11.enabled = true;
+                        }
+                    }
+
+                    else if (i == 6)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            septC12.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            septC13.enabled = true;
+                        }
+                    }
+
+                    else //if (i == 7)//8eme poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            septC14.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            septC15.enabled = true;
+                        }
+                    }
+
+
+
+
+                }
+
+                if (Nombre[j] == '8')
+                {
+                    //print("on va y arriver");
+                    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                    //on va donc chercher sur quel canvas on met l'image maintenant
+                    if (i == 0)//premier poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            huitC0.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            huitC1.enabled = true;
+                        }
+
+                    }
+                    else if (i == 1)//deuxième poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            huitC2.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            huitC3.enabled = true;
+                        }
+                    }
+                    else if (i == 2)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            huitC4.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            huitC5.enabled = true;
+                        }
+                    }
+
+                    else if (i == 3)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            huitC6.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            huitC7.enabled = true;
+                        }
+                    }
+
+                    else if (i == 4)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            huitC8.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            huitC9.enabled = true;
+                        }
+                    }
+
+                    else if (i == 5)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            huitC10.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            huitC11.enabled = true;
+                        }
+                    }
+
+                    else if (i == 6)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            huitC12.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            huitC13.enabled = true;
+                        }
+                    }
+
+                    else //if (i == 7)//8eme poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            huitC14.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            huitC15.enabled = true;
+                        }
+                    }
+
+
+
+
+                }
+
+                if (Nombre[j] == '9')
+                {
+                    //print("on va y arriver");
+                    //il est important de poser d'entrer qu'on aura à chaque fois deux images par poteau par exemple on reste sur le poteau 1 c'est à dire
+                    //les canvas 0 et 1 tant que j=0 ou j=1 comme il y a 8 poteaux il y a 16 canvas (de 0 à15)
+
+
+                    //on va donc chercher sur quel canvas on met l'image maintenant
+                    if (i == 0)//premier poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            neufC0.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            neufC1.enabled = true;
+                        }
+
+                    }
+                    else if (i == 1)//deuxième poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            neufC2.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            neufC3.enabled = true;
+                        }
+                    }
+                    else if (i == 2)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            neufC4.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            neufC5.enabled = true;
+                        }
+                    }
+
+                    else if (i == 3)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            neufC6.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            neufC7.enabled = true;
+                        }
+                    }
+
+                    else if (i == 4)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            neufC8.enabled = true;
+
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            neufC9.enabled = true;
+                        }
+                    }
+
+                    else if (i == 5)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            neufC10.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            neufC11.enabled = true;
+                        }
+                    }
+
+                    else if (i == 6)
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            neufC12.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            neufC13.enabled = true;
+                        }
+                    }
+
+                    else //if (i == 7)//8eme poteau
+                    {
+                        //on va regarder si on est le premier ou le deuxième chiffre du poteau 0
+                        if (j == 0)//si c'est le premier chiffre
+                        {
+                            print("premier chiffre du nombre");
+                            neufC14.enabled = true;
+                        }
+                        else//si c'est le deuxième chiffre du nommbre
+                        {
+                            print("deuxième  chiffre du nombre");
+                            neufC15.enabled = true;
+                        }
+                    }
+
+
+
+
+                }
+
+
+
+
+
+
 
             }
 
@@ -1804,42 +1840,11 @@ public class Enigme : MonoBehaviour
 
 
 
-
-
-        else if(levelString == "Intermediate")
-            {
-            int randomInt = Random.Range(0, NombreSuitesIntermediaires); //Génère un entier compris entre 0 et le nombre d'élément de la liste
-            print("le nombre tiré au hasard est :" + randomInt);
-            //on va donc selectionner la bonne suite maintenant
-            List<string> IntermediateRandom = SuitesIntermediaires[randomInt];
-            //j'écris la suite selectionnée dans la console
-            print("la suite tirée au hasard est :" + IntermediateRandom[0] + "," + IntermediateRandom[1] + "," + IntermediateRandom[2] + "," + IntermediateRandom[3] + "," + IntermediateRandom[4] + "," + IntermediateRandom[5] + "," + IntermediateRandom[6]);
-            List<string> SuiteChosen = IntermediateRandom;
-        }
-
-         else //if(levelString == "Difficult")
-        {
-            int randomInt = Random.Range(0, NombreSuitesDifficiles); //Génère un entier compris entre 0 et le nombre d'élément de la liste
-            print("le nombre tiré au hasard est :" + randomInt);
-            //on va donc selectionner la bonne suite maintenant
-            List<string> DifficileRandom = SuitesDifficiles[randomInt];
-            //j'écris la suite selectionnée dans la console
-            print("la suite tirée au hasard est :" + DifficileRandom[0] + "," + DifficileRandom[1] + "," + DifficileRandom[2] + "," + DifficileRandom[3] + "," + DifficileRandom[4] + "," + DifficileRandom[5] + "," + DifficileRandom[6]);
-            List<string> SuiteChosen = DifficileRandom;
-            
-            
-        }
-        
-
-
-
-       
-
     }
 
 
 
     //il faut donc faire correpondre à chaque suite sa solution et lorsqu'on va cliquer sur les bons symboles sur le mur; le sphynx se décalera 
 
-  
+
 }

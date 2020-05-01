@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 
 public class equations : MonoBehaviour
 {
 
-    public Text equation;
+    //public TextMeshPro equation;
 
 
     //equation niveau facile sont des droites f(x)= ax+b
@@ -25,7 +26,7 @@ public class equations : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        equation.text = "bonjour";
+        //equation.text = "bonjour";
     }
 
     // Update is called once per frame

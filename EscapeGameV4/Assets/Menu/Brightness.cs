@@ -21,14 +21,14 @@ public class Brightness : MonoBehaviour
 
         if (firstPlayInt == 0)
         {
-            print("test");
+           // print("test");
             luminosity.value = GammaCorrection;
             PlayerPrefs.SetFloat(LuminosityPref, GammaCorrection);
             PlayerPrefs.SetInt(FirstPlayPref2, -1);
         }
         else
         {
-            print("else");
+            //print("else");
             GammaCorrection = PlayerPrefs.GetFloat(LuminosityPref);
             RenderSettings.ambientLight = new Color(GammaCorrection, GammaCorrection, GammaCorrection, 1.0f);
             luminosity.value = GammaCorrection;

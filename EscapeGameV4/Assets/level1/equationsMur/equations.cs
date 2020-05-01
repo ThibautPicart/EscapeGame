@@ -9,7 +9,7 @@ using TMPro;
 public class equations : MonoBehaviour
 {
 
-    //public TextMeshPro equation;
+    public GameObject equation;
 
 
     //equation niveau facile sont des droites f(x)= ax+b
@@ -26,6 +26,8 @@ public class equations : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        TMP_Text equationText = equation.GetComponent<TMP_Text>();
+        equationText.SetText("bonjour");
         //equation.text = "bonjour";
     }
 

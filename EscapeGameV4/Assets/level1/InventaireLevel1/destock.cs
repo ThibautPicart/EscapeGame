@@ -56,6 +56,7 @@ public class destock : MonoBehaviour
 
     void ClickOnBtnTab1()
     {
+        print("click");
         panelToRemove = TablettePanel1;
         objectADrop = tablette;
         ClickOnItemPanel.SetActive(true);
@@ -65,6 +66,7 @@ public class destock : MonoBehaviour
     public void ClickOnBtnTab2()
 
     {
+        print("click");
         panelToRemove = TablettePanel2;
         objectADrop = tablette;
         ClickOnItemPanel.SetActive(true);
@@ -74,6 +76,7 @@ public class destock : MonoBehaviour
     public void ClickOnBtnStick1()
 
     {
+        print("click");
         panelToRemove = StickPanel1;
         objectADrop = stick;
         ClickOnItemPanel.SetActive(true);
@@ -83,6 +86,7 @@ public class destock : MonoBehaviour
     public void ClickOnBtnStick2()
 
     {
+        print("click");
         panelToRemove = StickPanel2;
         objectADrop = stick;
         ClickOnItemPanel.SetActive(true);

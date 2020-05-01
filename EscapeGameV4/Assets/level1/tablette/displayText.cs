@@ -8,35 +8,20 @@ public class displayText : MonoBehaviour
 {
     // Update is called once per frame
 
-
    
     public GameObject text;
     public GameObject player;
     public GameObject tablette;
 
 
-
     public void OnMouseDown()
-    {
-
+      {
         if ((Vector3.Distance(tablette.transform.position, player.transform.position)) < 2)
         {
             text.SetActive(true);
         }
         
         
-    }
-
-
-        
-      
-
-    public void exitImage()
-    {
-        text.SetActive(false);
-        croix.enabled = false;
-        
-    }
-    
+      }
 
 }

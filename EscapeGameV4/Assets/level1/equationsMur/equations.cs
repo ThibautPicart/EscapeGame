@@ -25,7 +25,7 @@ public class equations : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        equation.text = "bonjou";
+        equation.text = "bonjour";
     }
 
     // Update is called once per frame

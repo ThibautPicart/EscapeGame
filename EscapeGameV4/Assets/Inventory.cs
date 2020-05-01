@@ -20,6 +20,7 @@ public class Inventory : MonoBehaviour
     //Déclaration de la liste de ces items
     public List<GameObject> items;
 
+    //Pour savoir si c'est la premiere fois qu'on s'approche d'un item
     public int firstTime;
 
 

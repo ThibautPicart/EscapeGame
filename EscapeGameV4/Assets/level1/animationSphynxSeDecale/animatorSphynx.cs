@@ -12,6 +12,8 @@ public class animatorSphynx : MonoBehaviour
 
     //pour mettre du son quand les pierres sont pousées où tirées par le personnage
     public AudioSource sonPierres;
+    //
+    public AudioSource egypte;
 
     //pour récuperer la solution associée à la suite qui a été tirée au sort dans le script enigme
     private static readonly string solutionSuite = "solutionSuite";
@@ -59,7 +61,7 @@ public class animatorSphynx : MonoBehaviour
     List<char> reponse = new List<char>();
 
     //pour faire la temporisation avnt de faire monter l'excalier une fois que le sphynx s'est bougé
-    public float tempsTemporisation = 9;
+    public float tempsTemporisation = 30;
 
     //pour l'animation de l'escalier
     public Animator escalier;
@@ -92,8 +94,8 @@ public class animatorSphynx : MonoBehaviour
         //pn ecris le temps la premiere fois que la fonction est appelée
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
 
-        //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(tempsTemporisation);
+        //yield on a new YieldInstruction that waits for x seconds.
+        yield return new WaitForSeconds(10);
 
         //After we have waited 5 seconds print the time again.
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);

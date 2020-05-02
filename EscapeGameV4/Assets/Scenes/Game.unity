@@ -6311,7 +6311,7 @@ GameObject:
   - component: {fileID: 331511450}
   - component: {fileID: 331511449}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: equation1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6333,7 +6333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -58.6, y: -30.4}
+  m_AnchoredPosition: {x: -62, y: -30.4}
   m_SizeDelta: {x: 163.47, y: 33.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &331511449
@@ -8250,7 +8250,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -58.6, y: -35.3}
+  m_AnchoredPosition: {x: -62.1, y: -35.3}
   m_SizeDelta: {x: 163.47, y: 33.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &440549027
@@ -22599,6 +22599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sonSphynx: {fileID: 1928754687}
   sonPierres: {fileID: 650687237}
+  egypte: {fileID: 0}
   zeroPousse: {fileID: 1444628866}
   unPousse: {fileID: 295986405}
   deuxPousse: {fileID: 828052351}
@@ -30773,7 +30774,7 @@ GameObject:
   - component: {fileID: 1860261577}
   - component: {fileID: 1860261576}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CanvasEquations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30812,7 +30813,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5259ed0c4ca80e4468c4bc8255326b44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equation: {fileID: 440549025}
+  equation1: {fileID: 331511447}
+  equation2: {fileID: 440549025}
 --- !u!114 &1860261577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31536,7 +31538,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: c5a3bf37c6262004c9d7f48ec8e13beb,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: fa0b4dd16e108384c9b1ef1fc3c3f305, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9db8b2f748dee8a4d9162b028c85f079, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

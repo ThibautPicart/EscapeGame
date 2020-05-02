@@ -5,6 +5,7 @@ using UnityEngine;
 public class postionTerrainQuiBougent : MonoBehaviour
 {
     public GameObject terrainsDroiteGaucheSphynx;
+    public GameObject terrainsHautBas;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +21,19 @@ public class postionTerrainQuiBougent : MonoBehaviour
         //si on augmente z,on va vers a gauche du sphynx
         //si z=11 => le trou est collé au mur gauche
         //si z=-12.6 => le trou est collé au mur droit
+        //z=-0.8=> trou est centré
 
 
-      terrainsDroiteGaucheSphynx.transform.localPosition = new Vector3(56f,0f,0f);
+      terrainsDroiteGaucheSphynx.transform.localPosition = new Vector3(56f,0f,-0.8f);
+
+        //poue celui-ci quand j'augmente z, il va a gauche du sphynx
+        //quand x diminue, on se rapproche du sphynx; on est sencé agir uniquement sur cette composante!
+        //si x=-10 => une bande juste devant les pattes ud sphynx (avec la petite marge qu'on a pri pour etre a -36 pile!)
+      terrainsHautBas.transform.localPosition = new Vector3(-10f, 0f, 0f);
+
+
+        //je simule les coordonée de la solution pour l'instant (4,5) dans le repère du jeu!!!!!
+        //il faut voir ce que ca donne dans le repere des terrains droite/gauche
 
     }
 

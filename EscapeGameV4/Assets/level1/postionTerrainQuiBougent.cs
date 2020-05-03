@@ -6,6 +6,7 @@ public class postionTerrainQuiBougent : MonoBehaviour
 {
     public GameObject terrainsDroiteGaucheSphynx;
     public GameObject terrainsHautBas;
+    public GameObject key;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class postionTerrainQuiBougent : MonoBehaviour
         //ensuite il conviendra de placer ce gameObject constitué de 2 terrains par rapport au repere dans lequel je vais tracer les équations
 
 
-        //on remarque donc lorsque x augmente, on va de la tête du sphyn vers le mur aux equations
+        //on remarque donc lorsque x augmente, on va de la tête du sphynx vers le mur aux equations
         //si x vaut 56 => je suis aux pattes du sphynx => on laisse tout le temps x à 56 
         //si y augmente, le sol monte => on laisse y a 0
         //si on augmente z,on va vers a gauche du sphynx
@@ -24,17 +25,31 @@ public class postionTerrainQuiBougent : MonoBehaviour
         //z=-0.8=> trou est centré
 
 
-      terrainsDroiteGaucheSphynx.transform.localPosition = new Vector3(56f,0f,-0.8f);
+        //terrainsDroiteGaucheSphynx.transform.localPosition = new Vector3(56f,0f,11f);
 
         //poue celui-ci quand j'augmente z, il va a gauche du sphynx
         //quand x diminue, on se rapproche du sphynx; on est sencé agir uniquement sur cette composante!
         //si x=-10 => une bande juste devant les pattes ud sphynx (avec la petite marge qu'on a pri pour etre a -36 pile!)
-      terrainsHautBas.transform.localPosition = new Vector3(-10f, 0f, 0f);
+        //terrainsHautBas.transform.localPosition = new Vector3(-10f, 0f, 0f);
 
 
         //je simule les coordonée de la solution pour l'instant (4,5) dans le repère du jeu!!!!!
         //il faut voir ce que ca donne dans le repere des terrains droite/gauche
-
+        //après raisonnement sur papier, je trouve: 
+        //notons X1,Y1,Z1 les coordonées du repère des terrains de gauche a droite du sphynx
+        //X2,Y2,Z2 les coordonnées du repère des tearrain qui s'éloignent ou se rapprochent du sphynx
+        //x,y,z les coordonées en prenant pour repère le coin de la map; (celle que le joueur utilisera)
+        //=> Z1=11-y
+        //=>X2=56+(36-x)
+        float xSolution = 2f;
+        float ySolution = 2f;
+        float xCle = 49.5f - xSolution;
+        float zCle = 24.5f - ySolution;
+        float Z1 = 11f - ySolution;
+        float X2 = -11f + 23f - xSolution;
+        key.transform.localPosition = new Vector3(xCle, 0.5f, zCle);
+        terrainsDroiteGaucheSphynx.transform.localPosition = new Vector3(56f, 0f, Z1);
+        terrainsHautBas.transform.localPosition = new Vector3(X2, 0f, 0f);
     }
 
     // Update is called once per frame

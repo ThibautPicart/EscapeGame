@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class postionTerrainQuiBougent : MonoBehaviour
 {
+    //le terrain qui à sa taille qui évolue
+    public Terrain terrain;
+
+    private Vector3 terrainSize;
+
+
     public GameObject terrainsDroiteGaucheSphynx;
     public GameObject terrainsHautBas;
     public GameObject key;
@@ -58,7 +64,8 @@ public class postionTerrainQuiBougent : MonoBehaviour
         float xsolutionFloat = float.Parse(xSolution);//pour convertir le string récupéré avec le playerPref en float
         float ysolutionFloat = float.Parse(ySolution);
         
-        
+
+
         float xCle = 49.5f - xsolutionFloat;
         float zCle = 24f - ysolutionFloat;
         float Z1 = 11f - ysolutionFloat;
@@ -66,6 +73,13 @@ public class postionTerrainQuiBougent : MonoBehaviour
         key.transform.localPosition = new Vector3(xCle, 0.5f, zCle);
         terrainsDroiteGaucheSphynx.transform.localPosition = new Vector3(56f, 0f, Z1);
         terrainsHautBas.transform.localPosition = new Vector3(X2, 0f, 0f);
+
+        //on va adapter la taille du terrain en fonction afin qu'il n'y est pas de trou dans le sol
+        float sizeX = 25f-xsolutionFloat;//Length =>on met 25 car la longueur entre les pattes du sphynx et le mur aux équation vaut 25
+        float sizeY = 40f;//width
+        float sizeZ = 12f;//height
+        terrainSize = new Vector3(sizeY,sizeZ,sizeX);
+        terrain.terrainData.size = terrainSize;
     }
 
     // Update is called once per frame

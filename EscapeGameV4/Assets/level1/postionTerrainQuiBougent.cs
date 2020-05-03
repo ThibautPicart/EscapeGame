@@ -83,7 +83,8 @@ public class postionTerrainQuiBougent : MonoBehaviour
         float xTerrainAEffacer = 50- xsolutionFloat;
         float zTerrainAEffacer = 23.5f - ysolutionFloat;
         terrainAEffacer.transform.localPosition = new Vector3(xTerrainAEffacer, 0, zTerrainAEffacer);
-
+        //pour le cacher ou l'afficher si on creuse au bonne endroit
+        terrainAEffacer.enabled = true;
 
         //on va adapter la taille du terrain en fonction afin qu'il n'y est pas de trou dans le sol
         float sizeX = 25f-xsolutionFloat;//Length =>on met 25 car la longueur entre les pattes du sphynx et le mur aux équation vaut 25

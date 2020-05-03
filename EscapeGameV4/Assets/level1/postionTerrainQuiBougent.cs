@@ -7,6 +7,12 @@ public class postionTerrainQuiBougent : MonoBehaviour
     public GameObject terrainsDroiteGaucheSphynx;
     public GameObject terrainsHautBas;
     public GameObject key;
+
+    //playerPref pour envoyer la solution  au script qui fait bouger les terrains
+    private static readonly string xSolutionEquation = "xSolutionEquation";
+    private static readonly string ySolutionEquation = "ySolutionEquation";
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,12 +47,22 @@ public class postionTerrainQuiBougent : MonoBehaviour
         //x,y,z les coordonées en prenant pour repère le coin de la map; (celle que le joueur utilisera)
         //=> Z1=11-y
         //=>X2=56+(36-x)
-        float xSolution = 15f;
-        float ySolution = 15f;
-        float xCle = 49.5f - xSolution;
-        float zCle = 24f - ySolution;
-        float Z1 = 11f - ySolution;
-        float X2 = -11f + 23f - xSolution;
+
+
+        //on récupère la solution à l'aide de playerpref
+        string xSolution = PlayerPrefs.GetString(xSolutionEquation);
+        print("xsolution: "+xSolution);
+        string ySolution = PlayerPrefs.GetString(ySolutionEquation);
+        print("ysolution: " + ySolution);
+
+        float xsolutionFloat = float.Parse(xSolution);//pour convertir le string récupéré avec le playerPref en float
+        float ysolutionFloat = float.Parse(ySolution);
+        
+        
+        float xCle = 49.5f - xsolutionFloat;
+        float zCle = 24f - ysolutionFloat;
+        float Z1 = 11f - ysolutionFloat;
+        float X2 = -11f + 23f - xsolutionFloat;
         key.transform.localPosition = new Vector3(xCle, 0.5f, zCle);
         terrainsDroiteGaucheSphynx.transform.localPosition = new Vector3(56f, 0f, Z1);
         terrainsHautBas.transform.localPosition = new Vector3(X2, 0f, 0f);

@@ -41,10 +41,10 @@ public class postionTerrainQuiBougent : MonoBehaviour
         //x,y,z les coordonées en prenant pour repère le coin de la map; (celle que le joueur utilisera)
         //=> Z1=11-y
         //=>X2=56+(36-x)
-        float xSolution = 2f;
-        float ySolution = 2f;
+        float xSolution = 15f;
+        float ySolution = 15f;
         float xCle = 49.5f - xSolution;
-        float zCle = 24.5f - ySolution;
+        float zCle = 24f - ySolution;
         float Z1 = 11f - ySolution;
         float X2 = -11f + 23f - xSolution;
         key.transform.localPosition = new Vector3(xCle, 0.5f, zCle);

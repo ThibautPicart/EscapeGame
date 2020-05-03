@@ -6,8 +6,11 @@ public class postionTerrainQuiBougent : MonoBehaviour
 {
     //le terrain qui à sa taille qui évolue
     public Terrain terrain;
-
+    
     private Vector3 terrainSize;
+
+    //terrain qu'on va effacer quand on va creuser au bon endroit
+    public Terrain terrainAEffacer;
 
 
     public GameObject terrainsDroiteGaucheSphynx;
@@ -70,9 +73,17 @@ public class postionTerrainQuiBougent : MonoBehaviour
         float zCle = 24f - ysolutionFloat;
         float Z1 = 11f - ysolutionFloat;
         float X2 = -11f + 23f - xsolutionFloat;
-        key.transform.localPosition = new Vector3(xCle, 0.5f, zCle);
+        //on place la clé a l'endroit qui convient
+        key.transform.localPosition = new Vector3(xCle, -0.5f, zCle);
+
         terrainsDroiteGaucheSphynx.transform.localPosition = new Vector3(56f, 0f, Z1);
         terrainsHautBas.transform.localPosition = new Vector3(X2, 0f, 0f);
+
+        //on vient placer le terrain qui cache le trou au bonne endroit
+        float xTerrainAEffacer = 50- xsolutionFloat;
+        float zTerrainAEffacer = 23.5f - ysolutionFloat;
+        terrainAEffacer.transform.localPosition = new Vector3(xTerrainAEffacer, 0, zTerrainAEffacer);
+
 
         //on va adapter la taille du terrain en fonction afin qu'il n'y est pas de trou dans le sol
         float sizeX = 25f-xsolutionFloat;//Length =>on met 25 car la longueur entre les pattes du sphynx et le mur aux équation vaut 25

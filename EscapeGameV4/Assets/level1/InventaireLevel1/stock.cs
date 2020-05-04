@@ -17,11 +17,11 @@ public class stock : MonoBehaviour
     private int EmplacementDispoInt;
 
     //On récupère tous les Panels
-    public GameObject ItemTablette1, ItemStick1, ItemTablette2, ItemStick2;
+    public GameObject ItemTablette1, ItemStick1, ItemKey1, ItemShovel1, ItemTablette2, ItemStick2, ItemKey2, ItemShovel2, ItemTablette3, ItemStick3, ItemKey3, ItemShovel3, ItemTablette4, ItemStick4, ItemKey4, ItemShovel4;
 
 
     //Déclaration des listes de panels correspondants aux objets affichés dans l'inventaire
-    public List<GameObject> Emplacement1, Emplacement2;
+    public List<GameObject> Emplacement1, Emplacement2, Emplacement3, Emplacement4;
 
 
     //Déclaration de la liste des emplacements
@@ -31,10 +31,12 @@ public class stock : MonoBehaviour
 
     void Start()
     {
-        Emplacement1 = new List<GameObject>() { ItemTablette1, ItemStick1 };
-        Emplacement2 = new List<GameObject>() { ItemTablette2, ItemStick2 };
+        Emplacement1 = new List<GameObject>() { ItemTablette1, ItemStick1, ItemKey1, ItemShovel1};
+        Emplacement2 = new List<GameObject>() { ItemTablette2, ItemStick2, ItemKey2, ItemShovel2 };
+        Emplacement3 = new List<GameObject>() { ItemTablette3, ItemStick3, ItemKey3, ItemShovel3 };
+        Emplacement4 = new List<GameObject>() { ItemTablette4, ItemStick4, ItemKey4, ItemShovel4 };
 
-        Emplacements = new List<List<GameObject>> { Emplacement1, Emplacement2 };
+        Emplacements = new List<List<GameObject>> { Emplacement1, Emplacement2, Emplacement3, Emplacement4 };
     }
 
 
@@ -44,8 +46,17 @@ public class stock : MonoBehaviour
     {
         if (Input.GetKeyDown("t") && Vector3.Distance(myself.transform.position, player.transform.position) < 2)
         {
-            myself.SetActive(false);  // On enlève de la scène l'objet placé dans l'inventaire
-            StockInTheRightPanel();   // On appelle la fonction qui l'affiche dans l'inventaire
+            if(myself.name!="key")
+            {
+                myself.SetActive(false);  // On enlève de la scène l'objet placé dans l'inventaire
+                StockInTheRightPanel();   // On appelle la fonction qui l'affiche dans l'inventaire
+            }
+            else if(PlayerPrefs.GetInt("KeyOk")==1)
+            {
+                myself.SetActive(false);  // On enlève de la scène l'objet placé dans l'inventaire
+                StockInTheRightPanel();   // On appelle la fonction qui l'affiche dans l'inventaire
+            }
+            
         }
     }
 
@@ -60,6 +71,14 @@ public class stock : MonoBehaviour
         if (myself.name == "WoodStick")
         {
             Position = 1;
+        }
+        if (myself.name == "key")
+        {
+            Position = 2;
+        }
+        if (myself.name == "shovel")
+        {
+            Position = 3;
         }
 
         Emplacements[EmplacementDispoInt - 1][Position].SetActive(true);

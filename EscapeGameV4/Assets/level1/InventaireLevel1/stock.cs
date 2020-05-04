@@ -37,6 +37,9 @@ public class stock : MonoBehaviour
         Emplacement4 = new List<GameObject>() { ItemTablette4, ItemStick4, ItemKey4, ItemShovel4 };
 
         Emplacements = new List<List<GameObject>> { Emplacement1, Emplacement2, Emplacement3, Emplacement4 };
+
+        PlayerPrefs.SetInt("KeyOk", 0);
+        PlayerPrefs.SetInt("HasKey", 0);
     }
 
 
@@ -75,6 +78,7 @@ public class stock : MonoBehaviour
         if (myself.name == "key")
         {
             Position = 2;
+            PlayerPrefs.SetInt("HasKey", 1);
         }
         if (myself.name == "shovel")
         {

@@ -47,10 +47,19 @@ public class Inventory : MonoBehaviour
         {
             if ((Vector3.Distance(item.transform.position, player.transform.position)) < 2 && firstTime == 0)
             {
-                //On affiche le conseil
-                HelpPopup.SetActive(true);
-                firstTime = -1;
+                if(item.name!="key")
+                {
+                    //On affiche le conseil
+                    HelpPopup.SetActive(true);
+                    firstTime = -1;
+                }
+                
             }
+        }
+
+        if(Input.GetKeyDown("enter"))
+        {
+            HelpPopup.SetActive(false);
         }
 
     }

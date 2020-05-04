@@ -88,6 +88,7 @@ public class positionTerrainQuiBougent : MonoBehaviour
             //pour le cacher ou l'afficher si on creuse au bonne endroit
             terrainAEffacer.enabled = true;
 
+
             //on va adapter la taille du terrain en fonction afin qu'il n'y est pas de trou dans le sol
             float sizeX = 25f - xsolutionFloat;//Length =>on met 25 car la longueur entre les pattes du sphynx et le mur aux équation vaut 25
             float sizeY = 40f;//width
@@ -100,6 +101,9 @@ public class positionTerrainQuiBougent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(terrainAEffacer.isActiveAndEnabled == false)
+        {
+            PlayerPrefs.SetInt("KeyOk", 1);
+        }
     }
 }

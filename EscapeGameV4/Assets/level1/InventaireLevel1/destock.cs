@@ -36,6 +36,7 @@ public class destock : MonoBehaviour
 
     //Le popup de drop
     public GameObject ClickOnItemPanel;
+
     //Son bouton de drop
     public Button DropItemButton;
 
@@ -241,6 +242,10 @@ public class destock : MonoBehaviour
     {
         objectADrop.transform.position = player.transform.position;
         objectADrop.SetActive(true);
+        if(objectADrop.name == "key")
+        {
+            PlayerPrefs.SetInt("HasKey", 0);
+        }
         panelToRemove.SetActive(false);
         ClickOnItemPanel.SetActive(false);
         PlayerPrefs.SetInt("EmplacementDispoPref", PlayerPrefs.GetInt("EmplacementDispoPref") - 1);

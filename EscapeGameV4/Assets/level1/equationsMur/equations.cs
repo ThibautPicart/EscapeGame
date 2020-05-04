@@ -8,7 +8,8 @@ using TMPro;
 
 public class equations : MonoBehaviour
 {
-
+    //pour faire appel à la fonction du script position des terrains
+    public GameObject containerGameObject;
     //playerPref pour envoyer la solution  au script qui fait bouger les terrains
     private static readonly string xSolutionEquation = "xSolutionEquation";
     private static readonly string ySolutionEquation = "ySolutionEquation";
@@ -77,14 +78,16 @@ public class equations : MonoBehaviour
         if (levelString == "Easy")
         {
             int randomInt = Random.Range(0, equationsFaciles.Count); //génère un entier compris entre 0 et le nombre d'élément de la liste
-
+            print(randomInt);
             //on va donc selectionner les equations correspondantes maintenant
             equationChosen = equationsFaciles[randomInt];
+           
             
 
 
             //je selectionne aussi la bonne réponse correpondante afin de l'envoyer danns le script qui fait bouger le sphynx
             solutionEquation = solutionEquationsFaciles[randomInt];
+
             string xSolution = solutionEquation[0];
             string ySolution = solutionEquation[1];
 
@@ -119,7 +122,7 @@ public class equations : MonoBehaviour
             equation1Text.SetText("f(x)= " + equationChosen[0] + "x +" + equationChosen[1]);//la droite
             //équation2
             TMP_Text equation2Text = equation2.GetComponent<TMP_Text>();
-            equation2Text.SetText("(x-" + equationChosen[2] + ")^2 + (y-" + equationChosen[3] + ")^2=" + equationChosen[4]);//le cercle
+            equation2Text.SetText("(x-" + equationChosen[2] + ")² + (y-" + equationChosen[3] + ")²=" + equationChosen[4]);//le cercle
         }
 
         else//if(levelstring == "difficult")
@@ -134,15 +137,16 @@ public class equations : MonoBehaviour
             //maintenant on va écrire sur le mur les équation correcpondante
         }
 
-
-
+        //pour executer la fonction du script positionTerrainQuiBouge
+        containerGameObject.GetComponent<positionTerrainQuiBougent>().MiseEnplaceDuTerrain();
+        
 
     }
 
 
 
-// Update is called once per frame
-void Update()
+    // Update is called once per frame
+    void Update()
     {
         
     }

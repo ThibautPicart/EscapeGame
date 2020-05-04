@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class postionTerrainQuiBougent : MonoBehaviour
+public class positionTerrainQuiBougent : MonoBehaviour
 {
     //le terrain qui à sa taille qui évolue
     public Terrain terrain;
@@ -23,7 +23,7 @@ public class postionTerrainQuiBougent : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    public void MiseEnplaceDuTerrain()
     {
 
         //il a fallut commencer en mettant des valeur de position au hasard et voir où le game object se mettait pour voir la
@@ -57,41 +57,44 @@ public class postionTerrainQuiBougent : MonoBehaviour
         //=> Z1=11-y
         //=>X2=56+(36-x)
 
-
-        //on récupère la solution à l'aide de playerpref
-        string xSolution = PlayerPrefs.GetString(xSolutionEquation);
-        print("xsolution: "+xSolution);
-        string ySolution = PlayerPrefs.GetString(ySolutionEquation);
-        print("ysolution: " + ySolution);
-
-        float xsolutionFloat = float.Parse(xSolution);//pour convertir le string récupéré avec le playerPref en float
-        float ysolutionFloat = float.Parse(ySolution);
         
 
 
-        float xCle = 49.5f - xsolutionFloat;
-        float zCle = 24f - ysolutionFloat;
-        float Z1 = 11f - ysolutionFloat;
-        float X2 = -11f + 23f - xsolutionFloat;
-        //on place la clé a l'endroit qui convient
-        key.transform.localPosition = new Vector3(xCle, -0.5f, zCle);
+            //on récupère la solution à l'aide de playerpref
+            string xSolution = PlayerPrefs.GetString(xSolutionEquation);
+            print("xsolution: " + xSolution);
+            string ySolution = PlayerPrefs.GetString(ySolutionEquation);
+            print("ysolution: " + ySolution);
 
-        terrainsDroiteGaucheSphynx.transform.localPosition = new Vector3(56f, 0f, Z1);
-        terrainsHautBas.transform.localPosition = new Vector3(X2, 0f, 0f);
+            float xsolutionFloat = float.Parse(xSolution);//pour convertir le string récupéré avec le playerPref en float
+            float ysolutionFloat = float.Parse(ySolution);
 
-        //on vient placer le terrain qui cache le trou au bonne endroit
-        float xTerrainAEffacer = 50- xsolutionFloat;
-        float zTerrainAEffacer = 23.5f - ysolutionFloat;
-        terrainAEffacer.transform.localPosition = new Vector3(xTerrainAEffacer, 0, zTerrainAEffacer);
-        //pour le cacher ou l'afficher si on creuse au bonne endroit
-        terrainAEffacer.enabled = true;
 
-        //on va adapter la taille du terrain en fonction afin qu'il n'y est pas de trou dans le sol
-        float sizeX = 25f-xsolutionFloat;//Length =>on met 25 car la longueur entre les pattes du sphynx et le mur aux équation vaut 25
-        float sizeY = 40f;//width
-        float sizeZ = 12f;//height
-        terrainSize = new Vector3(sizeY,sizeZ,sizeX);
-        terrain.terrainData.size = terrainSize;
+
+            float xCle = 49.5f - xsolutionFloat;
+            float zCle = 24f - ysolutionFloat;
+            float Z1 = 11f - ysolutionFloat;
+            float X2 = -11f + 23f - xsolutionFloat;
+            //on place la clé a l'endroit qui convient
+            key.transform.localPosition = new Vector3(xCle, -0.5f, zCle);
+
+            terrainsDroiteGaucheSphynx.transform.localPosition = new Vector3(56f, 0f, Z1);
+            terrainsHautBas.transform.localPosition = new Vector3(X2, 0f, 0f);
+
+            //on vient placer le terrain qui cache le trou au bonne endroit
+            float xTerrainAEffacer = 50 - xsolutionFloat;
+            float zTerrainAEffacer = 23.5f - ysolutionFloat;
+            terrainAEffacer.transform.localPosition = new Vector3(xTerrainAEffacer, 0, zTerrainAEffacer);
+            //pour le cacher ou l'afficher si on creuse au bonne endroit
+            terrainAEffacer.enabled = true;
+
+            //on va adapter la taille du terrain en fonction afin qu'il n'y est pas de trou dans le sol
+            float sizeX = 25f - xsolutionFloat;//Length =>on met 25 car la longueur entre les pattes du sphynx et le mur aux équation vaut 25
+            float sizeY = 40f;//width
+            float sizeZ = 12f;//height
+            terrainSize = new Vector3(sizeY, sizeZ, sizeX);
+            terrain.terrainData.size = terrainSize;
+        
     }
 
     // Update is called once per frame

@@ -31613,6 +31613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5259ed0c4ca80e4468c4bc8255326b44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  containerGameObject: {fileID: 1074017754}
   equation1: {fileID: 331511447}
   equation2: {fileID: 440549025}
 --- !u!114 &1860261577

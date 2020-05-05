@@ -3128,6 +3128,26 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &179468029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 115552, guid: c7ba8aacb1d261048bab2170e7576836,
+    type: 3}
+  m_PrefabInstance: {fileID: 2068853083}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &179468034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179468029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee1fd6343b3b66428723636a57280bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1771481126}
+  helpPopup: {fileID: 356430440}
 --- !u!1 &182302650
 GameObject:
   m_ObjectHideFlags: 0
@@ -17423,7 +17443,6 @@ GameObject:
   - component: {fileID: 856217647}
   - component: {fileID: 856217649}
   - component: {fileID: 856217648}
-  - component: {fileID: 856217650}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -17496,20 +17515,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &856217650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 856217646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fd8c1e25aca35a4d839bf370f2c2f5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedH: 2
-  speedV: 2
 --- !u!1 &856758653
 GameObject:
   m_ObjectHideFlags: 0
@@ -18108,20 +18113,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2068853083}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &877836947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 877836944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dee1fd6343b3b66428723636a57280bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1771481126}
-  helpPopup: {fileID: 356430440}
 --- !u!1 &879417780
 GameObject:
   m_ObjectHideFlags: 0
@@ -37116,6 +37107,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 440580, guid: c7ba8aacb1d261048bab2170e7576836, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 440580, guid: c7ba8aacb1d261048bab2170e7576836, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440580, guid: c7ba8aacb1d261048bab2170e7576836, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440580, guid: c7ba8aacb1d261048bab2170e7576836, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 440580, guid: c7ba8aacb1d261048bab2170e7576836, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440580, guid: c7ba8aacb1d261048bab2170e7576836, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440580, guid: c7ba8aacb1d261048bab2170e7576836, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 448762, guid: c7ba8aacb1d261048bab2170e7576836, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.88200265
@@ -37184,7 +37203,8 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9575536, guid: c7ba8aacb1d261048bab2170e7576836, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c7ba8aacb1d261048bab2170e7576836, type: 3}
 --- !u!1001 &2070629781
 PrefabInstance:

@@ -15116,7 +15116,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.95, z: 0}
 --- !u!54 &724868251
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15145,9 +15145,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc729090567548458323faca5d5a543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
+  runSpeed: 6
   jump: 5
-  sensibiliteSourie: 0
+  sensibiliteSourie: 5
 --- !u!4 &724868253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 2493cc387de28b24e9fa91c250182887,
@@ -30627,6 +30628,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9042772588573301732, guid: 2493cc387de28b24e9fa91c250182887,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00004724968
+      objectReference: {fileID: 0}
+    - target: {fileID: -9042772588573301732, guid: 2493cc387de28b24e9fa91c250182887,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.118173935
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 2493cc387de28b24e9fa91c250182887,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5a2711bd2f6439d4db6b449d7cdcc6f3, type: 2}
+    - target: {fileID: -4676408568124400190, guid: 2493cc387de28b24e9fa91c250182887,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000047249683
+      objectReference: {fileID: 0}
+    - target: {fileID: -4676408568124400190, guid: 2493cc387de28b24e9fa91c250182887,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.118173935
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2493cc387de28b24e9fa91c250182887,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30686,6 +30712,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: player1_Unity
+      objectReference: {fileID: 0}
+    - target: {fileID: -111256922469883070, guid: 2493cc387de28b24e9fa91c250182887,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.49051166
+      objectReference: {fileID: 0}
+    - target: {fileID: -111256922469883070, guid: 2493cc387de28b24e9fa91c250182887,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5783538
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2493cc387de28b24e9fa91c250182887, type: 3}

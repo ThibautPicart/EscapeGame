@@ -56,11 +56,14 @@ public class playerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space ) && Player.isGrounded)//&& Player.isGrounded
         {
+            personnageAnim.SetBool("jump", true);
             DirectionalDeplacement.y = jump;
+            
         }
 
         if (!Player.isGrounded)
         {
+            personnageAnim.SetBool("jump", false);
             DirectionalDeplacement.y -= gravite * Time.deltaTime;
         }
 

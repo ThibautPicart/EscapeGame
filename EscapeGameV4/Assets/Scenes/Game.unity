@@ -15149,6 +15149,7 @@ MonoBehaviour:
   runSpeed: 6
   jump: 5
   sensibiliteSourie: 5
+  camera: {fileID: 735713520}
 --- !u!4 &724868253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 2493cc387de28b24e9fa91c250182887,

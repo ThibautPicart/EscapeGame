@@ -20,6 +20,10 @@ public class playerController : MonoBehaviour
     //pour glisser la camera
     public Camera camera;
 
+    public float speedV = 2.0f;
+    private float pitch = 0.0f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +36,9 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        //pitch -= speedV * Input.GetAxis("Mouse Y");
+        //camera.transform.eulerAngles.Set(pitch, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z);
+
         //on va donc faire évoluer les coordonées du personnage
         DirectionalDeplacement.z = Input.GetAxisRaw("Vertical");
         DirectionalDeplacement.x = Input.GetAxisRaw("Horizontal");

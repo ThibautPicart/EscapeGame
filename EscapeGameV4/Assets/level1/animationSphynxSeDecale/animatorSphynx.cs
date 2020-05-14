@@ -132,6 +132,7 @@ public class animatorSphynx : MonoBehaviour
         un = !un;
         if (un)
         {
+            print("caca");
             reponse.Add('1');
             unPousse.SetBool("1move", true);
             unPousse.SetBool("1comeback", false);

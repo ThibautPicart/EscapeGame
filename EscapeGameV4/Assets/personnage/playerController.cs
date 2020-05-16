@@ -16,7 +16,7 @@ public class playerController : MonoBehaviour
     private Vector3 DirectionalDeplacement = Vector3.zero;
     private CharacterController Player;
     //on va faire tourner le personnage à l'aide de la sourie; on va donc créer une variable pour changer la sensiblité
-    public int sensibiliteSourie;
+    public float rotationSensi=2;
     //pour glisser la camera
     public Camera camera;
 
@@ -53,10 +53,18 @@ public class playerController : MonoBehaviour
             Player.Move(DirectionalDeplacement * Time.deltaTime * speed);
         }
 
-        //pour faire pivoter le personnage à l'aide de la sourie (uniquement l'axe horizontale
-        //on sait qu'il faut utiliser mouse x en allant dans project setting puis Input sur unity
-        transform.Rotate(0, Input.GetAxisRaw("Mouse X")*sensibiliteSourie, 0);
-        
+        //pour faire tourner le personnage sur lui mmeme avec q et d 
+        if (Input.GetKey("d")|| Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Rotate(0, rotationSensi, 0);
+        }
+
+        if (Input.GetKey("q")||Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Rotate(0, -rotationSensi, 0);
+        }
+
+
 
         //saut du personnage quand on appui sur espace
 

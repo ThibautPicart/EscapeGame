@@ -1,22 +1,66 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class cameraController : MonoBehaviour
 {
-    public float speedH = 2.0f;
-    public float speedV = 2.0f;
+    public Transform perso;
+    public float smoothSpeed = 0.125f;
+    public Vector3 offset;
 
-    private float yaw = 0.0f;
-    private float pitch = 0.0f;
+    public float rotationSensi = 0.125f;
+    private Vector3 prevPos;
+
+    private float deltaX;
+    private float deltaY;
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        offset = new Vector3(0, 1.5f, 0);
+    }
 
     // Update is called once per frame
+    void LateUpdate()
+    {
+        Vector3 desiredPosition = perso.position + offset;
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        transform.position = smoothedPosition;
+
+    }
+
     void Update()
     {
-        yaw += speedH * Input.GetAxis("Mouse X");
-        pitch -= speedV * Input.GetAxis("Mouse Y");
+        /*
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Rotate(0, rotationSensi, 0);
+        }
 
-        transform.eulerAngles = new Vector3(pitch, GetComponent<Camera>().transform.eulerAngles.y, GetComponent<Camera>().transform.eulerAngles.z);
-        //transform.eulerAngles.Set(pitch, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z);
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Rotate(0, -rotationSensi, 0);
+        }
+
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.Rotate(rotationSensi, 0, 0);
+        }
+
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.Rotate(-rotationSensi, 0, 0);
+        }
+        */
+        deltaX = prevPos.x - Input.mousePosition.x;
+        deltaY = prevPos.y - Input.mousePosition.y;
+
+        if (Input.GetMouseButton(1))
+        {
+            transform.Rotate(deltaY * rotationSensi, -deltaX * rotationSensi, 0);
+        }
+
+
+        prevPos = Input.mousePosition;
+
     }
 }

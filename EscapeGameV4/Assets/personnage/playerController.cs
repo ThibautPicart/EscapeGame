@@ -17,8 +17,8 @@ public class playerController : MonoBehaviour
     private CharacterController Player;
     //on va faire tourner le personnage à l'aide de la sourie; on va donc créer une variable pour changer la sensiblité
     public float rotationSensi=2;
-    //pour glisser la camera
-    //public Camera camera;
+   
+ 
 
     public float speedV = 2.0f;
     private float pitch = 0.0f;

@@ -16,8 +16,9 @@ public class playerController : MonoBehaviour
     private Vector3 DirectionalDeplacement = Vector3.zero;
     private CharacterController Player;
     //on va faire tourner le personnage à l'aide de la sourie; on va donc créer une variable pour changer la sensiblité
-    public float rotationSensi;
-
+    public float rotationSensi = 2;
+    //pour glisser la camera
+    //public Camera camera;
 
     public float speedV = 2.0f;
     private float pitch = 0.0f;
@@ -30,8 +31,6 @@ public class playerController : MonoBehaviour
         Player = GetComponent<CharacterController>();
         //on récupere l'animator du perso
         personnageAnim = GetComponent<Animator>();
-        //initialisation de la vitesse de rotation du personnage
-        rotationSensi = 2;
     }
 
     // Update is called once per frame
@@ -45,14 +44,14 @@ public class playerController : MonoBehaviour
         DirectionalDeplacement.x = Input.GetAxisRaw("Horizontal");
         //pour le déplacement du personnage
         DirectionalDeplacement = transform.TransformDirection(DirectionalDeplacement);
-        //if (Input.GetKey(KeyCode.LeftShift))
-        //{
-        //    Player.Move(DirectionalDeplacement * Time.deltaTime * runSpeed);
-        //}
-        //else 
-        //{
-        //    Player.Move(DirectionalDeplacement * Time.deltaTime * speed);
-        //}
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            Player.Move(DirectionalDeplacement * Time.deltaTime * runSpeed);
+        }
+        else
+        {
+            Player.Move(DirectionalDeplacement * Time.deltaTime * speed);
+        }
 
         //pour faire tourner le personnage sur lui mmeme avec q et d 
         if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))

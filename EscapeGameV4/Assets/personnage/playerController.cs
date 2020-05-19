@@ -16,9 +16,8 @@ public class playerController : MonoBehaviour
     private Vector3 DirectionalDeplacement = Vector3.zero;
     private CharacterController Player;
     //on va faire tourner le personnage à l'aide de la sourie; on va donc créer une variable pour changer la sensiblité
-    public float rotationSensi=2;
-    //pour glisser la camera
-    public Camera camera;
+    public float rotationSensi;
+
 
     public float speedV = 2.0f;
     private float pitch = 0.0f;
@@ -31,6 +30,8 @@ public class playerController : MonoBehaviour
         Player = GetComponent<CharacterController>();
         //on récupere l'animator du perso
         personnageAnim = GetComponent<Animator>();
+        //initialisation de la vitesse de rotation du personnage
+        rotationSensi = 2;
     }
 
     // Update is called once per frame
@@ -44,22 +45,22 @@ public class playerController : MonoBehaviour
         DirectionalDeplacement.x = Input.GetAxisRaw("Horizontal");
         //pour le déplacement du personnage
         DirectionalDeplacement = transform.TransformDirection(DirectionalDeplacement);
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            Player.Move(DirectionalDeplacement * Time.deltaTime * runSpeed);
-        }
-        else 
-        {
-            Player.Move(DirectionalDeplacement * Time.deltaTime * speed);
-        }
+        //if (Input.GetKey(KeyCode.LeftShift))
+        //{
+        //    Player.Move(DirectionalDeplacement * Time.deltaTime * runSpeed);
+        //}
+        //else 
+        //{
+        //    Player.Move(DirectionalDeplacement * Time.deltaTime * speed);
+        //}
 
         //pour faire tourner le personnage sur lui mmeme avec q et d 
-        if (Input.GetKey("d")|| Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
         {
             transform.Rotate(0, rotationSensi, 0);
         }
 
-        if (Input.GetKey("q")||Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey("q") || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Rotate(0, -rotationSensi, 0);
         }
@@ -68,11 +69,11 @@ public class playerController : MonoBehaviour
 
         //saut du personnage quand on appui sur espace
 
-        if (Input.GetKeyDown(KeyCode.Space ) && Player.isGrounded)//&& Player.isGrounded
+        if (Input.GetKeyDown(KeyCode.Space) && Player.isGrounded)//&& Player.isGrounded
         {
             personnageAnim.SetBool("jump", true);
             DirectionalDeplacement.y = jump;
-            
+
         }
 
         if (!Player.isGrounded)
@@ -84,9 +85,9 @@ public class playerController : MonoBehaviour
         //pour les animation
 
         //pour marcher
-        if ((Input.GetKey(KeyCode.Z)|| Input.GetKey(KeyCode.UpArrow))&& !Input.GetKey(KeyCode.LeftShift))
+        if ((Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.UpArrow)) && !Input.GetKey(KeyCode.LeftShift))
         {
-            personnageAnim.SetBool("walk",true);
+            personnageAnim.SetBool("walk", true);
         }
         if (!Input.GetKey(KeyCode.Z) && !Input.GetKey(KeyCode.UpArrow))
         {

@@ -25,6 +25,7 @@ public class setSettings : MonoBehaviour
     void Start()
     {
         firstComeInt = PlayerPrefs.GetInt("firstComePref");
+        firstComeInt = 0;
         if (firstComeInt == 0)
         {
             print("if");

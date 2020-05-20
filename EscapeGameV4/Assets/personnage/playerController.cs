@@ -80,5 +80,10 @@ public class playerController : MonoBehaviour
         {
             personnageAnim.SetBool("run", false);
         }
+
+        if ((Input.GetKeyDown("c")))
+        {
+            personnageAnim.SetBool("dig", true);
+        }
     }
 }

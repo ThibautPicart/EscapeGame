@@ -35,15 +35,30 @@ public class playerController : MonoBehaviour
             Player.Move(DirectionalDeplacement * Time.deltaTime * speed);
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey("d"))
         {
             transform.Rotate(0, rotationSensi, 0);
+            personnageAnim.SetBool("rightTurn", true);
         }
+
+        if (!Input.GetKey("d"))
+        {
+            personnageAnim.SetBool("rightTurn", false);
+        }
+
 
         if (Input.GetKey("q"))
         {
             transform.Rotate(0, -rotationSensi, 0);
+            personnageAnim.SetBool("leftTurn", true);
         }
+
+        if(!Input.GetKey("q"))
+        {
+            personnageAnim.SetBool("leftTurn", true);
+        }
+
+
 
         if (Input.GetKeyDown(KeyCode.Space) && Player.isGrounded)//&& Player.isGrounded
         {

@@ -57,7 +57,20 @@ public class playerController : MonoBehaviour
             personnageAnim.SetBool("jump", false);
             DirectionalDeplacement.y -= gravite * Time.deltaTime;
         }
+        int variable = 0;
+        if (Input.GetKeyDown(KeyCode.C)&& variable==0)
+        {
+            personnageAnim.SetBool("dig", true);
+            variable++;
+            
+        }
 
+        if (Input.GetKeyDown(KeyCode.C) && variable == 1)
+        {
+            personnageAnim.SetBool("dig", true);
+            variable--;
+
+        }
         //pour les animations
 
         //pour marcher

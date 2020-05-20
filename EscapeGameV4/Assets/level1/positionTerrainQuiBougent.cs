@@ -62,9 +62,9 @@ public class positionTerrainQuiBougent : MonoBehaviour
 
             //on récupère la solution à l'aide de playerpref
             string xSolution = PlayerPrefs.GetString(xSolutionEquation);
-            print("xsolution: " + xSolution);
+            //print("xsolution: " + xSolution);
             string ySolution = PlayerPrefs.GetString(ySolutionEquation);
-            print("ysolution: " + ySolution);
+            //print("ysolution: " + ySolution);
 
             float xsolutionFloat = float.Parse(xSolution);//pour convertir le string récupéré avec le playerPref en float
             float ysolutionFloat = float.Parse(ySolution);

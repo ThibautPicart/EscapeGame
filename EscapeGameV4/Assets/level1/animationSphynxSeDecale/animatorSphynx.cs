@@ -30,18 +30,7 @@ public class animatorSphynx : MonoBehaviour
     public Animator neufPousse;
     
 
-    //liste des images du murs pour voir si le joueur a cliqué dessus
-    public Image zeroMur;
-    public Image unMur;
-    public Image deuxMur;
-    public Image troisMur;
-    public Image quatreMur;
-    public Image cinqMur;
-    public Image sixMur;
-    public Image septMur;
-    public Image huitMur;
-    public Image neufMur;
-
+  
     //on initialise toute les bouton à false pour dire que de base ils ne sont pas cliqués
     bool zero = false;
     bool un = false;
@@ -66,14 +55,15 @@ public class animatorSphynx : MonoBehaviour
     //pour l'animation de l'escalier
     public Animator escalier;
 
+    //public Button Btn1;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        //print("byhubhjkl,;");
         anim = GetComponent<Animator>();
         string Solution = PlayerPrefs.GetString(solutionSuite);
-        print("la solution a la suite est : " + Solution);
+        //print("la solution a la suite est : " + Solution);
         int nombreChiffreSolution = Solution.Length;
 
         //on va séparer caque chiffre du string en char 
@@ -83,7 +73,12 @@ public class animatorSphynx : MonoBehaviour
             charList.Add(Solution[i]);
         }
 
-        
+
+
+        //test
+        //Btn1.onClick.AddListener(() => unClick());
+
+
     }
 
 
@@ -129,10 +124,11 @@ public class animatorSphynx : MonoBehaviour
 
     public void unClick()
     {
+        print("click on 1");
         un = !un;
         if (un)
         {
-            print("caca");
+  
             reponse.Add('1');
             unPousse.SetBool("1move", true);
             unPousse.SetBool("1comeback", false);
@@ -318,24 +314,19 @@ public class animatorSphynx : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void Reponse()
     {
-        print("je suis dans la fonction reponse");
-        print("reponse: " );
+        //print("je suis dans la fonction reponse");
+        //print("reponse: " );
         for (int i= 0;i< reponse.Count; ++i)
         {
-            print(reponse[i]);
+            //print(reponse[i]);
         }
-        print("charList : ");
+        //print("charList : ");
         for (int i = 0; i < charList.Count; ++i)
         {
-            print(charList[i]);
+            //print(charList[i]);
         }
 
         bool result = false;
@@ -361,7 +352,7 @@ public class animatorSphynx : MonoBehaviour
         if (result==true && detect==false&&variableFin==0)
             //varaibleFin sert à ne passer qu'une seul fois dans cette fonction
         {
-            print("bonne réponse");
+            //print("bonne réponse");
             anim.SetBool("SphynxMove", true);
             sonSphynx.Play();
 

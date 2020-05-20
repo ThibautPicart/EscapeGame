@@ -78,7 +78,7 @@ public class equations : MonoBehaviour
         if (levelString == "Easy")
         {
             int randomInt = Random.Range(0, equationsFaciles.Count); //génère un entier compris entre 0 et le nombre d'élément de la liste
-            print(randomInt);
+           //print(randomInt);
             //on va donc selectionner les equations correspondantes maintenant
             equationChosen = equationsFaciles[randomInt];
            

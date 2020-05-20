@@ -55,7 +55,7 @@ public class playerController : MonoBehaviour
 
         if(!Input.GetKey("q"))
         {
-            personnageAnim.SetBool("leftTurn", true);
+            personnageAnim.SetBool("leftTurn", false);
         }
 
 

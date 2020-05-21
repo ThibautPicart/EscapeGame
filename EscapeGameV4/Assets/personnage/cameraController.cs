@@ -8,6 +8,7 @@ public class cameraController : MonoBehaviour
 
     public float rotationSensi = 0.125f;
     private Vector3 prevPos;
+    private Vector3 rotation;
 
     private float deltaX;
     private float deltaY;
@@ -30,33 +31,18 @@ public class cameraController : MonoBehaviour
 
     void Update()
     {
-        /*
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Rotate(0, rotationSensi, 0);
-        }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Rotate(0, -rotationSensi, 0);
-        }
-
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.Rotate(rotationSensi, 0, 0);
-        }
-
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.Rotate(-rotationSensi, 0, 0);
-        }
-        */
-        deltaX = prevPos.x - Input.mousePosition.x;
-        deltaY = prevPos.y - Input.mousePosition.y;
+       
+        
 
         if (Input.GetMouseButton(1))
         {
-            transform.Rotate(deltaY * rotationSensi, -deltaX * rotationSensi, 0);
+            deltaX = prevPos.x - Input.mousePosition.x;
+            deltaY = prevPos.y - Input.mousePosition.y;
+            transform.Rotate(deltaY * rotationSensi, -deltaX * rotationSensi, 0, Space.World);
+            rotation = transform.eulerAngles;
+            rotation.z = 0;
+            transform.eulerAngles = rotation;
+
         }
 
 

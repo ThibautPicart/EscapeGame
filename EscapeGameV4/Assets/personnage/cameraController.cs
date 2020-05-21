@@ -38,7 +38,7 @@ public class cameraController : MonoBehaviour
         {
             deltaX = prevPos.x - Input.mousePosition.x;
             deltaY = prevPos.y - Input.mousePosition.y;
-            transform.Rotate(deltaY * rotationSensi, -deltaX * rotationSensi, 0, Space.World);
+            transform.Rotate(deltaY * rotationSensi, -deltaX * rotationSensi, 0, Space.Self);
             rotation = transform.eulerAngles;
             rotation.z = 0;
             transform.eulerAngles = rotation;

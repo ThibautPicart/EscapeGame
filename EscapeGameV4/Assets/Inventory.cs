@@ -15,6 +15,7 @@ public class Inventory : MonoBehaviour
     public GameObject stick;
     public GameObject key;
     public GameObject shovel;
+    public GameObject book;
 
     //Le joueur
     public GameObject player;
@@ -28,7 +29,7 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetInt("EmplacementDispoPref", 1); // On initialise le premier emplacement dispo de l'inventaire
-        items = new List<GameObject>() { tablette, stick, key, shovel};
+        items = new List<GameObject>() { tablette, stick, key, shovel, book};
         firstTime = 0;
     }
 

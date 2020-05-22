@@ -15,6 +15,7 @@ public class openChest : MonoBehaviour
     {
         openCover = GetComponent<Animator>();
         firstTime = 1;
+        PlayerPrefs.SetInt("isChestOpen", 0);
     }
     void Update()
     {
@@ -30,6 +31,7 @@ public class openChest : MonoBehaviour
             if(Input.GetKeyDown("o"))
             {
                 openCover.SetBool("openCoffre", true);
+                PlayerPrefs.SetInt("isChestOpen", 1);
             }
         }
 

@@ -54,12 +54,25 @@ public class stock : MonoBehaviour
     {
         if (Input.GetKeyDown("t") && Vector3.Distance(myself.transform.position, player.transform.position) < 2)
         {
-            if(myself.name!="key")
+            if(myself.name == "key")
             {
-                myself.SetActive(false);  // On enlève de la scène l'objet placé dans l'inventaire
-                StockInTheRightPanel();   // On appelle la fonction qui l'affiche dans l'inventaire
+                if(PlayerPrefs.GetInt("KeyOk") == 1)
+                {
+                    myself.SetActive(false);  // On enlève de la scène l'objet placé dans l'inventaire
+                    StockInTheRightPanel();   // On appelle la fonction qui l'affiche dans l'inventaire
+                }
             }
-            else if(PlayerPrefs.GetInt("KeyOk")==1)
+
+            else if (myself.name == "book")
+            {
+                if(PlayerPrefs.GetInt("IsChestOpen") == 1)
+                {
+                    myself.SetActive(false);  // On enlève de la scène l'objet placé dans l'inventaire
+                    StockInTheRightPanel();   // On appelle la fonction qui l'affiche dans l'inventaire
+                }
+            }
+
+            else
             {
                 myself.SetActive(false);  // On enlève de la scène l'objet placé dans l'inventaire
                 StockInTheRightPanel();   // On appelle la fonction qui l'affiche dans l'inventaire

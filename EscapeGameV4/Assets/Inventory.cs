@@ -7,7 +7,6 @@ public class Inventory : MonoBehaviour
 {
     public GameObject InventoryCanvas;
     public GameObject HelpPopup;
-    public GameObject camera2;
     public InputField inputField;
 
     //liste des items que l'on peut ramasser
@@ -40,7 +39,7 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown("i") && inputField.isFocused == false)
         {
             InventoryCanvas.SetActive(!InventoryCanvas.activeSelf);
-            camera2.SetActive(!camera2.activeSelf);
+            player.transform.position = new Vector3(player.transform.position.x, 0.08f, player.transform.position.z); //sinon bug de chute du player
             player.SetActive(!player.activeSelf);
         }
 
@@ -58,7 +57,7 @@ public class Inventory : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown("enter"))
+        if(Input.GetKeyDown(KeyCode.Return))
         {
             HelpPopup.SetActive(false);
         }

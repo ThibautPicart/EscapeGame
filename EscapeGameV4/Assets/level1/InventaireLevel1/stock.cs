@@ -65,7 +65,7 @@ public class stock : MonoBehaviour
 
             else if (myself.name == "book")
             {
-                if(PlayerPrefs.GetInt("IsChestOpen") == 1)
+                if(PlayerPrefs.GetInt("isChestOpen") == 1)
                 {
                     myself.SetActive(false);  // On enlève de la scène l'objet placé dans l'inventaire
                     StockInTheRightPanel();   // On appelle la fonction qui l'affiche dans l'inventaire

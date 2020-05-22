@@ -58,6 +58,16 @@ public class playerController : MonoBehaviour
             personnageAnim.SetBool("leftTurn", false);
         }
 
+        if(Input.GetKeyDown("g"))
+        {
+            personnageAnim.SetBool("cap", !personnageAnim.GetBool("cap"));
+        }
+
+        
+
+
+
+
 
 
         if (Input.GetKeyDown(KeyCode.Space) && Player.isGrounded)//&& Player.isGrounded

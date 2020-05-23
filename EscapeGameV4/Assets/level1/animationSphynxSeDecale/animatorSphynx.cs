@@ -18,19 +18,20 @@ public class animatorSphynx : MonoBehaviour
     //pour récuperer la solution associée à la suite qui a été tirée au sort dans le script enigme
     private static readonly string solutionSuite = "solutionSuite";
     private Animator anim;
-    public Animator zeroPousse;
-    public Animator unPousse;
-    public Animator deuxPousse;
-    public Animator troisPousse;
-    public Animator quatrePousse;
-    public Animator cinqPousse;
-    public Animator sixPousse;
-    public Animator septPousse;
-    public Animator huitPousse;
-    public Animator neufPousse;
-    
+    public Animator cubeAnim0;
+    public Animator cubeAnim1;
+    public Animator cubeAnim2;
+    public Animator cubeAnim3;
+    public Animator cubeAnim4;
+    public Animator cubeAnim5;
+    public Animator cubeAnim6;
+    public Animator cubeAnim7;
+    public Animator cubeAnim8;
+    public Animator cubeAnim9;
 
-  
+
+
+
     //on initialise toute les bouton à false pour dire que de base ils ne sont pas cliqués
     bool zero = false;
     bool un = false;
@@ -103,8 +104,8 @@ public class animatorSphynx : MonoBehaviour
         if (zero)
         {
             reponse.Add('0');
-            zeroPousse.SetBool("0Pousse", true);
-            zeroPousse.SetBool("0comeback", false);
+            cubeAnim0.SetBool("move", true);
+            cubeAnim0.SetBool("comeback", false);
             sonPierres.Play();
             
 
@@ -112,8 +113,8 @@ public class animatorSphynx : MonoBehaviour
         else
         {
             reponse.Remove('0');
-            zeroPousse.SetBool("0comeback", true);
-            zeroPousse.SetBool("0Pousse", false);
+            cubeAnim0.SetBool("move", false);
+            cubeAnim0.SetBool("comeback", true);
             sonPierres.Play();
         }
         
@@ -130,15 +131,15 @@ public class animatorSphynx : MonoBehaviour
         {
   
             reponse.Add('1');
-            unPousse.SetBool("1move", true);
-            unPousse.SetBool("1comeback", false);
+            cubeAnim1.SetBool("move", true);
+            cubeAnim1.SetBool("comeback", false);
             sonPierres.Play();
         }
         else
         {
             reponse.Remove('1');
-            unPousse.SetBool("1comeback", true);
-            unPousse.SetBool("1move", false);
+            cubeAnim1.SetBool("move", false);
+            cubeAnim1.SetBool("comeback", true);
             sonPierres.Play();
         }
         
@@ -152,15 +153,15 @@ public class animatorSphynx : MonoBehaviour
         if (deux)
         {
             reponse.Add('2');
-            deuxPousse.SetBool("2move",true);
-            deuxPousse.SetBool("2comeback", false);
+            cubeAnim2.SetBool("move", true);
+            cubeAnim2.SetBool("comeback", false);
             sonPierres.Play();
         }
         else
         {
             reponse.Remove('2');
-            deuxPousse.SetBool("2move", false);
-            deuxPousse.SetBool("2comeback", true);
+            cubeAnim2.SetBool("move", false);
+            cubeAnim2.SetBool("comeback", true);
             sonPierres.Play();
         }
         Reponse();
@@ -173,15 +174,15 @@ public class animatorSphynx : MonoBehaviour
         if (trois)
         {
             reponse.Add('3');
-            troisPousse.SetBool("3move", true);
-            troisPousse.SetBool("3comeback", false);
+            cubeAnim3.SetBool("move", true);
+            cubeAnim3.SetBool("comeback", false);
             sonPierres.Play();
         }
         else
         {
             reponse.Remove('3');
-            troisPousse.SetBool("3move", false);
-            troisPousse.SetBool("3comeback", true);
+            cubeAnim3.SetBool("move", false);
+            cubeAnim3.SetBool("comeback", true);
             sonPierres.Play();
         }
         Reponse();
@@ -194,15 +195,15 @@ public class animatorSphynx : MonoBehaviour
         if (quatre)
         {
             reponse.Add('4');
-            quatrePousse.SetBool("4move", true);
-            quatrePousse.SetBool("4comeback", false);
+            cubeAnim4.SetBool("move", true);
+            cubeAnim4.SetBool("comeback", false);
             sonPierres.Play();
         }
         else
         {
             reponse.Remove('4');
-            quatrePousse.SetBool("4move", false);
-            quatrePousse.SetBool("4comeback", true);
+            cubeAnim4.SetBool("move", false);
+            cubeAnim4.SetBool("comeback", true);
             sonPierres.Play();
         }
         Reponse();
@@ -215,15 +216,15 @@ public class animatorSphynx : MonoBehaviour
         if (cinq)
         {
             reponse.Add('5');
-            cinqPousse.SetBool("5move", true);
-            cinqPousse.SetBool("5comeback", false);
+            cubeAnim5.SetBool("move", true);
+            cubeAnim5.SetBool("comeback", false);
             sonPierres.Play();
         }
         else
         {
             reponse.Remove('5');
-            cinqPousse.SetBool("5move", false);
-            cinqPousse.SetBool("5comeback", true);
+            cubeAnim5.SetBool("move", false);
+            cubeAnim5.SetBool("comeback", true);
             sonPierres.Play();
         }
         Reponse();
@@ -236,15 +237,15 @@ public class animatorSphynx : MonoBehaviour
         if (six)
         {
             reponse.Add('6');
-            sixPousse.SetBool("6move", true);
-            sixPousse.SetBool("6comeback", false);
+            cubeAnim6.SetBool("move", true);
+            cubeAnim6.SetBool("comeback", false);
             sonPierres.Play();
         }
         else
         {
             reponse.Remove('6');
-            sixPousse.SetBool("6move", false);
-            sixPousse.SetBool("6comeback", true);
+            cubeAnim6.SetBool("move", false);
+            cubeAnim6.SetBool("comeback", true);
             sonPierres.Play();
         }
         Reponse();
@@ -257,15 +258,15 @@ public class animatorSphynx : MonoBehaviour
         if (sept)
         {
             reponse.Add('7');
-            septPousse.SetBool("7move", true);
-            septPousse.SetBool("7comeback", false);
+            cubeAnim7.SetBool("move", true);
+            cubeAnim7.SetBool("comeback", false);
             sonPierres.Play();
         }
         else
         {
             reponse.Remove('7');
-            septPousse.SetBool("7move", false);
-            septPousse.SetBool("7comeback", true);
+            cubeAnim7.SetBool("move", false);
+            cubeAnim7.SetBool("comeback", true);
             sonPierres.Play();
         }
         Reponse();
@@ -277,15 +278,15 @@ public class animatorSphynx : MonoBehaviour
         if (huit)
         {
             reponse.Add('8');
-            huitPousse.SetBool("8move", true);
-            huitPousse.SetBool("8comeback", false);
+            cubeAnim8.SetBool("move", true);
+            cubeAnim8.SetBool("comeback", false);
             sonPierres.Play();
         }
         else
         {
             reponse.Remove('8');
-            huitPousse.SetBool("8move", false);
-            huitPousse.SetBool("8comeback", true);
+            cubeAnim8.SetBool("move", false);
+            cubeAnim8.SetBool("comeback", true);
             sonPierres.Play();
         }
         Reponse();
@@ -299,15 +300,15 @@ public class animatorSphynx : MonoBehaviour
         if (neuf)
         {
             reponse.Add('9');
-            neufPousse.SetBool("9move", true);
-            neufPousse.SetBool("9comeback", false);
+            cubeAnim9.SetBool("move", true);
+            cubeAnim9.SetBool("comeback", false);
             sonPierres.Play();
         }
         else
         {
             reponse.Remove('9');
-            neufPousse.SetBool("9move", false);
-            neufPousse.SetBool("9comeback", true);
+            cubeAnim9.SetBool("move", false);
+            cubeAnim9.SetBool("comeback", true);
             sonPierres.Play();
         }
         Reponse();

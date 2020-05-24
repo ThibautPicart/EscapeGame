@@ -56,6 +56,7 @@ public class playerController : MonoBehaviour
         if(!Input.GetKey("q"))
         {
             personnageAnim.SetBool("leftTurn", false);
+            
         }
 
         if(Input.GetKeyDown("g"))
@@ -106,9 +107,12 @@ public class playerController : MonoBehaviour
             personnageAnim.SetBool("run", false);
         }
 
+        //j'ai mi ce bout de code dans ouvertureSol pour faciliter le code
+
         if ((Input.GetKeyDown("c")))
         {
             personnageAnim.SetBool("dig", true);
+            
         }
     }
 }

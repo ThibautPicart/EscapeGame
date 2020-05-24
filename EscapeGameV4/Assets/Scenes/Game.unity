@@ -7614,51 +7614,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1277819983}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &360085463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 360085461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3949a4f37d5c5b549b688c91b32ebdfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 724868249}
-  myself: {fileID: 360085461}
-  Position: 0
-  ItemTablette1: {fileID: 24397306}
-  ItemStick1: {fileID: 532266583}
-  ItemKey1: {fileID: 425521163}
-  ItemShovel1: {fileID: 1477711565}
-  ItemBook1: {fileID: 1425032729}
-  ItemTablette2: {fileID: 1998646627}
-  ItemStick2: {fileID: 404293998}
-  ItemKey2: {fileID: 448118419}
-  ItemShovel2: {fileID: 1585812368}
-  ItemBook2: {fileID: 1164274969}
-  ItemTablette3: {fileID: 640089128}
-  ItemStick3: {fileID: 862523782}
-  ItemKey3: {fileID: 1284988154}
-  ItemShovel3: {fileID: 1011932335}
-  ItemBook3: {fileID: 1204218369}
-  ItemTablette4: {fileID: 1731397575}
-  ItemStick4: {fileID: 1492105534}
-  ItemKey4: {fileID: 1102587399}
-  ItemShovel4: {fileID: 2003059577}
-  ItemBook4: {fileID: 962945573}
-  ItemTablette5: {fileID: 520010661}
-  ItemStick5: {fileID: 2101419968}
-  ItemKey5: {fileID: 1179941813}
-  ItemShovel5: {fileID: 881271292}
-  ItemBook5: {fileID: 1548329690}
-  Emplacement1: []
-  Emplacement2: []
-  Emplacement3: []
-  Emplacement4: []
-  Emplacement5: []
 --- !u!65 &360085464
 BoxCollider:
   m_ObjectHideFlags: 0

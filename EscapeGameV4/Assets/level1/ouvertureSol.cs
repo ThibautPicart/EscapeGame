@@ -36,7 +36,7 @@ public class ouvertureSol : MonoBehaviour
         //bool creuse = personnageAnim.GetBool("dig");
         //print("creuse = " + creuse);
 
-        if ((Vector3.Distance(solAOuvrir.transform.position, player.transform.position)) < 5 && creuse==true )
+        if ((Vector3.Distance(solAOuvrir.transform.position, player.transform.position)) < 2 && creuse==true )
         {
             solAOuvrir.SetActive(false);
         }

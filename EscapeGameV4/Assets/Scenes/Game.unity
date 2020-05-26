@@ -31998,6 +31998,16 @@ MonoBehaviour:
   cubeAnim7: {fileID: 1780182410}
   cubeAnim8: {fileID: 866866322}
   cubeAnim9: {fileID: 316066421}
+  cube0: {fileID: 399455550}
+  cube1: {fileID: 536368161}
+  cube2: {fileID: 362489470}
+  cube3: {fileID: 1159205054}
+  cube4: {fileID: 429723224}
+  cube5: {fileID: 290536816}
+  cube6: {fileID: 928401577}
+  cube7: {fileID: 631073926}
+  cube8: {fileID: 559796940}
+  cube9: {fileID: 1704667374}
   tempsTemporisation: 5
   escalier: {fileID: 1455985281}
   player: {fileID: 724868249}

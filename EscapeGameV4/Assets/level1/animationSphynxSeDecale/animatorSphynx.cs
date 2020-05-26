@@ -29,6 +29,8 @@ public class animatorSphynx : MonoBehaviour
     public Animator cubeAnim8;
     public Animator cubeAnim9;
 
+    public GameObject cube0, cube1, cube2, cube3, cube4, cube5, cube6, cube7, cube8, cube9;
+
 
 
 
@@ -107,238 +109,278 @@ public class animatorSphynx : MonoBehaviour
     }
     public void zeroClick()
     {
-        zero=!zero;
-        if (zero)
+        if ((Vector3.Distance(cube0.transform.position, player.transform.position)) < 4)
         {
-            reponse.Add('0');
-            cubeAnim0.SetBool("move", true);
-            cubeAnim0.SetBool("comeback", false);
-            sonPierres.Play();
-            personnageAnim.SetBool("push", true);
+            zero = !zero;
+            if (zero)
+            {
+                reponse.Add('0');
+                cubeAnim0.SetBool("move", true);
+                cubeAnim0.SetBool("comeback", false);
+                sonPierres.Play();
+                personnageAnim.SetBool("push", true);
 
 
-        }
-        else
-        {
-            reponse.Remove('0');
-            cubeAnim0.SetBool("move", false);
-            cubeAnim0.SetBool("comeback", true);
-            sonPierres.Play();
-            personnageAnim.SetBool("pull", true);
+            }
+            else
+            {
+                reponse.Remove('0');
+                cubeAnim0.SetBool("move", false);
+                cubeAnim0.SetBool("comeback", true);
+                sonPierres.Play();
+                personnageAnim.SetBool("pull", true);
+            }
+
+            Reponse();
         }
         
-        Reponse();
 
 
     }
 
     public void unClick()
     {
-        print("click on 1");
-        un = !un;
-        if (un)
+        if ((Vector3.Distance(cube1.transform.position, player.transform.position)) < 4)
         {
-  
-            reponse.Add('1');
-            cubeAnim1.SetBool("move", true);
-            cubeAnim1.SetBool("comeback", false);
-            sonPierres.Play();
-            personnageAnim.SetBool("push", true);
+            un = !un;
+            if (un)
+            {
+
+                reponse.Add('1');
+                cubeAnim1.SetBool("move", true);
+                cubeAnim1.SetBool("comeback", false);
+                sonPierres.Play();
+                personnageAnim.SetBool("push", true);
+            }
+            else
+            {
+                reponse.Remove('1');
+                cubeAnim1.SetBool("move", false);
+                cubeAnim1.SetBool("comeback", true);
+                sonPierres.Play();
+                personnageAnim.SetBool("pull", true);
+            }
+
+            Reponse();
         }
-        else
-        {
-            reponse.Remove('1');
-            cubeAnim1.SetBool("move", false);
-            cubeAnim1.SetBool("comeback", true);
-            sonPierres.Play();
-            personnageAnim.SetBool("pull", true);
-        }
+
         
-        Reponse();
 
     }
 
     public void deuxClick()
     {
-        deux = !deux;
-        if (deux)
+        if ((Vector3.Distance(cube2.transform.position, player.transform.position)) < 4)
         {
-            reponse.Add('2');
-            cubeAnim2.SetBool("move", true);
-            cubeAnim2.SetBool("comeback", false);
-            sonPierres.Play();
-            personnageAnim.SetBool("push", true);
+            deux = !deux;
+            if (deux)
+            {
+                reponse.Add('2');
+                cubeAnim2.SetBool("move", true);
+                cubeAnim2.SetBool("comeback", false);
+                sonPierres.Play();
+                personnageAnim.SetBool("push", true);
+            }
+            else
+            {
+                reponse.Remove('2');
+                cubeAnim2.SetBool("move", false);
+                cubeAnim2.SetBool("comeback", true);
+                sonPierres.Play();
+                personnageAnim.SetBool("pull", true);
+            }
+            Reponse();
         }
-        else
-        {
-            reponse.Remove('2');
-            cubeAnim2.SetBool("move", false);
-            cubeAnim2.SetBool("comeback", true);
-            sonPierres.Play();
-            personnageAnim.SetBool("pull", true);
-        }
-        Reponse();
+        
 
 
     }
     public void troisClick()
     {
-        trois = !trois;
-        if (trois)
+        if ((Vector3.Distance(cube3.transform.position, player.transform.position)) < 4)
         {
-            reponse.Add('3');
-            cubeAnim3.SetBool("move", true);
-            cubeAnim3.SetBool("comeback", false);
-            sonPierres.Play();
-            personnageAnim.SetBool("push", true);
+            trois = !trois;
+            if (trois)
+            {
+                reponse.Add('3');
+                cubeAnim3.SetBool("move", true);
+                cubeAnim3.SetBool("comeback", false);
+                sonPierres.Play();
+                personnageAnim.SetBool("push", true);
+            }
+            else
+            {
+                reponse.Remove('3');
+                cubeAnim3.SetBool("move", false);
+                cubeAnim3.SetBool("comeback", true);
+                sonPierres.Play();
+                personnageAnim.SetBool("pull", true);
+            }
+            Reponse();
         }
-        else
-        {
-            reponse.Remove('3');
-            cubeAnim3.SetBool("move", false);
-            cubeAnim3.SetBool("comeback", true);
-            sonPierres.Play();
-            personnageAnim.SetBool("pull", true);
-        }
-        Reponse();
+        
 
 
     }
     public void quatreClick()
     {
-        quatre = !quatre;
-        if (quatre)
+        if ((Vector3.Distance(cube4.transform.position, player.transform.position)) < 4)
         {
-            reponse.Add('4');
-            cubeAnim4.SetBool("move", true);
-            cubeAnim4.SetBool("comeback", false);
-            sonPierres.Play();
-            personnageAnim.SetBool("push", true);
+            quatre = !quatre;
+            if (quatre)
+            {
+                reponse.Add('4');
+                cubeAnim4.SetBool("move", true);
+                cubeAnim4.SetBool("comeback", false);
+                sonPierres.Play();
+                personnageAnim.SetBool("push", true);
+            }
+            else
+            {
+                reponse.Remove('4');
+                cubeAnim4.SetBool("move", false);
+                cubeAnim4.SetBool("comeback", true);
+                sonPierres.Play();
+                personnageAnim.SetBool("pull", true);
+            }
+            Reponse();
         }
-        else
-        {
-            reponse.Remove('4');
-            cubeAnim4.SetBool("move", false);
-            cubeAnim4.SetBool("comeback", true);
-            sonPierres.Play();
-            personnageAnim.SetBool("pull", true);
-        }
-        Reponse();
+        
 
 
     }
     public void cinqClick()
     {
-        cinq = !cinq;
-        if (cinq)
+        if ((Vector3.Distance(cube5.transform.position, player.transform.position)) < 4)
         {
-            reponse.Add('5');
-            cubeAnim5.SetBool("move", true);
-            cubeAnim5.SetBool("comeback", false);
-            sonPierres.Play();
-            personnageAnim.SetBool("push", true);
+            cinq = !cinq;
+            if (cinq)
+            {
+                reponse.Add('5');
+                cubeAnim5.SetBool("move", true);
+                cubeAnim5.SetBool("comeback", false);
+                sonPierres.Play();
+                personnageAnim.SetBool("push", true);
+            }
+            else
+            {
+                reponse.Remove('5');
+                cubeAnim5.SetBool("move", false);
+                cubeAnim5.SetBool("comeback", true);
+                sonPierres.Play();
+                personnageAnim.SetBool("pull", true);
+            }
+            Reponse();
         }
-        else
-        {
-            reponse.Remove('5');
-            cubeAnim5.SetBool("move", false);
-            cubeAnim5.SetBool("comeback", true);
-            sonPierres.Play();
-            personnageAnim.SetBool("pull", true);
-        }
-        Reponse();
+        
 
 
     }
     public void sixClick()
     {
-        six = !six;
-        if (six)
+        if ((Vector3.Distance(cube6.transform.position, player.transform.position)) < 4)
         {
-            reponse.Add('6');
-            cubeAnim6.SetBool("move", true);
-            cubeAnim6.SetBool("comeback", false);
-            sonPierres.Play();
-            personnageAnim.SetBool("push", true);
+            six = !six;
+            if (six)
+            {
+                reponse.Add('6');
+                cubeAnim6.SetBool("move", true);
+                cubeAnim6.SetBool("comeback", false);
+                sonPierres.Play();
+                personnageAnim.SetBool("push", true);
+            }
+            else
+            {
+                reponse.Remove('6');
+                cubeAnim6.SetBool("move", false);
+                cubeAnim6.SetBool("comeback", true);
+                sonPierres.Play();
+                personnageAnim.SetBool("pull", true);
+            }
+            Reponse();
         }
-        else
-        {
-            reponse.Remove('6');
-            cubeAnim6.SetBool("move", false);
-            cubeAnim6.SetBool("comeback", true);
-            sonPierres.Play();
-            personnageAnim.SetBool("pull", true);
-        }
-        Reponse();
+        
 
 
     }
     public void septClick()
     {
-        sept = !sept;
-        if (sept)
+        if ((Vector3.Distance(cube7.transform.position, player.transform.position)) < 4)
         {
-            reponse.Add('7');
-            cubeAnim7.SetBool("move", true);
-            cubeAnim7.SetBool("comeback", false);
-            sonPierres.Play();
-            personnageAnim.SetBool("push", true);
+            sept = !sept;
+            if (sept)
+            {
+                reponse.Add('7');
+                cubeAnim7.SetBool("move", true);
+                cubeAnim7.SetBool("comeback", false);
+                sonPierres.Play();
+                personnageAnim.SetBool("push", true);
+            }
+            else
+            {
+                reponse.Remove('7');
+                cubeAnim7.SetBool("move", false);
+                cubeAnim7.SetBool("comeback", true);
+                sonPierres.Play();
+                personnageAnim.SetBool("pull", true);
+            }
+            Reponse();
         }
-        else
-        {
-            reponse.Remove('7');
-            cubeAnim7.SetBool("move", false);
-            cubeAnim7.SetBool("comeback", true);
-            sonPierres.Play();
-            personnageAnim.SetBool("pull", true);
-        }
-        Reponse();
+        
 
     }
     public void huitClick()
     {
-        huit = !huit;
-        if (huit)
+        if ((Vector3.Distance(cube8.transform.position, player.transform.position)) < 4)
         {
-            reponse.Add('8');
-            cubeAnim8.SetBool("move", true);
-            cubeAnim8.SetBool("comeback", false);
-            sonPierres.Play();
-            personnageAnim.SetBool("push", true);
+            huit = !huit;
+            if (huit)
+            {
+                reponse.Add('8');
+                cubeAnim8.SetBool("move", true);
+                cubeAnim8.SetBool("comeback", false);
+                sonPierres.Play();
+                personnageAnim.SetBool("push", true);
+            }
+            else
+            {
+                reponse.Remove('8');
+                cubeAnim8.SetBool("move", false);
+                cubeAnim8.SetBool("comeback", true);
+                sonPierres.Play();
+                personnageAnim.SetBool("pull", true);
+            }
+            Reponse();
         }
-        else
-        {
-            reponse.Remove('8');
-            cubeAnim8.SetBool("move", false);
-            cubeAnim8.SetBool("comeback", true);
-            sonPierres.Play();
-            personnageAnim.SetBool("pull", true);
-        }
-        Reponse();
+        
 
 
 
     }
     public void neufClick()
     {
-        neuf = !neuf;
-        if (neuf)
+        if ((Vector3.Distance(cube9.transform.position, player.transform.position)) < 4)
         {
-            reponse.Add('9');
-            cubeAnim9.SetBool("move", true);
-            cubeAnim9.SetBool("comeback", false);
-            sonPierres.Play();
-            personnageAnim.SetBool("push", true);
+            neuf = !neuf;
+            if (neuf)
+            {
+                reponse.Add('9');
+                cubeAnim9.SetBool("move", true);
+                cubeAnim9.SetBool("comeback", false);
+                sonPierres.Play();
+                personnageAnim.SetBool("push", true);
+            }
+            else
+            {
+                reponse.Remove('9');
+                cubeAnim9.SetBool("move", false);
+                cubeAnim9.SetBool("comeback", true);
+                sonPierres.Play();
+                personnageAnim.SetBool("pull", true);
+            }
+            Reponse();
         }
-        else
-        {
-            reponse.Remove('9');
-            cubeAnim9.SetBool("move", false);
-            cubeAnim9.SetBool("comeback", true);
-            sonPierres.Play();
-            personnageAnim.SetBool("pull", true);
-        }
-        Reponse();
+        
 
     }
 

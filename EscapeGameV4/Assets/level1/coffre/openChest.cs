@@ -17,7 +17,7 @@ public class openChest : MonoBehaviour
         firstTime = 1;
         PlayerPrefs.SetInt("isChestOpen", 0);
     }
-    void Update()
+    void FixedUpdate()
     {
         if((Vector3.Distance(transform.position, player.transform.position)) < 2 && PlayerPrefs.GetInt("HasKey") == 1)
         {

@@ -5684,31 +5684,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 482706, guid: cfbc09ea4462a9e46b329b723b20ec50, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.22700024
+      value: 0.227
       objectReference: {fileID: 0}
     - target: {fileID: 482706, guid: cfbc09ea4462a9e46b329b723b20ec50, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.249
+      value: 1.987
       objectReference: {fileID: 0}
     - target: {fileID: 482706, guid: cfbc09ea4462a9e46b329b723b20ec50, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.67
+      value: 9.43
       objectReference: {fileID: 0}
     - target: {fileID: 482706, guid: cfbc09ea4462a9e46b329b723b20ec50, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.39465755
+      value: 0.510477
       objectReference: {fileID: 0}
     - target: {fileID: 482706, guid: cfbc09ea4462a9e46b329b723b20ec50, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0026116369
+      value: 0.0024341939
       objectReference: {fileID: 0}
     - target: {fileID: 482706, guid: cfbc09ea4462a9e46b329b723b20ec50, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0011984556
+      value: -0.0015270706
       objectReference: {fileID: 0}
     - target: {fileID: 482706, guid: cfbc09ea4462a9e46b329b723b20ec50, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9188238
+      value: 0.85988665
       objectReference: {fileID: 0}
     - target: {fileID: 482706, guid: cfbc09ea4462a9e46b329b723b20ec50, type: 3}
       propertyPath: m_RootOrder
@@ -5716,15 +5716,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 482706, guid: cfbc09ea4462a9e46b329b723b20ec50, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 46.489002
+      value: 61.392002
       objectReference: {fileID: 0}
     - target: {fileID: 482706, guid: cfbc09ea4462a9e46b329b723b20ec50, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90.32101
+      value: 0.314
       objectReference: {fileID: 0}
     - target: {fileID: 482706, guid: cfbc09ea4462a9e46b329b723b20ec50, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -0.012
+      value: -0.017
       objectReference: {fileID: 0}
     - target: {fileID: 482706, guid: cfbc09ea4462a9e46b329b723b20ec50, type: 3}
       propertyPath: m_LocalScale.z
@@ -7032,6 +7032,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1227312859}
         m_MethodName: quatreClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 724868252}
+        m_MethodName: pushPull
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10701,6 +10712,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1227312859}
         m_MethodName: troisClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 724868252}
+        m_MethodName: pushPull
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15408,6 +15430,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 724868252}
+        m_MethodName: pushPull
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &583279874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17876,6 +17909,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1227312859}
         m_MethodName: cinqClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 724868252}
+        m_MethodName: pushPull
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23517,6 +23561,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1227312859}
         m_MethodName: unClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 724868252}
+        m_MethodName: pushPull
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29997,6 +30052,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 724868252}
+        m_MethodName: pushPull
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1159298152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31796,6 +31862,7 @@ MonoBehaviour:
   cubeAnim9: {fileID: 316066421}
   tempsTemporisation: 5
   escalier: {fileID: 1455985281}
+  player: {fileID: 0}
 --- !u!1 &1234456213
 GameObject:
   m_ObjectHideFlags: 0
@@ -31880,6 +31947,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1227312859}
         m_MethodName: sixClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 724868252}
+        m_MethodName: pushPull
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -36900,6 +36978,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 724868252}
+        m_MethodName: pushPull
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1480965468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41332,6 +41421,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1227312859}
         m_MethodName: deuxClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 724868252}
+        m_MethodName: pushPull
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -46015,6 +46115,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1227312859}
         m_MethodName: neufClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 724868252}
+        m_MethodName: pushPull
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -51203,17 +51314,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 91acf39212f06f4418a10bae6150aa2c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.26300144
+      value: 0.272
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 91acf39212f06f4418a10bae6150aa2c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.146
+      value: 1.715
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 91acf39212f06f4418a10bae6150aa2c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.904
+      value: 8.532
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 91acf39212f06f4418a10bae6150aa2c,
         type: 3}

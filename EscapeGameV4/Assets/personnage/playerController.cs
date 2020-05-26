@@ -109,4 +109,9 @@ public class playerController : MonoBehaviour
 
         
     }
+
+    public void pushPull()
+    {
+        personnageAnim.SetBool("push", true);
+    }
 }

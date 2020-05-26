@@ -56,12 +56,19 @@ public class animatorSphynx : MonoBehaviour
     //pour l'animation de l'escalier
     public Animator escalier;
 
+    //anim perso
+    private Animator personnageAnim;
+
+    //le perso
+    public GameObject player;
+
     //public Button Btn1;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        personnageAnim = player.GetComponent<Animator>();
         anim = GetComponent<Animator>();
         string Solution = PlayerPrefs.GetString(solutionSuite);
         //print("la solution a la suite est : " + Solution);
@@ -107,7 +114,8 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim0.SetBool("move", true);
             cubeAnim0.SetBool("comeback", false);
             sonPierres.Play();
-            
+            personnageAnim.SetBool("push", true);
+
 
         }
         else
@@ -116,6 +124,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim0.SetBool("move", false);
             cubeAnim0.SetBool("comeback", true);
             sonPierres.Play();
+            personnageAnim.SetBool("pull", true);
         }
         
         Reponse();
@@ -134,6 +143,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim1.SetBool("move", true);
             cubeAnim1.SetBool("comeback", false);
             sonPierres.Play();
+            personnageAnim.SetBool("push", true);
         }
         else
         {
@@ -141,6 +151,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim1.SetBool("move", false);
             cubeAnim1.SetBool("comeback", true);
             sonPierres.Play();
+            personnageAnim.SetBool("pull", true);
         }
         
         Reponse();
@@ -156,6 +167,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim2.SetBool("move", true);
             cubeAnim2.SetBool("comeback", false);
             sonPierres.Play();
+            personnageAnim.SetBool("push", true);
         }
         else
         {
@@ -163,6 +175,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim2.SetBool("move", false);
             cubeAnim2.SetBool("comeback", true);
             sonPierres.Play();
+            personnageAnim.SetBool("pull", true);
         }
         Reponse();
 
@@ -177,6 +190,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim3.SetBool("move", true);
             cubeAnim3.SetBool("comeback", false);
             sonPierres.Play();
+            personnageAnim.SetBool("push", true);
         }
         else
         {
@@ -184,6 +198,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim3.SetBool("move", false);
             cubeAnim3.SetBool("comeback", true);
             sonPierres.Play();
+            personnageAnim.SetBool("pull", true);
         }
         Reponse();
 
@@ -198,6 +213,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim4.SetBool("move", true);
             cubeAnim4.SetBool("comeback", false);
             sonPierres.Play();
+            personnageAnim.SetBool("push", true);
         }
         else
         {
@@ -205,6 +221,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim4.SetBool("move", false);
             cubeAnim4.SetBool("comeback", true);
             sonPierres.Play();
+            personnageAnim.SetBool("pull", true);
         }
         Reponse();
 
@@ -219,6 +236,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim5.SetBool("move", true);
             cubeAnim5.SetBool("comeback", false);
             sonPierres.Play();
+            personnageAnim.SetBool("push", true);
         }
         else
         {
@@ -226,6 +244,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim5.SetBool("move", false);
             cubeAnim5.SetBool("comeback", true);
             sonPierres.Play();
+            personnageAnim.SetBool("pull", true);
         }
         Reponse();
 
@@ -240,6 +259,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim6.SetBool("move", true);
             cubeAnim6.SetBool("comeback", false);
             sonPierres.Play();
+            personnageAnim.SetBool("push", true);
         }
         else
         {
@@ -247,6 +267,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim6.SetBool("move", false);
             cubeAnim6.SetBool("comeback", true);
             sonPierres.Play();
+            personnageAnim.SetBool("pull", true);
         }
         Reponse();
 
@@ -261,6 +282,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim7.SetBool("move", true);
             cubeAnim7.SetBool("comeback", false);
             sonPierres.Play();
+            personnageAnim.SetBool("push", true);
         }
         else
         {
@@ -268,6 +290,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim7.SetBool("move", false);
             cubeAnim7.SetBool("comeback", true);
             sonPierres.Play();
+            personnageAnim.SetBool("pull", true);
         }
         Reponse();
 
@@ -281,6 +304,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim8.SetBool("move", true);
             cubeAnim8.SetBool("comeback", false);
             sonPierres.Play();
+            personnageAnim.SetBool("push", true);
         }
         else
         {
@@ -288,6 +312,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim8.SetBool("move", false);
             cubeAnim8.SetBool("comeback", true);
             sonPierres.Play();
+            personnageAnim.SetBool("pull", true);
         }
         Reponse();
 
@@ -303,6 +328,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim9.SetBool("move", true);
             cubeAnim9.SetBool("comeback", false);
             sonPierres.Play();
+            personnageAnim.SetBool("push", true);
         }
         else
         {
@@ -310,6 +336,7 @@ public class animatorSphynx : MonoBehaviour
             cubeAnim9.SetBool("move", false);
             cubeAnim9.SetBool("comeback", true);
             sonPierres.Play();
+            personnageAnim.SetBool("pull", true);
         }
         Reponse();
 

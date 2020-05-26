@@ -10,6 +10,8 @@ public class ouvertureSol : MonoBehaviour
     public GameObject solAOuvrir;
     bool creuse;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,6 @@ public class ouvertureSol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print("creuse=" + creuse);
         
         //j'ai remi là pour éviter d'utiliser les playerprefs
         if (Input.GetKeyDown("c"))

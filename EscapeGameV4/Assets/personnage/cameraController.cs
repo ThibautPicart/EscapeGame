@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Media;
+using UnityEngine;
 
 public class cameraController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class cameraController : MonoBehaviour
     void Start()
     {
         offset = new Vector3(0, 1.5f, 0);
+        PlayerPrefs.SetInt("isDigging", 0);
     }
 
     // Update is called once per frame
@@ -34,7 +36,7 @@ public class cameraController : MonoBehaviour
        
         
 
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && PlayerPrefs.GetInt("isDigging") == 0)
         {
             deltaX = prevPos.x - Input.mousePosition.x;
             deltaY = prevPos.y - Input.mousePosition.y;
@@ -43,6 +45,14 @@ public class cameraController : MonoBehaviour
             rotation.z = 0;
             transform.eulerAngles = rotation;
 
+        }
+
+        if(PlayerPrefs.GetInt("isDigging") == 1)
+        {
+            rotation = transform.eulerAngles;
+            rotation.x = 20;
+            rotation.y = perso.eulerAngles.y;
+            transform.eulerAngles = rotation;
         }
 
 

@@ -46,9 +46,11 @@ public class destock : MonoBehaviour
 
     //Le popup de drop
     public GameObject ClickOnItemPanel;
+    public GameObject ClickOnShovelPanel;
 
     //Son bouton de drop
     public Button DropItemButton;
+    public Button DropShovelButton;
 
     //Les différents panels qui constituent l'inventaire
     public GameObject TablettePanel1;
@@ -77,10 +79,12 @@ public class destock : MonoBehaviour
     public GameObject ShovelPanel5;
     public GameObject BookPanel5;
 
-    public GameObject panelToRemove = null;
-    public GameObject objectADrop = null;
+    public GameObject handShovel;
 
-    public int pos;
+    private GameObject panelToRemove = null;
+    private GameObject objectADrop = null;
+
+    private int pos;
 
     void Start()
     {
@@ -117,6 +121,7 @@ public class destock : MonoBehaviour
 
         //Bouton du popup de drop
         DropItemButton.onClick.AddListener(() => ClickOnDropItem());
+        DropShovelButton.onClick.AddListener(() => ClickOnDropItem());
 
 
     }
@@ -176,7 +181,7 @@ public class destock : MonoBehaviour
         if (emplacement == 4) { panelToRemove = ShovelPanel4; }
         if (emplacement == 5) { panelToRemove = ShovelPanel5; }
         objectADrop = shovel;
-        ClickOnItemPanel.SetActive(true);
+        ClickOnShovelPanel.SetActive(true);
         pos = emplacement;
     }
 
@@ -196,17 +201,24 @@ public class destock : MonoBehaviour
 
     public void ClickOnDropItem()
     {
-        objectADrop.transform.position = player.transform.position;
+        objectADrop.transform.position = player.transform.position + new Vector3(0,1.0f,0);
         objectADrop.SetActive(true);
         if(objectADrop.name == "key")
         {
             PlayerPrefs.SetInt("HasKey", 0);
         }
+        if (objectADrop.name == "shovel")
+        {
+            handShovel.SetActive(false);
+        }
         panelToRemove.SetActive(false);
         ClickOnItemPanel.SetActive(false);
+        ClickOnShovelPanel.SetActive(false);
+        
         PlayerPrefs.SetInt("EmplacementDispoPref", PlayerPrefs.GetInt("EmplacementDispoPref") - 1);
         tablette.GetComponent<stock>().MiseAJourItems(pos);
     }
-
+ 
+ 
 
 }

@@ -47,10 +47,12 @@ public class destock : MonoBehaviour
     //Le popup de drop
     public GameObject ClickOnItemPanel;
     public GameObject ClickOnShovelPanel;
+    public GameObject ClickOnBookPanel;
 
     //Son bouton de drop
     public Button DropItemButton;
     public Button DropShovelButton;
+    public Button DropBookButton;
 
     //Les différents panels qui constituent l'inventaire
     public GameObject TablettePanel1;
@@ -122,7 +124,7 @@ public class destock : MonoBehaviour
         //Bouton du popup de drop
         DropItemButton.onClick.AddListener(() => ClickOnDropItem());
         DropShovelButton.onClick.AddListener(() => ClickOnDropItem());
-
+        DropBookButton.onClick.AddListener(() => ClickOnDropItem());
 
     }
 
@@ -194,7 +196,7 @@ public class destock : MonoBehaviour
         if (emplacement == 4) { panelToRemove = BookPanel4; }
         if (emplacement == 5) { panelToRemove = BookPanel5; }
         objectADrop = book;
-        ClickOnItemPanel.SetActive(true);
+        ClickOnBookPanel.SetActive(true);
         pos = emplacement;
     }
 
@@ -214,7 +216,8 @@ public class destock : MonoBehaviour
         panelToRemove.SetActive(false);
         ClickOnItemPanel.SetActive(false);
         ClickOnShovelPanel.SetActive(false);
-        
+        ClickOnBookPanel.SetActive(false);
+
         PlayerPrefs.SetInt("EmplacementDispoPref", PlayerPrefs.GetInt("EmplacementDispoPref") - 1);
         tablette.GetComponent<stock>().MiseAJourItems(pos);
     }

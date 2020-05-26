@@ -13,6 +13,7 @@ public class cameraController : MonoBehaviour
 
     private float deltaX;
     private float deltaY;
+    private float y;
 
 
     // Start is called before the first frame update
@@ -44,6 +45,7 @@ public class cameraController : MonoBehaviour
             rotation = transform.eulerAngles;
             rotation.z = 0;
             transform.eulerAngles = rotation;
+            y = perso.eulerAngles.y + 0.5f;
 
         }
 
@@ -51,7 +53,7 @@ public class cameraController : MonoBehaviour
         {
             rotation = transform.eulerAngles;
             rotation.x = 20;
-            rotation.y = perso.eulerAngles.y;
+            rotation.y = y;
             transform.eulerAngles = rotation;
         }
 

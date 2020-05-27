@@ -233,28 +233,32 @@ public class Enigme : MonoBehaviour
     void Start()
     {
         //déclaration des suites faciles
-        List<string> SuiteFacile1 = new List<string>() { "0", "1", "2", "00", "00", "00", "??", "00" };
-        List<string> SuiteFacile2 = new List<string>() { "2", "4", "6", "8", "10", "12", "14", "??" };
+        List<string> SuiteFacile1 = new List<string>() { "0", "1", "2", "3", "4", "5", "6", "??" };
+        List<string> SuiteFacile2 = new List<string>() { "99", "98", "97", "96", "95", "94", "93","??" };
 
         //déclaration des solutions des suites faciles
-        string SolutionSuiteFacile1 = "0";
-        string SolutionSuiteFacile2 = "0";
+        string SolutionSuiteFacile1 = "7";
+        string SolutionSuiteFacile2 = "92";
 
         // déclaration des suite intermédiaires
-        List<string> SuiteIntermediaire1 = new List<string>() { "10", "20", "30", "40", "50", "60", "70", "??" };
-        List<string> SuiteIntermediaire2 = new List<string>() { "20", "40", "60", "80", "100", "120", "140", "??" };
+        //suite de fibonacci
+        List<string> SuiteIntermediaire1 = new List<string>() { "0", "1", "1", "2", "3", "5", "8", "??" };
+        // multiplication par 2
+        List<string> SuiteIntermediaire2 = new List<string>() { "1", "2", "4", "8", "16", "32", "64", "??" };
 
         //déclaration des solutions des suites intermediaires
-        string SolutionSuiteIntermediaire1 = "11";
-        string SolutionSuiteIntermediaire2 = "11";
+        string SolutionSuiteIntermediaire1 = "13";
+        string SolutionSuiteIntermediaire2 = "128";
 
         //déclaration des suite compliquées
-        List<string> SuiteDifficile1 = new List<string>() { "0", "1", "10", "11", "??", "5", "6", "7" };
-        List<string> SuiteDifficile2 = new List<string>() { "20", "4", "60", "80", "10", "10", "14", "??" };
+        // on aditionne au nième terme, n
+        List<string> SuiteDifficile1 = new List<string>() { "8", "10", "13", "17", "22", "28", "35", "??" };
+        //les carrés des entiers écrits de droite à gauche :
+        List<string> SuiteDifficile2 = new List<string>() { "1", "4", "9", "61", "52", "63", "94", "??" };
 
         //déclaration des solutions des suites compliquées
-        string SolutionSuiteDifficile1 = "21";
-        string SolutionSuiteDifficile2 = "21";
+        string SolutionSuiteDifficile1 = "43";
+        string SolutionSuiteDifficile2 = "46";
 
         //on fait les listes composées de toutes les listes
         List<List<string>> SuitesFaciles = new List<List<string>>() { SuiteFacile1, SuiteFacile2 };

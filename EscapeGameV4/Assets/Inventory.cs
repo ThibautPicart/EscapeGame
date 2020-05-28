@@ -47,7 +47,7 @@ public class Inventory : MonoBehaviour
         {
             if ((Vector3.Distance(item.transform.position, player.transform.position)) < 2 && firstTime == 0)
             {
-                if(item.name!="key" && item.name!="book")
+                if(item.name!="key" && item.name!="book"&&item.name!="tablette")
                 {
                     //On affiche le conseil
                     HelpPopup.SetActive(true);

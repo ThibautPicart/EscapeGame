@@ -233,7 +233,7 @@ public class Enigme : MonoBehaviour
     void Start()
     {
         //déclaration des suites faciles
-        List<string> SuiteFacile1 = new List<string>() { "0", "1", "2", "3", "4", "5", "6", "??" };
+        List<string> SuiteFacile1 = new List<string>() { "00", "01", "02", "03", "04", "05", "06", "??" };
         List<string> SuiteFacile2 = new List<string>() { "99", "98", "97", "96", "95", "94", "93","??" };
 
         //déclaration des solutions des suites faciles
@@ -242,9 +242,9 @@ public class Enigme : MonoBehaviour
 
         // déclaration des suite intermédiaires
         //suite de fibonacci
-        List<string> SuiteIntermediaire1 = new List<string>() { "0", "1", "1", "2", "3", "5", "8", "??" };
+        List<string> SuiteIntermediaire1 = new List<string>() { "00", "01", "01", "02", "03", "05", "08", "??" };
         // multiplication par 2
-        List<string> SuiteIntermediaire2 = new List<string>() { "1", "2", "4", "8", "16", "32", "64", "??" };
+        List<string> SuiteIntermediaire2 = new List<string>() { "01", "02", "04", "08", "16", "32", "64", "??" };
 
         //déclaration des solutions des suites intermediaires
         string SolutionSuiteIntermediaire1 = "13";

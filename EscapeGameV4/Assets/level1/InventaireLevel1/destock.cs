@@ -203,7 +203,15 @@ public class destock : MonoBehaviour
 
     public void ClickOnDropItem()
     {
-        objectADrop.transform.position = player.transform.position + new Vector3(0,1.0f,0);
+        
+        if(objectADrop.name == "key")
+        {
+            objectADrop.transform.position = new Vector3(player.transform.position.x, 0.1f, player.transform.position.z);
+        }
+        else
+        {
+            objectADrop.transform.position = player.transform.position + new Vector3(1.0f, 4.0f, 0.0f);
+        }
         objectADrop.SetActive(true);
         if(objectADrop.name == "key")
         {

@@ -50,7 +50,7 @@ public class stock : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetKeyDown("t") && Vector3.Distance(myself.transform.position, player.transform.position) < 2)
         {

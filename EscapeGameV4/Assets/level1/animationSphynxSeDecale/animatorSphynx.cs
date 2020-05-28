@@ -70,6 +70,7 @@ public class animatorSphynx : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.SetInt("LevelFinished", 0);
         personnageAnim = player.GetComponent<Animator>();
         anim = GetComponent<Animator>();
         string Solution = PlayerPrefs.GetString(solutionSuite);
@@ -422,13 +423,13 @@ public class animatorSphynx : MonoBehaviour
         if (result==true && detect==false&&variableFin==0)
             //varaibleFin sert à ne passer qu'une seul fois dans cette fonction
         {
-            //print("bonne réponse");
             anim.SetBool("SphynxMove", true);
             sonSphynx.Play();
 
             //pour la temporisation
             StartCoroutine(sphynxCoroutine());
             variableFin = 1;
+            PlayerPrefs.SetInt("LevelFinished", 1);
 
         }
         

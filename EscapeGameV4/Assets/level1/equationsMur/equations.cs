@@ -34,8 +34,10 @@ public class equations : MonoBehaviour
     ////intermédiaire cercle
     //les deux premier nombre sont le coefficient directeur et l'ordonée à l'origine de la droite
     //les trois dernier nombre sont : coordonnée du centre du cercle et le rayon du cercle au carré
-    private List<string> cercleDroite1 = new List<string>() { "1", "0", "0", "0","9" };
-    private List<string> cercleDroite2 = new List<string>() { "2", "1", "1", "2","16" };
+    private List<string> cercleDroite1 = new List<string>() { "1", "0", "0", "0","25" };
+    private List<string> cercleDroite2 = new List<string>() { "2", "1", "5", "0","49" };
+    private List<string> solutionCercle1 = new List<string>() { "4", "4" }; //valeur arrondie
+    private List<string> solutionCercle2 = new List<string>() { "3", "7" }; // idem
 
     ////difficile elypse
     private List<string> cercleElyspe1 = new List<string>() { "1", "0", "-1", "0" };
@@ -60,8 +62,8 @@ public class equations : MonoBehaviour
 
      //on fait une liste composé des solutions
      List<List<string>> solutionEquationsFaciles = new List<List<string>>() { solutionDroite1, solutionDroite2 };
-     List<List<string>> solutionEquationsIntermediaires = new List<List<string>>() { cercleDroite1, cercleDroite2 };
-     List<List<string>> solutionEquationsDifficiles = new List<List<string>>() { cercleElyspe1, cercleElypse2 };
+     List<List<string>> solutionEquationsIntermediaires = new List<List<string>>() { solutionCercle1, solutionCercle2 };
+     List<List<string>> solutionEquationsDifficiles = new List<List<string>>() { solutionCercle1, solutionCercle2 };
 
 
 
@@ -113,6 +115,17 @@ public class equations : MonoBehaviour
             //on va donc selectionner les equations correspondantes maintenant
             equationChosen = equationsIntermediaires[randomInt];
 
+
+            //je selectionne aussi la bonne réponse correpondante afin de l'envoyer danns le script qui fait bouger le sphynx
+            solutionEquation = solutionEquationsIntermediaires[randomInt];
+
+            string xSolution = solutionEquation[0];
+            string ySolution = solutionEquation[1];
+
+            //j'envoi la solution au script qui s'occupe de faire boger les terrains => je créer un playerPref
+            PlayerPrefs.SetString(xSolutionEquation, xSolution);
+            PlayerPrefs.SetString(ySolutionEquation, ySolution);
+
             //je selectionne aussi la bonne réponse correpondante afin de l'envoyer danns le script qui fait bouger le sphynx
             print("les équation choisies sont :\n" + equationChosen[0] + "x + " + equationChosen[1]);
             //maintenant on va écrire sur le mur les équation correcpondante
@@ -127,10 +140,21 @@ public class equations : MonoBehaviour
 
         else//if(levelstring == "difficult")
         {
-            int randomInt = Random.Range(0, equationsDifficiles.Count); //génère un entier compris entre 0 et le nombre d'élément de la liste
+            int randomInt = Random.Range(0, equationsIntermediaires.Count); //génère un entier compris entre 0 et le nombre d'élément de la liste
 
             //on va donc selectionner les equations correspondantes maintenant
-            equationChosen = equationsDifficiles[randomInt];
+            equationChosen = equationsIntermediaires[randomInt];
+
+
+            //je selectionne aussi la bonne réponse correpondante afin de l'envoyer danns le script qui fait bouger le sphynx
+            solutionEquation = solutionEquationsIntermediaires[randomInt];
+
+            string xSolution = solutionEquation[0];
+            string ySolution = solutionEquation[1];
+
+            //j'envoi la solution au script qui s'occupe de faire boger les terrains => je créer un playerPref
+            PlayerPrefs.SetString(xSolutionEquation, xSolution);
+            PlayerPrefs.SetString(ySolutionEquation, ySolution);
 
             //je selectionne aussi la bonne réponse correpondante afin de l'envoyer danns le script qui fait bouger le sphynx
             print("les équation choisies sont :\n" + equationChosen[0] + "x + " + equationChosen[1]);

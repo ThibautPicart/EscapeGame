@@ -8,15 +8,6 @@ public class ouvertureSol : MonoBehaviour
 
     public GameObject player;
     public GameObject solAOuvrir;
-    bool creuse;
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        creuse = false;
-    }
 
     // Update is called once per frame
     void Update()
@@ -26,20 +17,16 @@ public class ouvertureSol : MonoBehaviour
         if (Input.GetKeyDown("c"))
         {
             personnageAnim.SetBool("dig", true);
-            creuse = true;
+
+            if ((Vector3.Distance(solAOuvrir.transform.position, player.transform.position)) < 3 && PlayerPrefs.GetInt("HasShovel") == 1)
+            {
+                solAOuvrir.SetActive(false);
+            }
         }
         if (!Input.GetKeyDown("c"))
         {
             personnageAnim.SetBool("dig", false);
-            creuse = false;
         }
 
-        //bool creuse = personnageAnim.GetBool("dig");
-        //print("creuse = " + creuse);
-
-        if ((Vector3.Distance(solAOuvrir.transform.position, player.transform.position)) < 2 && creuse==true )
-        {
-            solAOuvrir.SetActive(false);
-        }
     }
 }

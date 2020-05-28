@@ -28,7 +28,6 @@ public class setSettings : MonoBehaviour
         firstComeInt = 0;
         if (firstComeInt == 0)
         {
-            print("if");
             PlayerPrefs.SetInt("firstComePref", 1);
             personnage.transform.localPosition = new Vector3(28f, 7f, 10f);
         }
@@ -37,7 +36,6 @@ public class setSettings : MonoBehaviour
         else
         {
             //on affecte les valeurs de positions récupérées à l'aide des playersPrefs
-            print("chiffre");
             print(PlayerPrefs.GetFloat(xPersonnage));
             personnage.transform.localPosition = new Vector3(PlayerPrefs.GetFloat(xPersonnage), PlayerPrefs.GetFloat(yPersonnage), PlayerPrefs.GetFloat(zPersonnage));
         
